@@ -1,0 +1,418 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Presentation: Beamer PG Theme
+% Author: Michał Czubenko and Karolina Marciniuk
+% Affiliation: Politechnika Gdańska
+% TASL: “Beamer PG Theme by M. Czubenko and K. Marciuniuk, PG, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+%
+% This work is licensed under a Creative Commons Attribution 
+% 4.0 International License (CC BY 4.0).
+%
+% To view a copy of this license, visit:
+% https://creativecommons.org/licenses/by/4.0/
+%
+% You are free to:
+%  - Share — copy and redistribute the material in any medium or format
+%  - Adapt — remix, transform, and build upon the material
+%    for any purpose, even commercially.
+%
+% Under the following terms:
+%  - Attribution — You must give appropriate credit, provide a link to the license,
+%    and indicate if changes were made.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mode<presentation>
+\ProvidesPackage{beamerouterthemepg}
+% Default sizes
+% 128 mm x 96 mm -- 4:3
+% 160 mm x 90 mm -- 16:9
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\beamer@custom@facultyimage}{./assets/wydzial_pg/pg_white.png}%
+\renewcommand{\beamer@custom@facultylogo}{}%
+
+% Możliwe wydziały to: warch, wch, weia, weti, wftims, wilis, wimio, wzie
+\ifdefstring{\beamer@custom@facultystyle}{warch}{%
+  \renewcommand{\beamer@custom@facultyimage}{./assets/wydzial_pg/pg_warch_biel.png}%
+  \renewcommand{\beamer@custom@facultylogo}{./assets/wydzial_pure/warch.png}%
+}{}
+
+\ifdefstring{\beamer@custom@facultystyle}{wch}{%
+  \renewcommand{\beamer@custom@facultyimage}{./assets/wydzial_pg/pg_wch_biel.png}%
+  \renewcommand{\beamer@custom@facultylogo}{./assets/wydzial_pure/wch.png}%
+}{}
+
+\ifdefstring{\beamer@custom@facultystyle}{weia}{%
+  \renewcommand{\beamer@custom@facultyimage}{./assets/wydzial_pg/pg_weia_biel.png}%
+  \renewcommand{\beamer@custom@facultylogo}{./assets/wydzial_pure/weia.png}%
+}{}
+
+\ifdefstring{\beamer@custom@facultystyle}{weti}{%
+  \renewcommand{\beamer@custom@facultyimage}{./assets/wydzial_pg/pg_weti_biel.png}%
+  \renewcommand{\beamer@custom@facultylogo}{./assets/wydzial_pure/weti.png}%
+}{}
+
+\ifdefstring{\beamer@custom@facultystyle}{wftims}{%
+  \renewcommand{\beamer@custom@facultyimage}{./assets/wydzial_pg/pg_wftims_biel.png}%
+  \renewcommand{\beamer@custom@facultylogo}{./assets/wydzial_pure/wfitms.png}%
+}{}
+
+\ifdefstring{\beamer@custom@facultystyle}{wilis}{%
+  \renewcommand{\beamer@custom@facultyimage}{./assets/wydzial_pg/pg_wilis_biel.png}%
+  \renewcommand{\beamer@custom@facultylogo}{./assets/wydzial_pure/wilis.png}%
+}{}
+
+\ifdefstring{\beamer@custom@facultystyle}{wimio}{%
+  \renewcommand{\beamer@custom@facultyimage}{./assets/wydzial_pg/pg_wimio_biel.png}%
+  \renewcommand{\beamer@custom@facultylogo}{./assets/wydzial_pure/wimio.png}%
+}{}
+
+\ifdefstring{\beamer@custom@facultystyle}{wilis}{%
+  \renewcommand{\beamer@custom@facultyimage}{./assets/wydzial_pg/pg_wzie_biel.png}%
+  \renewcommand{\beamer@custom@facultylogo}{./assets/wydzial_pure/wzie.png}%
+}{}
+
+\ifdefstring{\beamer@custom@facultystyle}{custom}{%
+  \renewcommand{\beamer@custom@facultyimage}{\beamer@custom@custom}%
+  \renewcommand{\beamer@custom@facultylogo}{\beamer@custom@custom}%
+}{}
+
+\renewcommand{\beamer@custom@copyrightsimage}{}%
+\ifdefstring{\beamer@custom@copyrights}{ccby}{%
+	\renewcommand{\beamer@custom@copyrightsimage}{./assets/logo/CC_BY_icon.png}%
+}{}
+\ifdefstring{\beamer@custom@copyrights}{cc0}{%
+	\renewcommand{\beamer@custom@copyrightsimage}{./assets/logo/CC0_button.png}%
+}{}
+\ifdefstring{\beamer@custom@copyrights}{ccbysa}{%
+	\renewcommand{\beamer@custom@copyrightsimage}{./assets/logo/CC_BY-SA_icon.png}%
+}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\defbeamertemplate*{frametitle}{standard}
+{
+	\begin{beamercolorbox}[wd=\paperwidth, ht=0.215\paperheight,dp=1ex]{}%
+  	\begin{tikzpicture}[remember picture, overlay]    
+  		% Debugger:
+  		% \draw[red, thick] (current page.north west) rectangle (current page.south east);   		
+      	\node[below right, minimum height=0.215\paperheight, minimum width=\paperwidth, inner sep=0pt, outer sep=0pt] 
+      		at (current page.north west){
+      			\includegraphics[height=\paperheight, width=\paperwidth, keepaspectratio]{./assets/elements/header_yale.png}
+      		};       	
+      	\node[anchor=north west, minimum height=0.18\paperheight, minimum width=\paperwidth, inner xsep=0.05\paperwidth, align=left] 
+      		at (current page.north west){					
+      		\parbox[t]{\paperwidth}{
+      		  % \usebeamerfont{title} %
+      		  \usebeamerfont{header title} %
+      		  \insertframetitle \\[0.5ex]%
+        		\usebeamerfont{header subtitle} \insertframesubtitle%        	
+        		}
+      		};
+      	\node[anchor=north east, minimum height=0.18\paperheight, minimum width=0.215\paperwidth, align=right] 
+      		at (current page.north east){					
+      			\includegraphics[height=0.115\paperheight,keepaspectratio]{\beamer@custom@facultyimage}
+      		};	          		
+  	\end{tikzpicture}
+  \end{beamercolorbox}
+}
+
+\newcommand{\sect}[1]{
+  	\section{#1}
+    \setbeamertemplate{footline}{}% remove footer
+    \setbeamertemplate{headline}{}% remove header
+    \begin{frame}[plain,noframenumbering]
+		\begin{tikzpicture}[remember picture, overlay] 
+			\node[below right, rectangle, minimum height=\paperheight, minimum width=\paperwidth, inner sep=0pt, outer sep=0pt]%
+    			at (current page.north west){%
+    			\includegraphics[height=\paperheight,keepaspectratio]{./assets/elements/bg_gradient_duo_02.png}    			
+    		};
+%    		\node[below right, rectangle, minimum height=\paperheight, minimum width=\paperwidth, inner sep=0pt, outer sep=0pt]%
+%    			at (current page.north west){%    			
+%    			\includegraphics[width=\paperwidth,keepaspectratio]{./assets/elements/map_magnolia.png}
+%    		}; 
+    		\node[anchor=north, rectangle, minimum height=\paperheight, minimum width=\paperwidth, inner sep=0pt, outer sep=0pt]%
+    			at (current page.north){%
+    			\includegraphics[height=\paperheight,keepaspectratio]{./assets/elements/half_white.png}    			
+    		}; 		
+			\node[below right, align=center, inner ysep=0.35\paperheight, inner xsep=0.1\paperwidth] at (current page.north west) {%
+				\usebeamerfont{title}
+				\color{white}\insertsectionhead
+				};
+		\end{tikzpicture}
+    \end{frame}
+}
+
+% Patch \subsection to insert an internal subsection title slide
+\newcommand{\subsect}[1]{%
+	\subsection{#1}
+    \setbeamertemplate{footline}{}% remove footer
+    \setbeamertemplate{headline}{}% remove header
+    \begin{frame}[plain,noframenumbering]
+		\begin{tikzpicture}[show background rectangle, remember picture, overlay] 
+				\node[below right, rectangle, minimum height=\paperheight, minimum width=\paperwidth, inner sep=0pt, outer sep=0pt]
+    			at (current page.north west){%
+    			\includegraphics[height=\paperheight,keepaspectratio]{./assets/elements/bg_grad.png}  			
+    		};
+%    		\node[below right, rectangle, minimum height=\paperheight, minimum width=\paperwidth, inner sep=0pt, outer sep=0pt]%
+%    			at (current page.north west){%    			
+%    			\includegraphics[width=\paperwidth,keepaspectratio]{./assets/elements/map_magnolia.png}
+%    		}; 
+    		\node[anchor=north, rectangle, minimum height=\paperheight, minimum width=\paperwidth, inner sep=0pt, outer sep=0pt]%
+    			at (current page.north){%
+    			\includegraphics[height=\paperheight,keepaspectratio]{./assets/elements/half_white.png}    			
+    		};
+			\node[below right, align=center, inner ysep=0.35\paperheight, inner xsep=0.1\paperwidth] at (current page.north west) {%
+				\usebeamerfont{title}
+      			\color{white}{\insertsubsectionhead}
+			};
+      \end{tikzpicture}
+    \end{frame}
+}
+
+\defbeamertemplate*{frametitle}{rojo}
+{
+	\begin{beamercolorbox}[wd=\paperwidth, ht=0.215\paperheight,dp=1ex]{}%
+  	\begin{tikzpicture}[remember picture, overlay]    
+  		% Debugger:
+  		% \draw[red, thick] (current page.north west) rectangle (current page.south east);   		
+      	\node[below right, minimum height=0.215\paperheight, minimum width=\paperwidth, inner sep=0pt, outer sep=0pt] 
+      		at (current page.north west){
+      			\includegraphics[height=\paperheight, width=\paperwidth, keepaspectratio]{./assets/elements/header_rojo_right.png}
+      		};       	
+      	\node[anchor=north west, minimum height=0.18\paperheight, minimum width=\paperwidth, inner xsep=0.05\paperwidth, align=left] 
+      		at (current page.north west){					
+      		\parbox[t]{\paperwidth}{
+      		  % \usebeamerfont{title} %
+      		  \usebeamerfont{header title} %
+      		  \insertframetitle \\[0.5ex]%
+        		\usebeamerfont{header subtitle} \insertframesubtitle%        	
+        		}
+      		};
+      	\node[anchor=north east, minimum height=0.18\paperheight, minimum width=0.215\paperwidth, align=right] 
+      		at (current page.north east){					
+      			\includegraphics[height=0.115\paperheight,keepaspectratio]{\beamer@custom@facultyimage}
+      		};	          		
+  	\end{tikzpicture}
+  \end{beamercolorbox}
+}
+
+\defbeamertemplate*{frametitle}{amarant}
+{
+	\begin{beamercolorbox}[wd=\paperwidth, ht=0.215\paperheight,dp=1ex]{}%
+  	\begin{tikzpicture}[remember picture, overlay]    
+  		% Debugger:
+  		% \draw[red, thick] (current page.north west) rectangle (current page.south east);   		
+      	\node[below right, minimum height=0.215\paperheight, minimum width=\paperwidth, inner sep=0pt, outer sep=0pt] 
+      		at (current page.north west){
+      			\includegraphics[height=\paperheight, width=\paperwidth, keepaspectratio]{./assets/elements/header_amarant_right.png}
+      		};       	
+      	\node[anchor=north west, minimum height=0.18\paperheight, minimum width=\paperwidth, inner xsep=0.05\paperwidth, align=left] 
+      		at (current page.north west){					
+      		\parbox[t]{\paperwidth}{
+      		  % \usebeamerfont{title} %
+      		  \usebeamerfont{header title} %
+      		  \insertframetitle \\[0.5ex]%
+        		\usebeamerfont{header subtitle} \insertframesubtitle%        	
+        		}
+      		};
+      	\node[anchor=north east, minimum height=0.18\paperheight, minimum width=0.215\paperwidth, align=right] 
+      		at (current page.north east){					
+      			\includegraphics[height=0.115\paperheight,keepaspectratio]{\beamer@custom@facultyimage}
+      		};	          		
+  	\end{tikzpicture}
+  \end{beamercolorbox}
+}
+
+\defbeamertemplate*{frametitle}{blend}
+{
+	\begin{beamercolorbox}[wd=\paperwidth, ht=0.215\paperheight,dp=1ex]{}%
+  	\begin{tikzpicture}[remember picture, overlay]    
+  		% Debugger:
+  		% \draw[red, thick] (current page.north west) rectangle (current page.south east);   		
+      	\node[below right, minimum height=0.215\paperheight, minimum width=\paperwidth, inner sep=0pt, outer sep=0pt] 
+      		at (current page.north west){
+      			\includegraphics[height=\paperheight, width=\paperwidth, keepaspectratio]{./assets/elements/header_grad_rojoyale_right.png}
+      		};       	
+      	\node[anchor=north west, minimum height=0.18\paperheight, minimum width=\paperwidth, inner xsep=0.05\paperwidth, align=left] 
+      		at (current page.north west){					
+      		\parbox[t]{\paperwidth}{
+      		  % \usebeamerfont{title} %
+      		  \usebeamerfont{header title} %
+      		  \insertframetitle \\[0.5ex]%
+        		\usebeamerfont{header subtitle} \insertframesubtitle%        	
+        		}
+      		};
+      	\node[anchor=north east, minimum height=0.18\paperheight, minimum width=0.215\paperwidth, align=right] 
+      		at (current page.north east){					
+      			\includegraphics[height=0.115\paperheight,keepaspectratio]{\beamer@custom@facultyimage}
+      		};	          		
+  	\end{tikzpicture}
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\beamer@custom@color}{standard}%
+
+\ifdefstring{\beamer@custom@color}{standard}{%
+	\setbeamertemplate{frametitle}[standard]%
+}{}
+
+\ifdefstring{\beamer@custom@color}{rojo}{%
+	\setbeamertemplate{frametitle}[rojo]%
+}{}
+
+\ifdefstring{\beamer@custom@color}{amarant}{%
+	\setbeamertemplate{frametitle}[amarant]%
+}{}
+
+\ifdefstring{\beamer@custom@color}{blend}{%
+	\setbeamertemplate{frametitle}[blend]%
+}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Footer
+\setbeamertemplate{footline}
+{%
+% \begin{beamercolorbox}[wd=\textwidth, center]{footer}%
+% 	\rule{0.95\paperwidth}{0.2pt}
+% \end{beamercolorbox}%
+\begin{beamercolorbox}[wd=\textwidth, leftskip=0.3cm,rightskip=0.3cm, ht=0.2cm,dp=0.15cm]{footer text}%
+	\usebeamerfont{footnote} 
+	\hfill \insertframenumber
+\end{beamercolorbox}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title Page
+\def\titlepage{\usebeamertemplate{title page}}
+\def\endpage{\usebeamertemplate{end page}}
+
+\setbeamertemplate{title page}
+{
+	\begin{frame}[plain]
+    	\begin{tikzpicture}[background rectangle/.style={fill=yale_blue}, show background rectangle, remember picture, overlay]    
+    		% \node[below right, rectangle, minimum height=\paperheight, minimum width=\paperwidth, inner sep=0pt, outer sep=0pt]%
+    		% 	at (current page.north west){%    			
+    		% 	\includegraphics[width=\paperwidth,keepaspectratio]{./assets/elements/map_magnolia.png}
+    		% }; 
+    		\node[below right, rectangle, minimum height=\paperheight, minimum width=\paperwidth, inner sep=0pt, outer sep=0pt]%
+    			at (current page.north west){%
+    			\includegraphics[height=\paperheight,keepaspectratio]{./assets/elements/both_white.png}    			
+    		};
+			\ifdefstring{\beamer@custom@facultystyle}{none}{%
+			}
+			{
+    		\node[anchor=north east, minimum height=0.2\paperheight, minimum width=0.215\paperwidth, align=right]%
+    			at (current page.north east){%
+    			\includegraphics[height=0.12\paperheight,keepaspectratio]{\beamer@custom@facultylogo}    			
+    		};
+			}
+    		\node[anchor=west, rectangle, minimum height=0.45\paperheight, minimum width=0.3\paperwidth, inner sep=0pt, outer sep=0pt]%
+    			at (current page.west){%
+    			\includegraphics[height=0.45\paperheight,keepaspectratio]{./assets/pg/pg_logo_bialy.png}    			
+    		};
+    		\node[anchor=west, align=left, inner xsep=-0.15\paperwidth]%
+    		 at (current page.center){
+    			\parbox[t]{0.5\paperwidth}{
+    				\begin{center}
+						\usebeamerfont{title}\color{white}\inserttitle\\[0.2cm]
+						\usebeamerfont{subtitle}\color{white!90!black}\insertsubtitle
+					\end{center}
+					}
+			  };
+			  \node[below right, align=left, inner ysep=0.17\paperheight, inner xsep=0.2\paperwidth]%
+			   at (current page.center){
+			  	\parbox[t]{0.25\paperwidth}{
+					\begin{center}
+						\usebeamerfont{author}\color{white!90!black}\insertauthor\\
+						\usebeamerfont{author}\color{white!90!black}\insertdate\\
+					\end{center}
+					}
+			  };    		
+    		\node[anchor=south west, align=left, inner ysep=0.125\paperheight, inner xsep=0.1\paperwidth] at (current page.south west){
+					\includegraphics[height=0.075\paperheight, keepaspectratio]{\beamer@custom@copyrightsimage}
+				};
+
+			%TODO
+			% \setlength{\yseplength}{\dimexpr0.05\paperheight + 0.2cm\relax}
+			% \setlength{\yseplength}{0.05\paperheight + 0.2cm}
+			\ifdefstring{\beamer@custom@imark}{true}{%
+    		\begin{scope}% top bar
+    			\node[anchor=south west, minimum height=1cm, inner xsep=0.3\paperwidth, inner ysep=0.3cm, align=left] %
+    				at (current page.south west) %
+	    			{\includegraphics[height=1.25cm, keepaspectratio]{./assets/logo/FERS_fix.png}};    		
+    			\node[anchor=south west, minimum height=1cm, inner xsep=0.525\paperwidth, inner ysep=0.3cm, align=center]%
+    		 		at (current page.south west)%
+  	   			{\includegraphics[height=1.25cm, keepaspectratio]{./assets/logo/Logo_RP_fix.png}};
+    			\node[anchor=south west, minimum height=1cm, inner xsep=0.725\paperwidth, inner ysep=0.3cm, align=left]%
+					at (current page.south west)%
+					{\includegraphics[height=1.25cm, keepaspectratio]{./assets/logo/Znak_UE_fix.png}};
+    		\end{scope}}{}			
+   		\end{tikzpicture}
+	\end{frame} 
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{end page}
+{
+	\begin{frame}[plain]
+    	\begin{tikzpicture}[remember picture, overlay]    
+				\node[below right, rectangle, minimum height=\paperheight, minimum width=\paperwidth, inner sep=0pt, outer sep=0pt]%
+    			at (current page.north west){%
+    			\includegraphics[height=\paperheight,keepaspectratio]{./assets/elements/bg_gradient_duo_02.png}    			
+    		};
+    		% \node[below right, rectangle, minimum height=\paperheight, minimum width=\paperwidth, inner sep=0pt, outer sep=0pt]%
+    		% 	at (current page.north west){%    			
+    		% 	\includegraphics[width=\paperwidth,keepaspectratio]{./assets/elements/map_magnolia.png}
+    		% }; 
+    		\node[below right, rectangle, minimum height=\paperheight, minimum width=\paperwidth, inner sep=0pt, outer sep=0pt]%
+    			at (current page.north west){%
+    			\includegraphics[height=\paperheight,keepaspectratio]{./assets/elements/bg_white_last.png}    			
+    		};    		
+    		\node[anchor=north west, rectangle, minimum height=0.35\paperheight, minimum width=0.3\paperwidth, inner xsep=0pt, inner ysep=0.25\paperheight]%
+    			at (current page.north west){%
+    			\includegraphics[height=0.35\paperheight,keepaspectratio]{\beamer@custom@qrcode}	
+    		};
+    		\node[anchor=north west, align=left, inner xsep=-0.15\paperwidth, inner ysep=0.15\paperheight]%
+    		 at (current page.north){
+				\parbox[t]{0.5\paperwidth}{
+					\centering
+    				\includegraphics[height=0.5\paperheight,keepaspectratio]{./assets/pg/pg_logo_bialy.png}\\
+					\usebeamerfont{author}\color{white} Dziękuję za uwagę! \\[0.2cm]%
+				}};	
+			\ifdefstring{\beamer@custom@imark}{true}{%		
+    			\begin{scope}% bottom bar
+    			\node[anchor=south west, minimum height=1cm, inner xsep=0.05\paperwidth, inner ysep=0.125\paperheight, align=left] %
+    				at (current page.south west) %
+	    			{\includegraphics[height=1.25cm, keepaspectratio]{./assets/logo/FERS_fix.png}};
+
+    			\node[anchor=south, minimum height=1cm, inner ysep=0.125\paperheight, align=center]%
+    		 		at (current page.south)%
+  	   			{\includegraphics[height=1.25cm, keepaspectratio]{./assets/logo/Logo_RP_fix.png}};
+
+    			\node[anchor=south east, minimum height=1cm, inner xsep=0.05\paperwidth, inner ysep=0.125\paperheight, align=left]%
+					at (current page.south east)%
+					{\includegraphics[height=1.25cm, keepaspectratio]{./assets/logo/Znak_UE_fix.png}};
+				\end{scope}    	
+				% Bottom text
+				\node[anchor=south, minimum height=1cm, align=center]%
+					at (current page.south)%
+					{\parbox[b]{0.95\paperwidth}{
+						\usebeamerfont{author}
+						\begin{center}
+						Projekt współfinansowany przez Unię Europejską ze środków Europejskiego~Funduszu~Społecznego~Plus w~ramach programu Fundusze~Europejskie~dla~Rozwoju~Społecznego 2021~--~2027
+						\end{center}
+					}};    		
+			}{}
+   		\end{tikzpicture}
+	\end{frame} 
+}
+
+\mode<all>

@@ -1,0 +1,106 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Presentation: Beamer PG Theme
+% Author: Michał Czubenko and Karolina Marciniuk
+% Affiliation: Politechnika Gdańska
+% TASL: “Beamer PG Theme by M. Czubenko and K. Marciuniuk, PG, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+%
+%
+% This work is licensed under a Creative Commons Attribution 
+% 4.0 International License (CC BY 4.0).
+%
+% To view a copy of this license, visit:
+% https://creativecommons.org/licenses/by/4.0/
+%
+% You are free to:
+%  - Share — copy and redistribute the material in any medium or format
+%  - Adapt — remix, transform, and build upon the material
+%    for any purpose, even commercially.
+%
+% Under the following terms:
+%  - Attribution — You must give appropriate credit, provide a link to the license,
+%    and indicate if changes were made.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\mode<presentation>
+
+\usepackage{xcolor}
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% PG color palette
+\definecolor{white}{HTML}{ffffff}		%biały
+\definecolor{yale_blue}{HTML}{003767} 	% 0 55 103
+\definecolor{rojo}{HTML}{e31b23}		% 227 27 35
+\definecolor{taupe_gray}{HTML}{919195} 	% 145 145 149
+\definecolor{amarant}{HTML}{e71946} 	
+\definecolor{citron}{HTML}{bbbe64} 	
+\definecolor{papaya}{HTML}{ffefd3} 	
+\definecolor{magnolia}{HTML}{f8f1ff} 	
+
+\colorlet{yale_blue_80}{white!20!yale_blue}
+% \colorlet{yale_blue_60}{white!40!yale_blue}
+\colorlet{taupe_gray_80}{white!20!taupe_gray}
+% \colorlet{taupe_gray_60}{white!40!taupe_gray}
+\colorlet{rojo_80}{white!20!rojo}
+% \colorlet{rojo_60}{white!40!rojo}
+\definecolor{black}{HTML}{000000}	
+
+% WCAG 2.0 level AA requires a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text. 
+% WCAG 2.1 requires a contrast ratio of at least 3:1 for graphics and user interface components (such as form input borders). 
+% WCAG Level AAA requires a contrast ratio of at least 7:1 for normal text and 4.5:1 for large text.
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Headers
+\setbeamercolor{frametitle}{fg=white}
+\setbeamercolor{section}{fg=yale_blue,bg=white}
+\setbeamercolor{section in head/foot}{fg=yale_blue}
+\setbeamercolor{author in head/foot}{fg=yale_blue_80}
+\setbeamercolor{date in head/foot}{fg=yale_blue_80}
+
+% Colors
+\setbeamercolor*{background canvas}{bg=white}
+\setbeamercolor*{footer}{fg=taupe_gray_80}
+\setbeamercolor*{footer text}{fg=taupe_gray_80}
+\setbeamercolor*{header title}{fg=white}
+\setbeamercolor*{header subtitle}{fg=white}
+% \setbeamercolor*{header primary}{fg=white,bg=rojo}
+% \setbeamercolor*{header secondary}{fg=rojo,bg=rojo}
+\setbeamercolor*{red text}{fg=rojo}
+% \setbeamercolor*{secondary}{fg=yale_blue_60,bg=white}
+
+% Block text
+\setbeamercolor*{example text}{fg=black}
+\setbeamercolor*{normal text}{fg=yale_blue}
+\setbeamercolor*{alerted text}{fg=yale_blue}
+% Default block
+\setbeamercolor{block title}{bg=yale_blue, fg=white}%
+\setbeamercolor{block body}{bg=magnolia, fg=black}%
+\setbeamercolor{block title alerted}{bg=amarant, fg=white}%
+\setbeamercolor{block body alerted}{bg=magnolia, fg=black}%
+\setbeamercolor{block title example}{bg=citron, fg=black}%
+\setbeamercolor{block body example}{bg=magnolia, fg=black}%
+% Itemize
+\setbeamercolor*{itemize item}{fg=black}
+\setbeamercolor*{itemize subitem}{fg=black}
+\setbeamercolor*{itemize subsubitem}{fg=black}
+\setbeamercolor*{item projected}{bg=black, fg=white}
+\setbeamercolor*{enumerate item}{fg=black}
+\setbeamercolor*{enumerate subitem}{fg=black}
+\setbeamercolor*{enumerate subsubitem}{fg=black}
+% Captions
+\setbeamercolor*{description item}{fg=taupe_gray}
+\setbeamercolor*{caption name}{fg=taupe_gray!50!black}
+%TOC
+\setbeamercolor{section number projected}{fg=white,bg=yale_blue}
+\setbeamercolor{section}{fg=white,bg=yale_blue}
+\setbeamercolor{section in toc}{fg=yale_blue}
+% Bibliography
+\setbeamercolor*{bibliography entry author}{fg=yale_blue}
+\setbeamercolor*{bibliography entry title}{fg=black}
+\setbeamercolor*{bibliography entry location}{fg=black}
+\setbeamercolor*{bibliography entry note}{fg=black}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+\mode<all>

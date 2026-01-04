@@ -1,0 +1,159 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Presentation: Beamer PG Theme
+% Author: Michał Czubenko
+% Affiliation: Politechnika Gdańska
+% TASL: “Beamer PG Them by M. Czubenko, PG, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+%
+% This work is licensed under a Creative Commons Attribution 
+% 4.0 International License (CC BY 4.0).
+%
+% To view a copy of this license, visit:
+% https://creativecommons.org/licenses/by/4.0/
+%
+% You are free to:
+%  - Share — copy and redistribute the material in any medium or format
+%  - Adapt — remix, transform, and build upon the material
+%    for any purpose, even commercially.
+%
+% Under the following terms:
+%  - Attribution — You must give appropriate credit, provide a link to the license,
+%    and indicate if changes were made.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\mode<presentation>
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usetikzlibrary{backgrounds}
+
+% \useinnertheme[shadow=false]{rounded}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TOC
+\setlength{\parskip}{0ex}
+\setbeamerfont{header title}{series=\bfseries, size=\large}
+\setbeamerfont{section in toc}{series=\bfseries}
+\setbeamerfont{subsection in toc}{size=\scriptsize}
+% \setbeamertemplate{section in toc}[circle]
+% \setbeamertemplate{subsection in toc}[circle]
+% {%
+% 	\hspace{1.5 em}%
+% 	% \textcolor{pantone_blue}{$\blacktriangleright$}%
+% 	\hspace{0.5 em}%
+% 	\inserttocsubsection%
+% 	\\%
+% }
+% \setbeamertemplate{sections/subsections in toc shaded}[default][35]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Custom blocks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newlength{\blocktitleheight}
+
+% Default block
+\setbeamertemplate{block begin}{
+  \begin{beamercolorbox}[colsep*=.75ex, wd=.45\textwidth, dp=0ex, sep=0pt]{block title}
+    \usebeamerfont*{block title}%
+    \begin{tikzpicture}[remember picture, overlay=false, baseline=(title.base)]
+      % Create the title node and measure it
+      \node[outer sep=0, inner sep=0, draw=none, align=left] (title) {\parbox[t]{0.45\textwidth}{\usebeamercolor[fg]{block title alerted}\insertblocktitle}};
+      % Measure block width      
+      \pgfextracty{\blocktitleheight}{\pgfpointdiff{\pgfpointanchor{title}{south}}{\pgfpointanchor{title}{north}}}          
+      \setlength{\blocktitleheight}{\blocktitleheight+1.5ex}
+      % Add image to the right of the title
+      \node[anchor=north east, inner xsep=-0.75ex, inner ysep=-0.75ex, align=left] at (title.north east) {%
+        \includegraphics[height=\blocktitleheight, keepaspectratio]{./assets/elements/element_block.png}%
+      };
+      % Display measurements below the title
+      % \node[below=0.1cm of title, font=\tiny, text=red] (measurements) {%
+      %   Width: \the\blocktitlewidth, Height: \the\blocktitleheight%
+      % };
+    \end{tikzpicture}
+  \end{beamercolorbox}
+  \vskip-3pt
+  \begin{beamercolorbox}[colsep*=.75ex, dp=0ex]{block body}
+    \usebeamerfont{block body}\vskip-.75ex
+}
+
+\setbeamertemplate{block end}{
+  \end{beamercolorbox}
+  \vskip1ex
+}
+
+% Alert block
+\setbeamertemplate{block alerted begin}{
+  \begin{beamercolorbox}[colsep*=.75ex, wd=.45\textwidth, dp=0ex, sep=0pt]{block title alerted}
+    \usebeamerfont*{block title alerted}%
+    \begin{tikzpicture}[remember picture, overlay=false, baseline=(title.base)]
+      % Create the title node and measure it
+      \node[outer sep=0, inner sep=0, draw=none, align=left] (title) {\parbox[t]{0.45\textwidth}{\usebeamercolor[fg]{block title alerted}\insertblocktitle}};
+      % Measure block width      
+      \pgfextracty{\blocktitleheight}{\pgfpointdiff{\pgfpointanchor{title}{south}}{\pgfpointanchor{title}{north}}}          
+      \setlength{\blocktitleheight}{\blocktitleheight+1.5ex}
+      % Add image to the right of the title
+      \node[anchor=north east, inner xsep=-0.75ex, inner ysep=-0.75ex, align=left] at (title.north east) {%
+        \includegraphics[height=\blocktitleheight, keepaspectratio]{./assets/elements/element_block.png}%
+      };
+      % Display measurements below the title
+      % \node[below=0.1cm of title, font=\tiny, text=red] (measurements) {%
+      %   Width: \the\blocktitlewidth, Height: \the\blocktitleheight%
+      % };
+    \end{tikzpicture}
+  \end{beamercolorbox}
+  \vskip-3pt
+  \begin{beamercolorbox}[colsep*=.75ex, dp=0ex]{block body}
+    \usebeamerfont{block alerted body}\vskip-.75ex
+}
+
+\setbeamertemplate{block alerted end}{
+  \end{beamercolorbox}
+  \vskip1ex
+}
+
+% Example block
+\setbeamertemplate{block example begin}{
+  \begin{beamercolorbox}[colsep*=.75ex, wd=.45\textwidth, dp=0ex, sep=0pt]{block title example}
+    \usebeamerfont*{block title example}%   
+    \begin{tikzpicture}[remember picture, overlay=false, baseline=(title.base)]
+      % Create the title node and measure it
+      \node[outer sep=0, inner sep=0, draw=none, align=left] (title) {\parbox[t]{0.45\textwidth}{\usebeamercolor[fg]{block title example}\insertblocktitle}};
+      % Measure block width      
+      \pgfextracty{\blocktitleheight}{\pgfpointdiff{\pgfpointanchor{title}{south}}{\pgfpointanchor{title}{north}}}          
+      \setlength{\blocktitleheight}{\blocktitleheight+1.5ex}
+      % Add image to the right of the title
+      \node[anchor=north east, inner xsep=-0.75ex, inner ysep=-0.75ex, align=left] at (title.north east) {%
+        \includegraphics[height=\blocktitleheight, keepaspectratio]{./assets/elements/element_block.png}%
+      };
+      % Display measurements below the title
+      % \node[below=0.1cm of title, font=\tiny, text=red] (measurements) {%
+      %   Width: \the\blocktitlewidth, Height: \the\blocktitleheight%
+      % };
+    \end{tikzpicture}
+  \end{beamercolorbox}
+  \vskip-3pt
+  \begin{beamercolorbox}[colsep*=.75ex, dp=0ex]{block body}
+    \usebeamerfont{block example body}\vskip-.75ex
+}
+
+\setbeamertemplate{block example end}{
+  \end{beamercolorbox}
+  \vskip2ex
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Itemize
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% \setbeamertemplate{items}[circle] 
+% \setbeamertemplate{itemize item}{$\bullet$}
+% \setbeamertemplate{itemize subitem}{$\bullet$}
+% \setbeamertemplate{itemize subsubitem}{$\bullet$}
+\setlength{\parskip}{0.5em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Other
+\setbeamertemplate{navigation symbols}{}
+\mode<all>

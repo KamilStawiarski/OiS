@@ -1,0 +1,156 @@
+% Styl Politechniki Gdańskiej dedykowany do beamer'a, 
+% Kompilowany przy pomocy pdflatex lub lualatex, z biblatex'em na backendzie biber'a
+% W przyszłości będzie aktualizowany pod standard WCAG, PDF2.0/UA-2, 
+% Szczegóły: https://github.com/latex3/tagging-project
+% Aktualnie, częściowym obejściem problemu jest użycie pakietu accsupp 
+\DocumentMetadata{
+  lang        = pl,
+  pdfversion  = 2.0,
+  pdfstandard = ua-2,
+  pdfstandard = a-4f, %or a-4
+  testphase   = latest
+}
+\tagpdfsetup{
+ math/mathml/structelem,
+ math/tex/AF=false,
+ math/mathml/AF=false,
+ math/mathml/sources=true
+}
+
+\documentclass[9pt, aspectratio=169]{beamer}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Kompilujemy przy użyciu LuaLaTex (czcionka prawie jak Arial), zaś preferowany manager bibliografii to biblatex 
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\usetheme[faculty=weti, color=standard, copyrights=ccby, qr=./assets/pg_beamer_theme_qr.png, i5=true]{pg}
+% Opcja faculty -- możliwe wydziały to: warch, wch, weia, weti, wftims, wilis, wimio, wzie
+% Możliwe opcje kolorystyczne w ustawieniach \setbeamertemplate{frametitle}[]: standard, rojo, amartant, blend
+% Opcja color wskazuje na użycie w całej prezentacji jednego koloru do momentu jego wymuszonej zmiany 
+% Opcja copyrights -- pozwala na wybór prawa autorskiego: ccby, cc0, ccbysa, none
+% Opcja qr wstawia qrcode na ostatnim slajdzie (można go wygenerować np. za pomocą chatagpt), który powinien odnosić się do linku do zajęć
+% Opcja i5 ustawiona na true wymusza dodanie znaków projektu Inżynier 5.0
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Setup biblatex'a z backend'em biber:
+% Aby skompilować bibliografię należy wywołać lualatex %; biber %; lualatex % * 2
+% przykładowy config to VSCodium:
+% "latex-workshop.latex.tools": [
+% {"name": "lualatex",
+%  "command": "lualatex",
+%  "args": [
+%  		"-synctex=1",
+%  		"-interaction=nonstopmode",
+%  		"-file-line-error",
+%   	"-pdf",
+%		"%DOC%"
+%			]},
+% {"name": "biber",
+%  "command": "biber",
+%  "args": ["%DOC%"]}]
+%  "latex-workshop.latex.recipes": [		
+%  {"name": "lualatex->biber->lualatex",
+%	"tools": ["lualatex", "biber", "lualatex", "lualatex"]}]
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Wymagany setup biber'a
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\usepackage[backend=biber,
+	style=ieee,
+	sortlocale=pl_PL,
+	natbib=true,
+	url=true, 
+	doi=true,
+	eprint=false]{biblatex}
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Wskazanie pliku z bibliografią:
+\addbibresource{biblio.bib}
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Fix dotyczący \emph w bibliografii
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\makeatletter
+\renewrobustcmd*{\mkbibemph}{\mkbibitalic}
+\protected\long\def\blx@imc@mkbibemph#1{\blx@imc@mkbibitalic{#1}}
+
+\addto\captionspolish{%
+  \renewcommand{\proofname}{Dowód}
+}
+\makeatother
+\uselanguage{Polish}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Setup href - do wypełnienia przez autora
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\hypersetup{
+	pdftitle={Tytuł prezentacji},
+	pdfauthor={Autor prezentacji},
+	pdfsubject={Temat prezentacji},
+	pdfkeywords={słowa kluczowe}, 
+	unicode=true,
+	pdfencoding=auto,
+	pdflang=pl-PL,
+	colorlinks=true,
+	linkcolor=rojo,
+	filecolor=rojo,
+	urlcolor=amarant
+}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Dane umieszczone w slajdzie tytułowym i stopce
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\title[Tytuł w stopce]{Obwody i sygnały}
+%\subtitle{Podtytuł}
+\author[Autor w stopce]{dr inż. Kamil Stawiarski}
+\institute{Politechnika Gdańska}
+\date[Data w stopce]{\today}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+\begin{document}
+
+% Generuje stronę tytułową 
+\titlepage
+
+% Generuje spis treści 
+\begin{frame}[allowframebreaks]{Spis treści}
+	\tagtool{sec-add-grouping=false}
+	\tableofcontents
+	\tagtool{sec-add-grouping}
+\end{frame}
+
+\include{src/01_Org.tex}
+\include{src/02_DC.tex}
+\include{src/03_AC.tex}
+\include{src/04_Signal.tex}
+
+\sect{Inżynier 5.0}
+\begin{frame}{Program Inżynier 5.0}
+	\begin{block}{Wymagania}
+		\begin{itemize}
+			\item[\bt] Prezentacje w jednym stylu 
+			\item[\bt] Wykład -- minimum 15 slajdów na każdą godzinę zmian
+			\item[\bt] Wprowadzenia do laboratoriów / ćwiczeń / seminariów -- min 5 slajdów na temat
+			\item[\bt] Wprowadzenie do projektów -- min 15 slajdów
+			\item[\bt] Na slajdach brak tekstu ciągłego			
+			\item[\bt] Treści / zadania do ćwiczeń, laboratoriów, seminarium w formatce A4 (Word / LaTeX)
+			\item[\bt] Wymagania dotyczące dostępności -- WCAG 2.x oraz PDF/UA (tagowany pdf)
+			\item[\bt] Narzędzie do weryfikacji tagów / kontrastów \url{https://pdfa.org/product/pac/}		
+			\item[\bt] Spełnione prawa autorskie CC-BY (grafiki własne lub na licencjach otwartych -- np. CC lub MiT)
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+% Bibliografia
+\sect{Bibliografia}
+\begin{frame}[allowframebreaks]{Bibliografia}
+	\nocite{*}
+	% W opcji czystego bibtex'a:
+	%\bibliographystyle{plain}
+	%\bibliography{biblio}
+	%
+	% W opcji biblatex:
+	\renewcommand*{\bibfont}{\normalfont\small}
+	\printbibliography
+\end{frame}
+
+% Strona końcowa tematu PG
+\endpage
+
+\end{document}
