@@ -1,75 +1,298 @@
 \sect{Wykład 1}
 
 \begin{frame}{Wielkości fizyczne}
-	\begin{itemize}
-		\item[\bt] Ładunek
-		\item[\bt] Natężenie
-		\item[\bt] Napięcie
-	\end{itemize}
+	\begin{block}{Ładunek elektryczny}
+	Wielkość fizyczna charakteryzująca ciała podlegające działaniu pola elektromagnetycznego i będące źródłem takiego pola.\footnote{https://encyklopedia.pwn.pl/haslo/;3934793}.
+	Jednostką ładunku jest kulomb (symbol $C$) i stanowi około $6.241*10^18$ ładunków pojedynczego elektronu.
+	Na ogół ładunek oznacza się symbolem $q$.
+	\end{block}
+\end{frame}
+
+\begin{frame}{Wielkości fizyczne}
+	\begin{block}{Natężenie prądu}
+	Określa tempo przepływu ładunku w czasu.
+	Jednostką natężenia jest amper ($1A=\frac{1C}{1s}$).
+	Na ogół przepływ prądu oznacza się za pomocą symbolu $i$, który można przedstawić jako: $i(t(=\frac{dq(t)}{dt}$ lub $q(t)=\int_{-\infty}^{t} i(\tau) d \tau$.
+	Natężenie mierzy się w punkcie obwodu, przez który przepływa prąd.
+	\end{block}
+\end{frame}
+
+\begin{frame}{Wielkości fizyczne}
+	\begin{table}
+		\centering
+		\tagpdfsetup{table/header-rows={1}}
+		\caption{Przykładowe wartości natężenia}
+		\begin{tabular}{|c|c|}
+			\hline
+			Natężenie [A] & Zjawisko / urządzenie \\ \hline
+			$\approx 10^5$ & Piorun \\ \hline
+			$\approx 10^3$ & Duży silnik przemysłowy \\ \hline
+			$\approx 10$ & Płyta grzewcza \\ \hline
+			$\approx 2$ & Prąd ładowania telefonu \\ \hline
+			$\approx 30*10^-3$ & Umowna granica prądu niebezpiecznego dla życia \\ \hline
+			$\approx 10^-6$ & Prąd pobierany przez uśpiony mikrokontrolwer \\ \hline
+			$\approx 10^-12$ & Prąd synaptyczny \\ \hline
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}{Wielkości fizyczne}
+	\begin{block}{Napięcie elektryczne}
+	Określa ilość pracy jaką należy wykonać aby przemieścić ładunek $q$ między dwoma punktami.
+	Na ogół napięcie oznacza się symbolem $u$.
+	Wyrażone w voltach ($V$).
+	Napięcie mierzy się między dwoma punktami.
+	\end{block}
+\end{frame}
+
+\begin{frame}{Wielkości fizyczne}
+	\begin{table}
+		\centering
+		\tagpdfsetup{table/header-rows={1}}
+		\caption{Przykładowe wartości napięcia}
+		\begin{tabular}{|c|c|}
+			\hline
+			Napięcie [V] & Zjawisko / urządzenie \\ \hline
+			$\approx 10^8$ & Piorun \\ \hline
+			$\approx 10^6$ & Linie przesyłowe najwyższych napięć \\ \hline
+			$\approx 10^4$ & Duże silniki przemysłowe \\ \hline
+			$\approx 230$ & Napięcie sieciowe \\ \hline
+			$\approx 20$ & Ładowarka laptopa \\ \hline
+			$\approx 10^-3$ & Napięcie EKG \\ \hline
+			$\approx 10^-5$ & Napięcie EEG \\ \hline
+			$\approx 10^-6$ & Napięcie na wyjściu anteny odbiornika radiowego \\ \hline
+		\end{tabular}
+	\end{table}
 \end{frame}
 
 \begin{frame}{Prawo Ohma}
-	\begin{itemize}
-		\item[\bt] Rezystancja Om/Siemens
-	\end{itemize}
+	\begin{block}{Prawo Ohma}
+		Natężenie prądu ($i$) jest wprost proporcjonalne do przyłożonego do przewodnika napięcia ($u$). \\
+	\end{block}
+	Proporcjonalność ta jest uzależniona od \textbf{rezystancji}, która jest z kolei własnością konkretnego przewodnika.
 \end{frame}
 
-\begin{frame}{Energia}
-	\begin{itemize}
-		\item[\bt] Dżul/Wat
-	\end{itemize}
+\begin{frame}{Wielkości fizyczne}
+	\begin{block}{Rezystancja}
+		Własność przewodnika określająca stosunek przyłożonego napięcia do przepływającego prądu. \\
+		Rezystancję na ogół oznacza się symbolem $R$, jej jednostką jest om $\Omega$. \\
+		Zgodnie z prawem Ohma: $u(t)=\frac{i(t)}{R}$. \\
+		Zazwyczaj wykorzystuje się 3 formy niezależne od czasu: $R=\frac{u}{i}$; $i=\frac{u}{R}$; $u=iR$. \\
+		Rezystancja jest własnością przewodnika, zależy od materiału wykonania, gabarytów itp.
+	\end{block}
 \end{frame}
 
-\begin{frame}{Definicja obwodu elektrycznego}
-	Placeholder
+\begin{frame}{Wielkości fizyczne}
+	\begin{table}
+		\centering
+		\tagpdfsetup{table/header-rows={1}}
+		\caption{Przykładowe wartości rezystancji}
+		\begin{tabular}{|c|c|}
+			\hline
+			$\approx 10^{12}$ & Rezystancja powietrza / dobrych izolatorów w warunkach laboratoryjnych \\ \hline
+			$\approx 10^9$ & Rezystancja tworzyw sztucznych (izolatory) \\ \hline
+			$\approx 10^7$ & Rezystancja ciała człowieka (sucha skóra) \\ \hline
+			$\approx 10^5$ & Rezystancja ciała człowieka (wilgotna skóra) \\ \hline
+			$\approx 10^3$ & Słuchawki, czujniki, rezystory w elektronice cyfrowej \\ \hline
+			$\approx 10^2$ & Mały rezystor w układach elektronicznych \\ \hline
+			$\approx 1$ & Typowy głośnik niskoomowy / uzwojenie transformatora \\ \hline
+			$\approx 10^{-3}$ & Rezystancja grubego przewodu miedzianego (kilka metrów) \\ \hline
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}{Rezystor}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{block}{Rezystor}
+				Jeden z podstawowych, pasywnych, elementów elektronicznych.
+				Idealny rezystor cechuje się stałą, niezmienną rezystancją.
+				W rzeczywistości rezystory charakteryzują się również maksymalną mocą, z jaką mogą pracować, stałością parametrów itp.
+			\end{block}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.2, alt={Na zdjęciu widać szereg rezystorów o różnych mocach znamionowych, od bardzo małych oporników węglowych 1/8 W do większych, cylindrycznych elementów 2 W. Poniżej pokazane są większe rezystory ceramiczne o mocach 10 W i 20 W, przy linijkach z podziałką w centymetrach do porównania ich rozmiarów.}]{./imags/L1/Carbon_and_ceramic_resistors_of_different_power_ratings.jpg}	
+				\caption{Przekładowe rezystory różnych mocy.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+\begin{frame}{Energia i Moc w obwodach}
+	\begin{block}{Energia}
+		Jak wcześniej wspomniano, różnica potencjałów między punktami A i B wynosząca $1V$ oznacza, że przetransportowanie ładunku $q=1C$ z punktu A do B wymaga dostarczenie $1J$ energii.
+		Oznacza to jednocześnie, że ten sam ładunek poruszający się ob punktu B do A odda energię $1J$.\\
+		$E=u*q$
+	\end{block}
+	\begin{block}{Moc}
+		Moc informuje o zmianie energii w czasie ($P(t)=\frac{dE(t)}{t}$).
+		Zakładając, że zamiast pojedynczego ładunku między punktami A i B przepływa prąd elektryczny - do układu dostarczana jest moc.\\
+		$P(t)=u(t)*\frac{d q(t)}{t}=u(t)*i(t)$ \\
+		Często przyjmuje się prostszą postać: $P=u*i$, lub z wykorzystaniem prawa Ohma: $P=i^2 R = \frac{u^2}{R}$.
+	\end{block}
 \end{frame}
 
 \begin{frame}{Przedrostki + notacja wykładnicza}
-	Placeholder
+	\begin{table}
+		\centering
+		\tagpdfsetup{table/header-rows={1}}
+		\caption{Przedrostki dziesiętne}
+			\begin{tabular}{|c|c|c|}
+			\hline
+			Przedrostek & Symbol & Mnożnik \\ \hline
+			piko  & p & $10^{-12}$ \\ \hline
+			nano  & n & $10^{-9}$  \\ \hline
+			mikro & $\mu$ & $10^{-6}$ \\ \hline
+			mili  & m & $10^{-3}$ \\ \hline
+			kilo  & k & $10^{3}$  \\ \hline
+			mega  & M & $10^{6}$  \\ \hline
+		\end{tabular}
+	\end{table}
 \end{frame}
 
-\begin{frame}{Prądowe prawo Kirchoffa (PPK)}
-	Placeholder
-\end{frame}
-
-\begin{frame}{Napięciowe prawi Kirchofa (NPK)}
-	Placeholder
-\end{frame}
-
-\begin{frame}{Zasada zachowania energii (zasada Tellgena)}
-	Placeholder
+\begin{frame}{Definicja obwodu elektrycznego}
+	\begin{block}{Obwód elektryczny}
+		Obwód elektryczny to zamknięty układ elementów przewodzących, w którym pod wpływem przyłożonego napięcia może płynąć prąd elektryczny.
+	\end{block}
+	Co tworzy obwód
+	\begin{itemize}
+		\item[\bt] Obwód zawiera co najmniej źródło zasilania oraz jeden odbiornik (np. żarówkę, rezystor), połączone przewodami w pętlę.
+		\item[\bt] Jeśli ścieżka przewodzenia jest przerwana, obwód jest otwarty i prąd nie płynie; gdy połączenia tworzą pełną pętlę, obwód jest zamknięty i możliwy jest przepływ prądu.
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Elementy w obwodzie}
+	Poniżej wymieniono wyłącznie elementy występujące w obrębie niniejszego przedmiotu, w rzeczywistości ich lista jest znacznie dłuższa.
 	\begin{itemize}
-		\item[\bt] Rezystory
+		\item[\bt] Rezystory, cewki, kondensatory
 		\item[\bt] Źródła niezależne
-		\item[\bt] Żródła zależne
+		\item[\bt] Źródła zależne
 		\item[\bt] Wzmacniacze operacyjne
     \end{itemize}
 \end{frame}
 
+\begin{frame}{Rezystor w obwodzie}
+	\begin{columns}
+		\begin{column}{0.7\textwidth}
+			\begin{block}{Rezystor}
+				Rezystor oznaczany jest za pomocą symbolu prostokąta z dwoma wyprowadzeniami na krótszych bokach.
+				Prąd $i_R$ przepływający przez rezystor powoduje powstanie napięcia $u_R$.
+				Napięcie na rezystorze zawsze strzałkowane jest przeciwnie do przepływu prądu.
+				Na rezystorze moc może być jedynie wydzielana, rezystor nie jest w stanie dostarczyć mocy do obwodu.
+			\end{block}
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.15, alt={Na rysunku jest symbol rezystora z zaznaczonymi zwrotami prądu iR oraz napięcia uR na tym elemencie. 
+				Strzałka prądu skierowana jest w dół przez rezystor, a strzałka napięcia w górę, co ilustruje przyjętą biegunowość przy zapisie równań obwodu.}]{./imags/L1/R.png}	
+				\caption{Rezystor z przepływającym prądem i strzałką napięcia.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Rezystor w obwodzie - symulacja}
+	\begin{block}{Symulacja zachowania rezystora}
+		\url{https://www.falstad.com/circuit/circuitjs.html}
+	\end{block}
+\end{frame}
+
+
+\begin{frame}{Źródło napięciowe}
+	\begin{columns}
+		\begin{column}{0.7\textwidth}
+			\begin{block}{Źródło napięciowe}
+				Idealne źródło napięciowe stanowi element na którym zawsze występuje napięcie $E$, niezależnie od przepływu prądu $i_E$.
+				Idealne źródło napięciowe nie występuje w rzeczywistości, ale podobnie do niego zachowują się np. akumulatory, baterie, zasilacze.
+				Strzałka wewnętrzna wskazuje zwrot napięcia i zawsze jest zgodna z strzałką napięcia $E$.
+				Na ogół oznacza się że zwrot przepływu prądu $i_E$ jest zgodny ze strzałką napięcia.
+				Źródło napięciowe może zarówno dostarczać, jak i odbierać moc w obwodzie.
+			\end{block}
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.15, alt={Na rysunku jest symbol źródła napięcia (okrąg) z zaznaczonym prądem iE płynącym pionowo w górę przez element. 
+				Obok narysowano strzałkę z literą E, oznaczającą siłę elektromotoryczną lub napięcie źródła, ze zwrotem ku górze.}]{./imags/L1/E.png}	
+				\caption{Idealne źródło napięciowe z przepływającym prądem i strzałką napięcia.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Źródło napięciowe - symulacja}
+	\begin{block}{Symulacja zachowania źródła napięciowego}
+		\url{https://www.falstad.com/circuit/circuitjs.html}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Źródło prądowe}
+	\begin{columns}
+		\begin{column}{0.7\textwidth}
+			\begin{block}{Źródło prądowe}
+				Idealne źródło prądowe stanowi element przez który zawsze przepływa prąd $J$, niezależnie od napięcia $u_J$ na nim.
+				Idealne źródło prądowe nie występuje w rzeczywistości, przez swój charakter nie istnieją powszechnie znane elementy o podobnym zachowaniu, co sprawia że jest trudniejszy w zrozumieniu.
+				Strzałka wewnętrzna wskazuje zwrot przepływu prądu $J$.
+				Na ogół oznacza się że zwrot napięcia $u_J$ jest zgodny ze strzałką prądu.
+				Źródło prądowe może zarówno dostarczać, jak i odbierać moc w obwodzie.
+			\end{block}
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.15, alt={Na rysunku przedstawiono symbol źródła prądowego (podwójny okrąg) z prądem J płynącym pionowo w górę przez element. 
+				Obok znajduje się strzałka z oznaczeniem uJ, określająca przyjęty zwrot napięcia na źródle prądowym.}]{./imags/L1/J.png}	
+				\caption{Idealne źródło prądowe z przepływającym prądem i strzałką napięcia.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Źródło prądowe - symulacja}
+	\begin{block}{Symulacja zachowania źródła prądowego}
+		\url{https://www.falstad.com/circuit/circuitjs.html}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Prądowe prawo Kirchoffa (PPK)}
+	Prądowe prawo Kirchhoffa (PPK), zwane też pierwszym prawem Kirchhoffa, mówi, że w każdym węźle obwodu elektrycznego suma algebraiczna prądów jest równa zero. 
+	Innymi słowy, suma natężeń prądów wpływających do węzła jest równa sumie natężeń prądów z niego wypływających, co wynika z zasady zachowania ładunku elektrycznego – ładunek nie może się w węźle ani gromadzić, ani znikać. 
+	Prawo to zapisuje się zwykle jako $\sum i=0$, przy czym prądom wpływającym nadaje się znak dodatni, a wypływającym ujemny.
+\end{frame}
+
+\begin{frame}{Napięciowe prawi Kirchofa (NPK)}
+	Napięciowe prawo Kirchhoffa (NPK), nazywane też drugim prawem Kirchhoffa, mówi, że w każdym zamkniętym oczku obwodu algebraiczna suma wszystkich napięć jest równa zeru. 
+	Równoważnie można powiedzieć, że suma spadków napięć na elementach odbiorczych w oczku jest równa sumie sił elektromotorycznych źródeł w tym oczku. 
+	Matematycznie zapisuje się to zwykle jako $\sum u=0$, przy czym napięcia zgodne z przyjętym kierunkiem obiegu oczka przyjmuje się z plusem, a przeciwne – z minusem.
+\end{frame}
+
+\begin{frame}{Zasada zachowania energii (zasada Tellgena)}
+	Zasada zachowania energii mówi, że w układzie izolowanym całkowita energia nie może być ani stworzona, ani zniszczona - może jedynie zmieniać formę (np. z elektrycznej w cieplną).
+	\begin{block}{Zasada Tellegena w obwodach}
+		\begin{itemize}
+			\item[\bt] W teorii obwodów odpowiednikiem tej zasady jest twierdzenie Tellegena: w dowolnym obwodzie skupionym suma mocy dostarczanych przez wszystkie elementy jest równa sumie mocy przez nie pobieranych, czyli suma algebraiczna mocy we wszystkich gałęziach jest równa zero.
+			\item[\bt] Oznacza to, że energia dostarczana przez źródła napięcia i prądu w obwodzie w każdej chwili dokładnie równoważy energię zużywaną lub magazynowaną w elementach biernych (rezystorach, cewkach, kondensatorach), co jest bezpośrednim zastosowaniem ogólnej zasady zachowania energii do sieci elektrycznych.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
 \begin{frame}{Definicje SLS}
-	Placeholder
+	W elektrotechnice SLS oznacza "skupiony, liniowy, stacjonarny" obwód elektryczny - układ z elementami skupionymi, spełniającymi prawo Ohma i o parametrach niezmieniających się w czasie.
 \end{frame}
-
-\begin{frame}{Strzałkowanie w obwodzie}
-	Placeholder
-\end{frame}
-
-\begin{frame}{Omówienie źródła napięciowego}
-	Placeholder
-\end{frame} 
-
-\begin{frame}{Omówienie źródła prądowego}
-	Placeholder
-\end{frame} 
 
 \sect{Wykład 2}
 
 \begin{frame}{Łączenie rezystorów}
 	Placeholder
 \end{frame} 
+
+\begin{frame}{Dzielnik napięciowy}
+	Placeholder
+\end{frame}
+
+\begin{frame}{Dzielnik prądowy}
+	Placeholder
+\end{frame}
 
 \begin{frame}{Źródło Thevenina}
 	Placeholder
@@ -107,7 +330,7 @@
 	Placeholder
 \end{frame} 
 
-\begin{frame}{Rówania węzłowe}
+\begin{frame}{Równania węzłowe}
 	Placeholder
 \end{frame} 
 
