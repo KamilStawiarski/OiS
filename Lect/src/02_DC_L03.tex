@@ -1,8 +1,415 @@
 \sect{Wykład 3}
 \begin{frame}{Bilans mocy}
-	Placeholder
+	\begin{block}{Bilans mocy}
+		Wykonanie bilansu mocy polega na sprawdzeniu, czy suma mocy dostarczanej do obwodu, oraz wydzielanej przez jego elementu jest sobie równa.
+		Sprawdzenie bilansu mocy pozwala na weryfikację poprawności obliczeń.
+	\end{block}
+	\begin{itemize}
+		\item[\bt] Na rezystorach moc może się jedynie wydzielać.
+		\item[\bt] Źródła napięciowe oraz prądowe mogę zarówno dostarczać, jak i pobierać moc z obwodu.		
+	\end{itemize}
+\end{frame} 
+
+\begin{frame}{Bilans mocy}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{block}{Źródła dostarczające moc}
+				Jeżeli strzałka napięcia jest zgodna z kierunkiem przepływu prądu - źródła dostarczają moc do obwodu (jak w przypadku po prawej).
+			\end{block}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Po lewej stronie znajduje się idealne źródło napięciowe, przedstawione jako pojedyncze koło, z zaznaczonym napięciem E oraz kierunkiem prądu iE wychodzącym z bieguna dodatniego.
+				Po prawej stronie znajduje się idealne źródło prądowe, narysowane jako podwójny okrąg, przez który płynie prąd J, a obok zaznaczone są: kierunek prądu oraz odpowiadające mu napięcie uJ na zaciskach tego źródła.}]{./imags/L3/Pin.png}	
+				\caption{Źródła dostarczające moc do obwodu.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Bilans mocy}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{block}{Źródła pobierające moc}
+				Jeżeli strzałka napięcia jest skierowana przeciwnie do kierunkiem przepływu prądu - źródła stanowią odbiornik mocy w obwodu (jak w przypadku po prawej).
+			\end{block}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Po lewej stronie jest idealne źródło napięciowe (pojedyncze koło) z zaznaczonym napięciem E skierowanym w górę oraz prądem iE płynącym w dół przez element.
+				Po prawej stronie jest idealne źródło prądowe (podwójny okrąg), w którym prąd J płynie w górę, natomiast napięcie na jego zaciskach uJ jest skierowane w dół, co oznacza przeciwny zwrot względem prądu.}]{./imags/L3/Pout.png}	
+				\caption{Źródła pobierające moc z obwodu.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Bilans mocy - przykład 1}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Na schemacie po prawej widoczne jest jedno źródło napięciowe o napięciu $U=5V$ połączone z rezystorem o rezystancji $R=10 \Omega$.\\
+			W takiej konfiguracji całe napięcie ze źródła odłoży się na rezystorze (NPK).
+			W efekcie, przez rezystor oraz źródło popłynie prąd o natężeniu $i=\frac{u}{R}=500mA$.\\
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku jest prosty obwód z idealnym źródłem napięciowym o napięciu u = 5 voltów po lewej stronie.
+				Źródło zasila rezystor o rezystancji R = 10 omów, włączony w szereg w górnej gałęzi obwodu, więc ten sam prąd płynie przez źródło i rezystor.}]{./imags/L3/Example1.png}	
+				\caption{Przykład 1.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Bilans mocy - przykład 1}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Moc dostarczona w obwodzie:\\
+			Źródło napięciowe: $P_d=u*i=5V*0.5A=2.5W$\\
+			Moc oddawana w obwodzie:\\
+			Rezystor: $P_o=u*i=5V*0.5A=2.5W$.\\
+			Moc dostarczona jest równa mocy oddanej.
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku jest prosty obwód z idealnym źródłem napięciowym o napięciu u = 5 voltów po lewej stronie.
+				Źródło zasila rezystor o rezystancji R = 10 omów, włączony w szereg w górnej gałęzi obwodu, więc ten sam prąd płynie przez źródło i rezystor.}]{./imags/L3/Example1.png}	
+				\caption{Przykład 1.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Przykład 1 - symulacja}
+	\begin{block}{Przykład 1 - symulacja}
+		\url{https://www.falstad.com/circuit/circuitjs.html}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Bilans mocy - przykład 2}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Po prawej stronie widoczny jest nieco bardziej złożony schemat.
+			Obwód składa się z jednego źródła i 3 rezystorów.
+			Wykonanie bilansu mocy wymaga znajomości napięcia i prądu na każdym z elementów obwodu.
+			Najprostszym sposobem na obliczenie tych wartości jest przekształcenie obwodu z wykorzystaniem reguł łączenia rezystorów, obliczenie napięć i prądów a później przywracanie pierwotnych połączeń.
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Ten obwód zawiera źródło napięciowe 5 V w szeregu z rezystorem R1 = 10 omów, po czym prąd dochodzi do dwóch równoległych rezystorów R2 i R3, każdy o wartości 30 omów. 
+				Oba równoległe rezystory łączą się z powrotem w jeden przewód, który wraca do źródła, tworząc zamkniętą pętlę.}]{./imags/L3/Example2.png}	
+				\caption{Przykład 2.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Bilans mocy - przykład 2}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Dwa równolegle połączone rezystory $R_2$ i $R_3$ posiadają taką samą rezystancję równą $30\Omega$.\\
+			Ich rezystancja zastępcza wynosi zatem $R_{23}=\frac{30 * 30}{30+30} \Omega = 15 \Omega$.\\
+			Po takiej zamianie pozostanie źródło napięciowe oraz szeregowe połączenie rezystorów $R_1=10\Omega$ oraz $R_{23}=15\Omega$.\\
+			Oba rezystory można zastąpić pojedynczym rezystorem o rezystancji $R_z=25 \Omega$.\\
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Ten obwód zawiera źródło napięciowe 5 V w szeregu z rezystorem R1 = 10 omów, po czym prąd dochodzi do dwóch równoległych rezystorów R2 i R3, każdy o wartości 30 omów. 
+				Oba równoległe rezystory łączą się z powrotem w jeden przewód, który wraca do źródła, tworząc zamkniętą pętlę.}]{./imags/L3/Example2.png}	
+				\caption{Przykład 2.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Bilans mocy - przykład 2}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Pozostanie wtedy źródło napięciowe o napięciu $u=5V$ połączone z rezystorem o rezystancji $R_z=25\Omega$.\\
+			W takim wypadku ze źródła będzie płynął prąd o natężeniu $i=\frac{5V}{25\Omega}=0.2A$.\\
+			Jak widać na schemacie po prawej, prąd ten popłynie przez rezystor $R_1$, skutkując powstaniem na jego zaciskach napięcia $u_1=i*R_1=0.2A * 10\Omega = 2V$.\\
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Ten obwód zawiera źródło napięciowe 5 V w szeregu z rezystorem R1 = 10 omów, po czym prąd dochodzi do dwóch równoległych rezystorów R2 i R3, każdy o wartości 30 omów. 
+				Oba równoległe rezystory łączą się z powrotem w jeden przewód, który wraca do źródła, tworząc zamkniętą pętlę.}]{./imags/L3/Example2.png}	
+				\caption{Przykład 2.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Bilans mocy - przykład 2}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Zgodnie z napięciowym prawem Kirchoffa, jeżeli źródło dostarcza napięcie $5V$, na rezystorze $R_1$ odkłada się napięcie $2V$, to na rezystorach $R_2$ i $R_3$ musi odkładać się napięcie $u_{23}=5V-2V=3V$.\\
+			Ponownie, korzystając z NPK można zauważyć, że na obu rezystorach napięcie to musi być takie samo.
+			To z kolei pozwala obliczyć prąd każdego z rezystorów:\\
+			$i_2=i_3=\frac{u_{23}}{R_2}=\frac{3V}{30\Omega}=0.1A$.
+			Pozwala to również zauważyć, jak prąd $0.2A$ płynący przez rezystor $R_1$ równomiernie rozpływa się do gałęzi z rezystorami $R_2$ i $R_3$.
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Ten obwód zawiera źródło napięciowe 5 V w szeregu z rezystorem R1 = 10 omów, po czym prąd dochodzi do dwóch równoległych rezystorów R2 i R3, każdy o wartości 30 omów. 
+				Oba równoległe rezystory łączą się z powrotem w jeden przewód, który wraca do źródła, tworząc zamkniętą pętlę.}]{./imags/L3/Example2.png}	
+				\caption{Przykład 2.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Bilans mocy - przykład 2}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Znając wszystkie wartości prądów i napięć można wykonać bilans mocy:\\
+			Moc dostarczona w obwodzie:\\
+			Źródło napięciowe: $P_d=u*i=5V * 0.2A=1W$\\
+			Moc oddawana w obwodzie:\\
+			$R_1$: $P_1=i*u_1=2V * 0.2A=0.4W$\\
+			$R_2$: $P_2=i_{2}*u_{23}=0.1A*3V=0.3W$\\
+			$R_3$: $P_3=i_{3}*u_{23}=0.1A*3V=0.3W$\\
+			Suma mocy dostarczonej: $1W$\\
+			Suma mocy oddawanej: $0.4W+0.3W+0.3W=1W$\\
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Ten obwód zawiera źródło napięciowe 5 V w szeregu z rezystorem R1 = 10 omów, po czym prąd dochodzi do dwóch równoległych rezystorów R2 i R3, każdy o wartości 30 omów. 
+				Oba równoległe rezystory łączą się z powrotem w jeden przewód, który wraca do źródła, tworząc zamkniętą pętlę.}]{./imags/L3/Example2.png}	
+				\caption{Przykład 2.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Przykład 2 - symulacja}
+	\begin{block}{Przykład 2 - symulacja}
+		\url{https://www.falstad.com/circuit/circuitjs.html}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Bilans mocy - przykład 3}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Trzeci przykład stanowi schemat zbudowany z źródła napięciowego, źródła prądowego oraz jednego rezystora.
+			Ich wartości to pokazane są na rysunku po prawej.\\
+			Prąd wymuszany przez źródło prądowe o wydajności $j=1A$ jest zgodny z kierunkiem napięcia źródła napięciowego.
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={W obwodzie znajduje się idealne źródło napięciowe o wartości 5 V po lewej stronie oraz szeregowo połączony rezystor R = 10 omów w górnej gałęzi. 
+				Po prawej stronie włączone jest idealne źródło prądowe o wartości 1 A, którego strzałka jest skierowana w dół, czyli przeciwnie do kierunku prądu wypływającego z źródła napięciowego.}]{./imags/L3/Example3.png}	
+				\caption{Przykład 3.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Bilans mocy - przykład 3}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Przepływ prądu $j$ przez rezystor $R=10\Omega$ powoduje powstanie na nim napięcia o wartości $u_R=10V$, o zwrocie skierowanym przeciwnie do przepływu prądu (czyli w lewo).\\
+			W efekcie powstaje oczko, w którym napięcia muszą się wyrównać:
+			$u-u_R+u_j=0$\\
+			Znając wartości $u=5V$ i $u_R=10V$, można obliczyć $u_j=5V$.
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={W obwodzie znajduje się idealne źródło napięciowe o wartości 5 V po lewej stronie oraz szeregowo połączony rezystor R = 10 omów w górnej gałęzi. 
+				Po prawej stronie włączone jest idealne źródło prądowe o wartości 1 A, którego strzałka jest skierowana w dół, czyli przeciwnie do kierunku prądu wypływającego z źródła napięciowego.}]{./imags/L3/Example3.png}	
+				\caption{Przykład 3.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+
+\begin{frame}{Bilans mocy - przykład 3}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Obliczane wartości pozwalają wykonać bilans mocy:
+			Moc dostarczona w obwodzie:\\
+			Źródło napięciowe: $P_u=u*j=5V * 1A=5W$\\
+			Źródło prądowe: $P_j=u*j=5V * 1A=5W$\\
+			Moc oddawana w obwodzie:\\
+			$R$: $P_R=u_R*j=10V * 1A=10W$\\
+			Suma mocy dostarczonej: $5W+5W=10W$\\
+			Suma mocy oddawanej: $10W$\\
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={W obwodzie znajduje się idealne źródło napięciowe o wartości 5 V po lewej stronie oraz szeregowo połączony rezystor R = 10 omów w górnej gałęzi. 
+				Po prawej stronie włączone jest idealne źródło prądowe o wartości 1 A, którego strzałka jest skierowana w dół, czyli przeciwnie do kierunku prądu wypływającego z źródła napięciowego.}]{./imags/L3/Example3.png}	
+				\caption{Przykład 3.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Przykład 3 - symulacja}
+	\begin{block}{Przykład 3 - symulacja}
+		\url{https://www.falstad.com/circuit/circuitjs.html}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Bilans mocy - przykład 4}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Czwarty, ostatni przykład różni się od poprzedniego jedynie zwrotem źródła prądowego.
+			Efektem jest jednak znaczna zmiana mocy dostarczanej i oddawanej w obwodzie.\\
+			Na początku należy zauważyć, że przez rezystor $R$ przepływa prąd $j$ o natężeniu $1A$ skutkując powstaniem na zaciskach rezystora napięcia $u_R=10V$. W przeciwieństwie do poprzedniego przykładu, strzałka napięcia skierowana będzie w prawo.
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={W obwodzie znajduje się idealne źródło napięciowe o wartości 5 V po lewej oraz szeregowo włączony rezystor R = 10 omów w górnej gałęzi. 
+				Po prawej stronie jest idealne źródło prądowe o wartości 1 A, przez które ten sam prąd przepływa wzdłuż całej pętli.}]{./imags/L3/Example4.png}	
+				\caption{Przykład 4.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Bilans mocy - przykład 4}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Wiedza ta pozwoli na wykonanie oczka, z którego wynika równanie:\\
+			$u+u_R-u_j=0$\\
+			Podstawiając wartości można zauważyć, że $u_j=15V$.\\
+			Znane są wszystkie wartości, co pozwala na wykonanie bilansu mocy.
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={W obwodzie znajduje się idealne źródło napięciowe o wartości 5 V po lewej oraz szeregowo włączony rezystor R = 10 omów w górnej gałęzi. 
+				Po prawej stronie jest idealne źródło prądowe o wartości 1 A, przez które ten sam prąd przepływa wzdłuż całej pętli.}]{./imags/L3/Example4.png}	
+				\caption{Przykład 4.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Bilans mocy - przykład 4}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Obliczane wartości pozwalają wykonać bilans mocy (sposób 1)
+			Moc dostarczona w obwodzie:\\
+			Źródło napięciowe: $P_u=u*-j=5V * -1A=-5W$ - znak ujemny wynika z przeciwnego zwrotu strzałki napięcia i prądu.
+			Ujemna moc dostarczana może być też uważana jako moc pobierana\\
+			Źródło prądowe: $P_j=u_j*j=15V * 1A=15W$\\
+			Moc oddawana w obwodzie:\\
+			$R$: $P_R=u_R*j=10V * 1A=10W$\\
+			Suma mocy dostarczonej: $-5W+15W=10W$\\
+			Suma mocy oddawanej: $10W$\\
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={W obwodzie znajduje się idealne źródło napięciowe o wartości 5 V po lewej oraz szeregowo włączony rezystor R = 10 omów w górnej gałęzi. 
+				Po prawej stronie jest idealne źródło prądowe o wartości 1 A, przez które ten sam prąd przepływa wzdłuż całej pętli.}]{./imags/L3/Example4.png}	
+				\caption{Przykład 4.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+
+\begin{frame}{Bilans mocy - przykład 4}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Obliczane wartości pozwalają wykonać bilans mocy (sposób 2)
+			Moc dostarczona w obwodzie:\\
+			Źródło prądowe: $P_j=u_j*j=15V*1A=15W$\\
+			Moc oddawana w obwodzie:\\
+			Źródło napięciowe: $P_u=u*j=5V*1A=5W$ - widząc przeciwny zwrot strzałek można również nie wpisywać ujemnego znaku i po prostu przenieść źródło do odbiorników.
+			$R$: $P_R=u_R*j=10V * 1A=10W$\\
+			Suma mocy dostarczonej: $15W$\\
+			Suma mocy oddawanej: $5W+10W$\\
+			Oba podejścia są prawidłowe, polecam jednak pierwsze (mniejsza szansa na błąd jak pojawią się ujemne napięcia/natężenia).
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={W obwodzie znajduje się idealne źródło napięciowe o wartości 5 V po lewej oraz szeregowo włączony rezystor R = 10 omów w górnej gałęzi. 
+				Po prawej stronie jest idealne źródło prądowe o wartości 1 A, przez które ten sam prąd przepływa wzdłuż całej pętli.}]{./imags/L3/Example4.png}	
+				\caption{Przykład 4.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Przykład 4 - symulacja}
+	\begin{block}{Przykład 4 - symulacja}
+		\url{https://www.falstad.com/circuit/circuitjs.html}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Optymalny pobór mocy}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Schemat po prawej stanowi rzeczywiste źródło Thevenina z dołączonym odbiornikiem mocy.
+			Rozważmy, jak wygląda zależność mocy oddawanej na tym rezystorze (odbiorniku mocy z źródła rzeczywistego) w zależności od wartości tej rezystancji.
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={W obwodzie jest idealne źródło napięciowe o wartości u, połączone szeregowo z dwoma rezystorami: rezystorem wewnętrznym (prostokąt u góry) oraz rezystorem obciążenia Rd po prawej stronie. 
+				Napięcie na rezystorze wewnętrznym oznaczono jako u_RW ze strzałką w lewo, napięcie na rezystorze obciążenia jako u_RD ze strzałką w górę, a przez oba rezystory płynie ten sam prąd i zgodnie z kierunkiem zaznaczonej strzałki w pętli.}]{./imags/L3/OptPower.png}	
+				\caption{Optymalny pobór mocy.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
 \end{frame} 
 
 \begin{frame}{Optymalny pobór mocy}
-	Placeholder
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Na podstawie dzielnika pamięciowego można obliczyć, że napięcie na rezystorze $R_d$ wynosi $u_d=u \frac{R_d}{R_w+R_d}$.
+			Prąd tego rezystora to z kolei $i=\frac{u}{R_w+R_d}$.
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={W obwodzie jest idealne źródło napięciowe o wartości u, połączone szeregowo z dwoma rezystorami: rezystorem wewnętrznym (prostokąt u góry) oraz rezystorem obciążenia Rd po prawej stronie. 
+				Napięcie na rezystorze wewnętrznym oznaczono jako u_RW ze strzałką w lewo, napięcie na rezystorze obciążenia jako u_RD ze strzałką w górę, a przez oba rezystory płynie ten sam prąd i zgodnie z kierunkiem zaznaczonej strzałki w pętli.}]{./imags/L3/OptPower.png}	
+				\caption{Optymalny pobór mocy.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
 \end{frame} 
+
+\begin{frame}{Optymalny pobór mocy}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Moc wydzielana na rezystorze $R_d$ jest zależna od tej rezystancji i wynosi:\\
+			$P(R_d)=\frac{u R_d}{R_w+R_d}*\frac{u}{R_d+R_w}=\frac{u^2 R_d}{R_d^2+2R_d R_w + R_w^2}$\\
+			Do obliczenia maksymalnej mocy wydzielanej na obwodzie konieczne jest obliczenie pochodnej funkcji mocy:\\
+			$\frac{d P(R_d)}{d R_d} = u^2 \left(R_d^2+2R_d R_w + R_w^2 - R_d \left(2R_d + 2 R_w \right) \right) \cdot (R_+R_w)^{-4}$.
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={W obwodzie jest idealne źródło napięciowe o wartości u, połączone szeregowo z dwoma rezystorami: rezystorem wewnętrznym (prostokąt u góry) oraz rezystorem obciążenia Rd po prawej stronie. 
+				Napięcie na rezystorze wewnętrznym oznaczono jako u_RW ze strzałką w lewo, napięcie na rezystorze obciążenia jako u_RD ze strzałką w górę, a przez oba rezystory płynie ten sam prąd i zgodnie z kierunkiem zaznaczonej strzałki w pętli.}]{./imags/L3/OptPower.png}	
+				\caption{Optymalny pobór mocy.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Optymalny pobór mocy}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Lokalizacja ekstremum wymaga przyrównania pochodnej do $0$:\\
+			$R_d^2+2R_d R_w + R_w^2 - R_d \left(2R_d + 2 R_w \right)=0$\\
+			$R_d^2+2R_d R_w + R_w^2 - 2R_d^2 - 2R_d R_w = 0$\\
+			$R_w^2 - R_d^2 = 0$\\
+			Przyjmując, że rezystancje nie mogą być ujemne, $R_d=R_w$.
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={W obwodzie jest idealne źródło napięciowe o wartości u, połączone szeregowo z dwoma rezystorami: rezystorem wewnętrznym (prostokąt u góry) oraz rezystorem obciążenia Rd po prawej stronie. 
+				Napięcie na rezystorze wewnętrznym oznaczono jako u_RW ze strzałką w lewo, napięcie na rezystorze obciążenia jako u_RD ze strzałką w górę, a przez oba rezystory płynie ten sam prąd i zgodnie z kierunkiem zaznaczonej strzałki w pętli.}]{./imags/L3/OptPower.png}	
+				\caption{Optymalny pobór mocy.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Symulacja działania optymalnego odbiornika}
+	\begin{block}{Symulacja działania optymalnego odbiornika}
+		\url{https://www.falstad.com/circuit/circuitjs.html}
+	\end{block}
+\end{frame}

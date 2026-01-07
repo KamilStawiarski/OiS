@@ -1,25 +1,319 @@
 \sect{Wykład 2}
 
-\begin{frame}{Łączenie rezystorów}
-	Placeholder
-\end{frame} 
+\begin{frame}{Szeregowe łączenie rezystorów}
+	\begin{columns}
+		\begin{column}{0.7\textwidth}
+			\begin{block}{Połączenie szeregowe}
+				Połączenie szeregowe rezystorów (w tym przypadku dwóch, o wartościach $R_1$ i $R_2$) polega na takim połączenie wyprowadzeń aby koniec jednego był początkiem drugiego.
+				Szeregowo może być połączona dowolna liczba rezystorów.
+				W przypadku obliczania rezystancji zastępczej kolejność połączenia nie ma znaczenia.
+			\end{block}
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku widać dwa rezystory R1 i R2 połączone szeregowo w jednym obwodzie elektrycznym, przez które płynie ten sam prąd iR od góry do dołu.
+				Strzałki uR1 i uR2 pokazują kierunki spadków napięcia na rezystorach R1 i R2, czyli napięcia odkładające się na każdym z oporników wzdłuż kierunku prądu iR.}]{./imags/L2/Series.png}	
+				\caption{Szeregowe połączenie rezystorów.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Szeregowe łączenie rezystorów}
+	\begin{columns}
+		\begin{column}{0.7\textwidth}
+			\begin{block}{Połączenie szeregowe}
+				Można zauważyć, że przez oba rezystory przepływa ten sam prąd, oznaczony jako $i_R$.
+				W efekcie jego przepływu na rezystorach pojawia się napięcie: \\
+				$u_{R1}=R_1 * i_R$ \\
+				$u_{R2}=R_2 * i_R$ \\
+			\end{block}
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku widać dwa rezystory R1 i R2 połączone szeregowo w jednym obwodzie elektrycznym, przez które płynie ten sam prąd iR od góry do dołu.
+				Strzałki uR1 i uR2 pokazują kierunki spadków napięcia na rezystorach R1 i R2, czyli napięcia odkładające się na każdym z oporników wzdłuż kierunku prądu iR.}]{./imags/L2/Series.png}	
+				\caption{Szeregowe połączenie rezystorów.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Szeregowe łączenie rezystorów}
+	\begin{columns}
+		\begin{column}{0.7\textwidth}
+			\begin{block}{Połączenie szeregowe}
+				Można zauważyć, że spadek napięcia na rezystorach $R_1$ i $R_2$ można zastąpić pojedynczym spadkiem napięcia o wartości $u_{R1}+u_{R2}$.\\
+				W takiej sytuacji, przepływowi prądu $i_R$ towarzyszy napięcie $u_{R1}+u_{R2} = i_R*R_1 + i_R*R_2 = i_R* \left(R_1 + R_2 \right)$.\\
+				Oznacza to, że dwa szeregowo połączone rezystory o wartościach $R_1$ i $R_2$ można zastąpić rezystancją zastępczą o wartości $R_Z=R_1+R_2$.\\
+				Dla większej liczby rezystorów prawdziwe jest równanie $R_Z+\sum_{n=1}^N R_n$
+			\end{block}
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku widać dwa rezystory R1 i R2 połączone szeregowo w jednym obwodzie elektrycznym, przez które płynie ten sam prąd iR od góry do dołu.
+				Strzałki uR1 i uR2 pokazują kierunki spadków napięcia na rezystorach R1 i R2, czyli napięcia odkładające się na każdym z oporników wzdłuż kierunku prądu iR.}]{./imags/L2/Series.png}	
+				\caption{Szeregowe połączenie rezystorów.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame}
 
 \begin{frame}{Dzielnik napięciowy}
-	Placeholder
+	\begin{columns}
+		\begin{column}{0.7\textwidth}
+			\begin{block}{Dzielnik napięciowy}
+				Przyjmijmy, że na dwa szeregowo połączone rezystory $R_1$ i $R_2$ podano napięcie $u_R$.
+				Przez oba rezystory popłynie prąd $i_R=\frac{u_R}{R_1+R_2}$.\\
+				Oznacza to, że napięcia na rezystorach wynoszą odpowiednio:\\
+				$u_{R1}=u_R \frac{R_1}{R_1+R_2}$\\
+				$u_{R2}=u_R \frac{R_2}{R_1+R_2}$\\
+				Zmieniając wartości rezystorów $R_1$ i $R_2$ można uzyskać odpowiednio pomniejszone napięcie.
+			\end{block}
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku widać dwa rezystory R1 i R2 połączone szeregowo w jednym obwodzie elektrycznym, przez które płynie ten sam prąd iR od góry do dołu.
+				Strzałki uR1 i uR2 pokazują kierunki spadków napięcia na rezystorach R1 i R2, czyli napięcia odkładające się na każdym z oporników wzdłuż kierunku prądu iR.}]{./imags/L2/Series.png}	
+				\caption{Szeregowe połączenie rezystorów.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
 \end{frame}
+
+\begin{frame}{Dzielnik napięciowy - symulacja}
+	\begin{block}{Symulacja zachowania dzielnika napięciowego}
+		\url{https://www.falstad.com/circuit/circuitjs.html}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Potencjometr}
+	\begin{columns}
+		\begin{column}{0.7\textwidth}
+			\begin{block}{Potencjometr}
+				Potencjometr to rezystor o regulowanej wartości, zwykle z trzema wyprowadzeniami, który działa jak nastawny dzielnik napięcia w obwodzie elektrycznym.
+				Używa się go m.in. do płynnej regulacji parametrów takich jak głośność, jasność czy prędkość obrotowa silnika w różnych urządzeniach elektronicznych.\\
+				Potencjometr jest zbudowany z elementu oporowego (ścieżki rezystancyjnej) połączonego między dwoma skrajnymi wyprowadzeniami oraz ruchomego suwaka, który stanowi trzecie wyprowadzenie.
+Suwak przesuwa się lub obraca po ścieżce wewnątrz obudowy potencjometru, zmieniając punkt dołączenia i tym samym wartość rezystancji między suwakiem a każdym z końców ścieżki.
+			\end{block}
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku widać symbol potencjometru - prostokątny rezystor z dodatkową końcówką w postaci strzałki oznaczającą ruchomy suwak.}]{./imags/L2/Potentiometer.png}	
+				\caption{Symbol potencjometru.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Potencjometr}
+	\begin{figure}
+		\includegraphics[scale=0.12, alt={Na zdjęciu widać trzy potencjometry suwakowe w metalowych obudowach, z widocznymi dźwigniami-suwakami przesuwanymi wzdłuż szczeliny.
+Służą one do płynnej regulacji parametrów, np. głośności w mikserach audio czy innych urządzeniach elektronicznych.}]{./imags/L2/Faders.jpg}
+		\caption{Potencjometry suwakowe.}
+	\end{figure}	
+\end{frame}
+
+\begin{frame}{Potencjometr}
+	\begin{figure}
+		\includegraphics[scale=0.12, alt={Na zdjęciu widać potencjometr obrotowy z trzema wyprowadzeniami, służący do regulacji rezystancji w obwodzie.
+Ma on wałek z gwintem i nakrętką do montażu w panelu oraz metalową obudowę kryjącą ścieżkę oporową i ruchomy suwak.}]{./imags/L2/PotentiometerRot.png}
+		\caption{Potencjometr obrotowy.}
+	\end{figure}	
+\end{frame}
+
+\begin{frame}{Potencjometr - symulacja}
+	\begin{block}{Symulacja zachowania potencjometru}
+		\url{https://www.falstad.com/circuit/circuitjs.html}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Równoległe łączenie rezystorów}
+	\begin{columns}
+		\begin{column}{0.7\textwidth}
+			\begin{block}{Połączenie równoległe}
+				Połączenie równoległe rezystorów (w tym przypadku dwóch, o wartościach $R_1$ i $R_2$) polega na takim połączeniu wyprowadzeń, aby oba końce jednego rezystora były połączone odpowiednio z oboma końcami drugiego, czyli oba elementy są wpięte między te same dwa węzły obwodu.\\
+Równolegle może być połączona dowolna liczba rezystorów, a kolejność ich podłączania nie ma znaczenia, ponieważ każdy z nich ma to samo napięcie, a prądy przez poszczególne gałęzie po prostu się sumują.
+			\end{block}
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku widać dwa rezystory R1 i R2 połączone równolegle, do których doprowadzony jest ten sam prąd całkowity iR rozdzielający się na prądy gałęziowe iR1 oraz iR2.
+				Strzałki uR1 i uR2 oznaczają spadki napięcia na rezystorach R1 i R2, które w połączeniu równoległym mają jednakową wartość dla obu gałęzi obwodu}]{./imags/L2/Parallel.png}	
+				\caption{Równoległe połączenie rezystorów.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Równoległe łączenie rezystorów}
+	\begin{columns}
+		\begin{column}{0.7\textwidth}
+			\begin{block}{Połączenie równoległe}
+				W połączeniu równoległym oba rezystory mają to samo napięcie między zaciskami, oznaczone zwykle jako $u_{R1}=u_{R2}=u_{R}$.\\
+Przez każdy z nich płynie natomiast inny prąd gałęziowy, opisany zależnościami:\\ 
+$i_{R1}=\frac{u_{R1}}{R_1}=\frac{u_{R}}{R_1}$ \\
+$i_{R2}=\frac{u_{R2}}{R_2}=\frac{u_{R}}{R_2}$ \\
+			\end{block}
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku widać dwa rezystory R1 i R2 połączone równolegle, do których doprowadzony jest ten sam prąd całkowity iR rozdzielający się na prądy gałęziowe iR1 oraz iR2.
+				Strzałki uR1 i uR2 oznaczają spadki napięcia na rezystorach R1 i R2, które w połączeniu równoległym mają jednakową wartość dla obu gałęzi obwodu}]{./imags/L2/Parallel.png}	
+				\caption{Równoległe połączenie rezystorów.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Równoległe łączenie rezystorów}
+	\begin{columns}
+		\begin{column}{0.7\textwidth}
+			\begin{block}{Połączenie równoległe}
+				Można zauważyć, że prąd przepływający przez oba rezystory jest sumą prądów obu rezystorów:\\
+				$i_R=i_{R1}+i_{R2}$\\
+				Z perspektywy reszty układu, przyłożonemu napięciu $u_R$ towarzyszy przepływ prądu $i_R$. Na tej podstawie można określić rezystancję zastępczą:\\
+				$R_Z=\frac{u_R}{i_R}=\frac{u_R}{i_{R1}+i_{R2}}$\\
+				$\frac{1}{R_Z}=\frac{1}{R_1}+ \frac{1}{R_2}$\\
+				$R_Z=\frac{R_1 R_2}{R_1+R_2}$\\
+				Dla większej liczby rezystorów prawdziwe jest równanie:\\
+				$\frac{1}{R_Z}+\sum_{n=1}^N \frac{1}{R_n}$
+			\end{block}
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku widać dwa rezystory R1 i R2 połączone równolegle, do których doprowadzony jest ten sam prąd całkowity iR rozdzielający się na prądy gałęziowe iR1 oraz iR2.
+				Strzałki uR1 i uR2 oznaczają spadki napięcia na rezystorach R1 i R2, które w połączeniu równoległym mają jednakową wartość dla obu gałęzi obwodu}]{./imags/L2/Parallel.png}	
+				\caption{Równoległe połączenie rezystorów.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
 
 \begin{frame}{Dzielnik prądowy}
-	Placeholder
+		\begin{columns}
+		\begin{column}{0.7\textwidth}
+			\begin{block}{Dzielnik prądowy}
+				Podobnie jak w przypadku dzielnika napięciowego, tu można określić proporcję rozpływu prądów:
+				$i_{R1}=i_R \frac{R_2}{R_1+R_2}$\\
+				$i_{R2}=i_R \frac{R_1}{R_1+R_2}$
+			\end{block}
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku widać dwa rezystory R1 i R2 połączone równolegle, do których doprowadzony jest ten sam prąd całkowity iR rozdzielający się na prądy gałęziowe iR1 oraz iR2.
+				Strzałki uR1 i uR2 oznaczają spadki napięcia na rezystorach R1 i R2, które w połączeniu równoległym mają jednakową wartość dla obu gałęzi obwodu}]{./imags/L2/Parallel.png}	
+				\caption{Równoległe połączenie rezystorów.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
 \end{frame}
 
+\begin{frame}{Dzielnik prądowy - symulacja}
+	\begin{block}{Symulacja zachowania dzielnika prądowego}
+		\url{https://www.falstad.com/circuit/circuitjs.html}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Simens}
+	\begin{block}{Simens}
+		Simens (S) jest jednostką przewodności w układzie SI.
+		W pewnych warunkach pozwala na uproszczenie obliczeń (np. w połączeniu równoległym).
+		Przewodność na ogół oznacza się symbolem $G$, przy czym $G=\frac{1}{R}$.\\
+		$1S = \frac{1}{1\Omega} = \frac{1A}{1V}$
+	\end{block}
+\end{frame} 
+
+
+
+\begin{frame}{Połączenie Gwiazda-Trójkąt}
+	\begin{block}{Gwiazda}
+		Połączenie rezystorów typu gwiazda polega na tym, że trzy (lub więcej) rezystory mają jeden wspólny punkt, a ich pozostałe końce wyprowadzone są do trzech osobnych zacisków – tworzy się więc układ przypominający literę Y.
+	\end{block}
+	\begin{block}{Trójkąt}
+		Połączenie typu trójkąt (delta) oznacza, że trzy rezystory są połączone końcami w zamkniętą pętlę, tak że każdy wierzchołek trójkąta stanowi zacisk obwodu, a między każdą parą zacisków znajduje się jeden rezystor.
+	\end{block}	
+\end{frame} 
+
+\begin{frame}{Połączenie Gwiazda-Trójkąt}
+	\begin{figure}
+		\includegraphics[scale=0.08, alt={Na rysunku po lewej stronie przedstawiono układ trzech rezystorów połączonych w gwiazdę, oznaczonych jako Rgx, Rgy i Rgz, których wspólny punkt znajduje się w środku, a wolne końce wyprowadzone są do węzłów X, Y i Z.​
+		Po prawej stronie pokazano równoważny układ trzech rezystorów połączonych w trójkąt (delta), oznaczonych jako Rtx, Rty i Rtz, tworzących zamkniętą pętlę między tymi samymi węzłami X, Y i Z.}]{./imags/L2/GT.png}	
+		\caption{Połączenia typu gwiazda i trójkąt.}
+	\end{figure}	
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			$R_gx=\frac{R_{ty} R_{tz}}{R_{ty} + R_{tz} + R_{ty}}$\\
+			$R_gy=\frac{R_{tx} R_{tz}}{R_{ty} + R_{tz} + R_{ty}}$\\
+			$R_gz=\frac{R_{tx} R_{ty}}{R_{ty} + R_{tz} + R_{ty}}$\\
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			$R_{tx}=R_{gy}+R_{gz}+\frac{R_{gy} R_{gz}}{R_{gx}}$\\
+			$R_{ty}=R_{gx}+R_{gz}+\frac{R_{gx} R_{gz}}{R_{gy}}$\\
+			$R_{tz}=R_{gx}+R_{gy}+\frac{R_{gx} R_{gy}}{R_{gz}}$\\
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Rzeczywiste źródło}
+	Rzeczywiste źródło napięciowe dostarcza określonego napięcia, ale ma wewnętrzną rezystancję, przez co jego napięcie wyjściowe zależy od obciążenia i nie jest idealnie stałe. 
+	Typowo opisuje się je modelem "idealne źródło napięcia + szeregowy opór wewnętrzny", co powoduje spadek napięcia przy dużym poborze prądu i ogranicza maksymalny prąd.
+
+	Przykładami rzeczywistych źródeł napięcia są baterie i akumulatory stosowane w urządzeniach przenośnych, zasilacze sieciowe do elektroniki użytkowej, laboratoryjne zasilacze stabilizowane, a także prądnice i alternatory w elektrowniach czy pojazdach.
+\end{frame} 
+
 \begin{frame}{Źródło Thevenina}
-	Placeholder
+	\begin{columns}
+		\begin{column}{0.7\textwidth}
+			\begin{block}{Źródło Thevenina}
+				Źródło Thévenina to zastępcze źródło napięciowe, którym można zastąpić dowolny liniowy obwód widziany z dwóch zacisków. 
+				Składa się z idealnego źródła napięcia $u_T$ połączonego szeregowo z rezystancją (lub ogólnie impedancją) wewnętrzną $R_T$, tak dobranych, aby od strony tych zacisków zachowywał się identycznie jak oryginalny obwód.
+			\end{block}
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono model rzeczywistego źródła napięcia, złożony z idealnego źródła o napięciu uT oraz szeregowo dołączonej rezystancji wewnętrznej Rw. 
+				Taki model opisuje zachowanie praktycznych źródeł zasilania, w których napięcie na zaciskach spada wraz ze wzrostem pobieranego prądu.}]{./imags/L2/Thevenin.png}	
+				\caption{Źródło Thevenina.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
 \end{frame} 
 
 \begin{frame}{Źródło Nortona}
-	Placeholder
+	\begin{columns}
+		\begin{column}{0.7\textwidth}
+			\begin{block}{Źródło Nortona}
+				Źródło Nortona to zastępcze źródło prądowe, którym można zastąpić dowolny liniowy obwód widziany z dwóch zacisków. 
+				Składa się z idealnego źródła prądu połączonego równolegle z rezystancją (impedancją) wewnętrzną, tak dobranych, aby od strony zacisków zachowywało się tak samo jak pierwotny obwód.
+			\end{block}
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku pokazano model rzeczywistego źródła prądowego, tzw. źródło Nortona: idealne źródło prądu o wartości iN połączone równolegle z rezystancją wewnętrzną Rw.​
+				Taki układ stanowi zastępcze źródło prądu, które od strony zacisków zewnętrznych odwzorowuje zachowanie bardziej złożonego obwodu​.}]{./imags/L2/Norton.png}	
+				\caption{Źródło Nortona.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
 \end{frame} 
 
-\begin{frame}{Połączenie G-T}
-	Placeholder
+
+\begin{frame}{Uzyskanie modelu źródła}
+	Poniżej przykładowa procedura wyznaczania źródła Thévenina i Nortona dla wybranego fragmentu obwodu (pomiędzy zaciskami A-B).
+	\begin{block}{Źródło Thévenina i Nortona}
+		\begin{itemize}
+			\item[\bt] Wyodrębnia się dwa zaciski analizowanego fragmentu obwodu, a element obciążenia odłącza się od tych zacisków.
+			\item[\bt] Wyznacza się napięcie między zaciskami przy otwartym obwodzie; przyjmuje się je jako napięcie Thévenina $u_T$.
+			\item[\bt] Wyznacza się prąd zwarcia, płynący między zaciskami przy zamkniętym obwodzie; przyjmuje się je jako prąd Nortona $i_N$.
+			\item[\bt] Oblicza się rezystancję wewnętrzną $R_W=\frac{u_T}{i_N}$.
+		\end{itemize}
+	\end{block}
 \end{frame} 
+
+\begin{frame}{Równoważność źródeł - symulacja}
+	\begin{block}{Symulacja zachowania źródeł Thevenina i Nortona}
+		\url{https://www.falstad.com/circuit/circuitjs.html}
+	\end{block}
+\end{frame}
+
