@@ -1,9 +1,327 @@
 \sect{Wykład 4}
 
+%https://tinyurl.com/2xsbds9a
+
 \begin{frame}{Zasada superpozycji}
-	Placeholder
+	\begin{block}{Zasada superpozycji}
+		Odpowiedź obwodu na jednoczesne działanie wielu źródeł (wymuszeń) jest równa sumie odpowiedzi na każde ze źródeł z osobna, przy wyzerowaniu pozostałych źródeł podczas każdej z tych analiz.
+	\end{block}
+	 Jeśli w układzie liniowym kilka źródeł prądu lub napięcia działa jednocześnie, to prąd lub napięcie w dowolnej gałęzi można obliczyć jako sumę algebraiczną prądów lub napięć wywołanych osobno przez każde ze źródeł, przy czym pozostałe zastępuje się zwarciem (dla idealnych źródeł napięcia) lub rozwarciem (dla idealnych źródeł prądu).
 \end{frame} 
 
-\begin{frame}{Metoda zamiany źródeł}
-	Placeholder
+\begin{frame}{Zasada superpozycji - przykład}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			Przykładowe zadanie przedstawiono na rysunku po prawej stronie.
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Po lewej stronie znajduje się źródło napięcia o wartości 5 V, narysowane jako koło ze strzałką skierowaną do góry i podpisem e = 5 V. Od górnego zacisku źródła przewód biegnie w prawo do opornika R4 o wartości 4 omy, narysowanego jako prostokąt z napisem R4 = 4 omy nad symbolem.
+				Za opornikiem R4 znajduje się węzeł łączący kilka przewodów. Od tego węzła pionowo w dół schodzi opornik R2 o wartości 2 omy, podpisany R2 = 2 omy, a jego dolny koniec jest połączony z poziomym przewodem biegnącym przy dolnej krawędzi rysunku. Z tego samego węzła przewód biegnie dalej w prawo do opornika R1 o wartości 1 om, narysowanego jako prostokąt z napisem R1 = 1 om nad nim.
+				Za opornikiem R1 znajduje się kolejny węzeł. Z tego węzła pionowo w dół schodzi opornik R3 o wartości 3 omy, oznaczony napisem R3 = 3 omy, którego dolny koniec także łączy się z dolnym poziomym przewodem. Od tego samego węzła przewód biegnie dalej w prawo aż do źródła prądu o wartości 1 A, narysowanego jako koło ze strzałką w górę i napisem j = 1 A.
+				Dolne końce obu źródeł, czyli źródła napięcia po lewej oraz źródła prądu po prawej, a także dolne końce oporników R2 i R3 są połączone jednym wspólnym poziomym przewodem, dzięki czemu cały obwód tworzy zamkniętą pętlę..}]{./imags/L4/fig1.png}	
+				\caption{Przykładowe zadanie.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
 \end{frame} 
+
+\begin{frame}{Zasada superpozycji - przykład}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			Pierwszą czynnością jest zastąpienie źródła prądowego rozwarciem. Pozostawia to prosty układ w którym kolejne przekształcenia polegają na łączeniu rezystorów. Można zauważyć, że rezystory R1 i R3 połączone są szeregowo.
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={To jest schemat prostego obwodu elektrycznego w postaci fragmentu poprzedniego układu, ale bez źródła prądu po prawej stronie. Po lewej znajduje się źródło napięcia o wartości 5 woltów, narysowane jako koło ze strzałką w górę i podpisem e = 5 V, połączone dolnym przewodem z poziomym przewodem biegnącym u dołu rysunku. Od góry źródła napięcia przewód idzie w prawo do opornika R4 o wartości 4 omy, oznaczonego napisem R4 = 4 omy nad prostokątnym symbolem.
+				Za R4 jest węzeł połączeń. Z tego węzła pionowo w dół schodzi opornik R2 o wartości 2 omy, z napisem R2 = 2 omy, którego dolny koniec łączy się z dolnym poziomym przewodem. Z tego samego węzła przewód biegnie dalej w prawo do opornika R1 o wartości 1 om, narysowanego jako prostokąt z napisem R1 = 1 om nad nim, a za nim znajduje się kolejny węzeł.
+				Od węzła za R1 pionowo w dół schodzi opornik R3 o wartości 3 omy, oznaczony napisem R3 = 3 omy, którego dolny koniec także jest połączony z dolnym poziomym przewodem. Z tego samego węzła górny przewód biegnie dalej w prawo i po krótkim odcinku zbiega w dół, łącząc się z dolnym poziomym przewodem, dzięki czemu obwód jest zamknięty tylko z udziałem źródła napięcia i czterech oporników..}]{./imags/L4/fig1_a1.png}	
+				\caption{Przykładowe zadanie - rozwarcie w miejscu źródła prądowego.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+
+\begin{frame}{Zasada superpozycji - przykład}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			Pierwszą czynnością jest zastąpienie źródła prądowego rozwarciem. Pozostawia to prosty układ w którym kolejne przekształcenia polegają na łączeniu rezystorów. Można zauważyć, że rezystory $R_1$ i $R_3$ połączone są szeregowo, co można zastąpić resytorem $R_{13}$.
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={To jest schemat prostego obwodu elektrycznego w postaci fragmentu poprzedniego układu, ale bez źródła prądu po prawej stronie.
+				Po lewej znajduje się źródło napięcia o wartości 5 woltów, narysowane jako koło ze strzałką w górę i podpisem e = 5 V, połączone dolnym przewodem z poziomym przewodem biegnącym u dołu rysunku. Od góry źródła napięcia przewód idzie w prawo do opornika R4 o wartości 4 omy, oznaczonego napisem R4 = 4 omy nad prostokątnym symbolem.
+				Za R4 jest węzeł połączeń. Z tego węzła pionowo w dół schodzi opornik R2 o wartości 2 omy, z napisem R2 = 2 omy, którego dolny koniec łączy się z dolnym poziomym przewodem. Z tego samego węzła przewód biegnie dalej w prawo do opornika R1 o wartości 1 om, narysowanego jako prostokąt z napisem R1 = 1 om nad nim, a za nim znajduje się kolejny węzeł.
+				Od węzła za R1 pionowo w dół schodzi opornik R3 o wartości 3 omy, oznaczony napisem R3 = 3 omy, którego dolny koniec także jest połączony z dolnym poziomym przewodem. Z tego samego węzła górny przewód biegnie dalej w prawo i po krótkim odcinku zbiega w dół, łącząc się z dolnym poziomym przewodem, dzięki czemu obwód jest zamknięty tylko z udziałem źródła napięcia i czterech oporników..}]{./imags/L4/fig1_a1.png}	
+				\caption{Przykładowe zadanie - rozwarcie w miejscu źródła prądowego.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Zasada superpozycji - przykład}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			Kolejnym krokiem rozwiązania może być równoległe połączenie rezystorów $R_2$ i $R_{13}$, które zostaną zastąpione rezystorem $R_{123}$.
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku jest obwód elektryczny z jednym źródłem napięcia i trzema opornikami połączonymi w prosty układ.
+				Po lewej stronie znajduje się źródło napięcia o wartości 5 woltów, narysowane jako koło ze strzałką skierowaną w górę i podpisem e = 5 V; jego dolny zacisk jest połączony z poziomym przewodem biegnącym u dołu rysunku. Od górnego zacisku źródła przewód biegnie w prawo do opornika R4 o wartości 4 omy, narysowanego jako prostokąt z napisem R4 = 4 omy nad symbolem.
+				Za opornikiem R4 jest węzeł. Z tego węzła pionowo w dół schodzi opornik R2 o wartości 2 omy, oznaczony napisem R2 = 2 omy, którego dolny koniec łączy się z dolnym poziomym przewodem. Z tego samego węzła górny przewód biegnie dalej w prawo do opornika R13 o wartości 4 omy, narysowanego jako prostokąt z napisem R13 = 4 omy nad nim.
+				Za opornikiem R13 górny przewód schodzi po prawej stronie w dół i łączy się z dolnym poziomym przewodem, domykając pętlę obwodu złożoną ze źródła napięcia, opornika R4, opornika R13 oraz opornika R2 jako gałęzi bocznej między węzłami.}]{./imags/L4/fig1_a2.png}	
+				\caption{Przykładowe zadanie - postęp w rozwiązaniu.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Zasada superpozycji - przykład}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			Tak przygotowane zadanie jest już proste do rozwiązania. Można zauważyć, że przez źródło prądowe przepływa prąd o natężeniu $i_e=0,938A$.
+			Oznacza to że na rezystorze $R_4$ odkłada się napięcie $u_4=3,75V$, na rezystorze $R_{123}$ napięcie $1,25V$.
+			Odczyniając zmiany wykonane w celu uzyskania rezystora $R_{123}$ można odzyskać poszczególne napięcia i natężenia na rezystorach $R_1$, $R_2$ i $R_3$.
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku jest bardzo prosty obwód elektryczny z jednym źródłem napięcia i dwoma opornikami połączonymi szeregowo.
+				Po lewej stronie znajduje się źródło napięcia o wartości 5 woltów, narysowane jako koło ze strzałką w górę i podpisem e = 5 V; dolny zacisk źródła jest połączony z poziomym przewodem biegnącym przy dolnej krawędzi rysunku. 
+				Od górnego zacisku źródła przewód biegnie w prawo do opornika R4 o wartości 4 omy, narysowanego jako prostokąt z napisem R4 = 4 omy nad nim.
+				Za opornikiem R4 w prawo znajduje się drugi opornik, oznaczony R123 = 1,33 oma, także narysowany jako prostokąt z napisem R123 = 1,33 oma nad symbolem. 
+				Za tym opornikiem przewód biegnie dalej w prawo, po czym schodzi pionowo w dół i łączy się z dolnym poziomym przewodem, zamykając pętlę obwodu złożoną ze źródła napięcia i dwóch oporników szeregowych.}]{./imags/L4/fig1_a3.png}	
+				\caption{Przykładowe zadanie - postęp w rozwiązaniu.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Zasada superpozycji - przykład}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			Wyniki prądów na poszczególnych rezystorach przedstawiono na schemacie po prawej.
+			Dla przejrzystości napięcia rezystorów zostały pominięte.
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku jest obwód elektryczny z jednym źródłem napięcia i trzema opornikami, przy których zaznaczono wartości prądów.
+				Po lewej stronie widoczne jest źródło napięcia oznaczone literą e; od jego górnego zacisku przewód biegnie w prawo do opornika R4. Nad przewodem między źródłem a R4 znajduje się napis 0,9375 A, a obok strzałka skierowana w prawo, co oznacza prąd 0,9375 ampera płynący przez opornik R4 w kierunku od źródła w prawo.
+				Za opornikiem R4 jest węzeł. Z tego węzła przewód idzie w prawo do opornika R1, przy którym po prawej stronie narysowana jest strzałka w prawo z napisem 0,3125 A, oznaczająca prąd 0,3125 ampera płynący przez R1. Z tego samego węzła pionowo w dół schodzi opornik R2, przy którym wzdłuż jego symbolu umieszczono strzałkę skierowaną w dół i napis 0,625 A, co oznacza prąd 0,625 ampera płynący z węzła w dół przez R2 do dolnego przewodu.
+				Po prawej stronie za opornikiem R1 przewód biegnie w dół do opornika R3, a następnie dalej do dolnego poziomego przewodu, który wraca do dolnego zacisku źródła napięcia, zamykając pętlę obwodu.}]{./imags/L4/fig1_a4.png}	
+				\caption{Przykładowe zadanie - postęp w rozwiązaniu.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Przykład - symulacja (wygaszone źródło napięciowe)}
+	\begin{block}{Przykład - symulacja (wygaszone źródło napięciowe)}
+		\url{https://www.falstad.com/circuit/circuitjs.html}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Zasada superpozycji - przykład}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			W drugiej części należy wyzerować źródło prądowe, zastępując je rozwarciem.
+			Można zauważyć, że ponownie obwód można rozwiązać metodą łączenia rezystorów, co przedstawiono w kolejnych krokach.
+			Na pierwszy rzut oka widać możliwe do połączenia rezystory $R_2$ i $R_4$.
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku jest obwód elektryczny z jednym źródłem prądu i trzema opornikami.
+				Po prawej stronie znajduje się źródło prądu o wartości 1 A, narysowane jako koło ze strzałką skierowaną do góry i podpisem j = 1 A; jego dolny zacisk jest połączony z dolnym poziomym przewodem. Od górnego zacisku źródła prądu przewód biegnie w lewo do węzła, z którego pionowo w dół schodzi opornik R3 o wartości 3 omy, podpisany R3 = 3 omy, a jego dolny koniec łączy się z dolnym poziomym przewodem.
+				Od tego samego węzła górny przewód biegnie dalej w lewo do opornika R1 o wartości 1 om, narysowanego jako prostokąt z napisem R1 = 1 om nad symbolem. Za opornikiem R1 znajduje się kolejny węzeł, z którego pionowo w dół schodzi opornik R2 o wartości 2 omy, oznaczony napisem R2 = 2 omy, połączony dolnym końcem z dolnym przewodem.
+				Od tego węzła przewód biegnie dalej w lewo do opornika R4 o wartości 4 omy, narysowanego jako prostokąt z napisem R4 = 4 omy nad symbolem, a następnie wraca w dół i w prawo dolnym poziomym przewodem do dolnego zacisku źródła prądu, zamykając pętlę obwodu.}]{./imags/L4/fig1_b1.png}	
+				\caption{Przykładowe zadanie - postęp w rozwiązaniu.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Zasada superpozycji - przykład}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			Po połączeniu w $R_{24}$ można zauważyć, że jest on szeregowo połączony z rezystorem $R_1$, ich połączenie jest wykonane w kolejnym kroku.
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku jest obwód elektryczny z jednym źródłem prądu i dwoma opornikami połączonymi w prosty układ, przy czym po lewej stronie zastąpiono dwie poprzednie rezystancje ich opornikiem zastępczym.
+				Po prawej stronie znajduje się źródło prądu o wartości 1 A, narysowane jako koło ze strzałką skierowaną w górę i podpisem j = 1 A; jego dolny zacisk jest połączony z dolnym poziomym przewodem. Od górnego zacisku źródła przewód biegnie w lewo do węzła, z którego pionowo w dół schodzi opornik R3 o wartości 3 omy, podpisany R3 = 3 omy, a jego dolny koniec łączy się z dolnym przewodem.
+				Od tego samego węzła górny przewód biegnie dalej w lewo do opornika R1 o wartości 1 om, narysowanego jako prostokąt z napisem R1 = 1 om nad symbolem. Za opornikiem R1 przewód dochodzi do kolejnego węzła, z którego pionowo w dół schodzi opornik R24 o wartości 1,33 oma, oznaczony napisem R24 = 1,33 oma, połączony dolnym końcem z dolnym poziomym przewodem. Dolny przewód wraca następnie w prawo do dolnego zacisku źródła prądu, zamykając pętlę obwodu.}]{./imags/L4/fig1_b2.png}	
+				\caption{Przykładowe zadanie - postęp w rozwiązaniu.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Zasada superpozycji - przykład}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			Pozostaje prosty układ z źródłem prądowym i dwoma rezystorami $R_3$ i $R_{124}$, których prądy można obliczyć używając dzielnika prądowego.
+			Ponownie, odwracając poprzednie połączenia, licząc napięcia i natężenia można uzyskać prądy i napięcia pierwotnych rezystorów.
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku jest prosty obwód elektryczny z jednym źródłem prądu i dwoma opornikami.Po prawej stronie znajduje się źródło prądu o wartości 1 A, narysowane jako koło ze strzałką skierowaną w górę i podpisem j = 1 A; jego dolny zacisk jest połączony z dolnym poziomym przewodem. Z dolnego przewodu mniej więcej na środku pionowo w górę schodzi opornik R3 o wartości 3 omy, oznaczony napisem R3 = 3 omy, którego górny koniec łączy się z górnym poziomym przewodem.
+				Po lewej stronie, między górnym i dolnym przewodem, wstawiony jest drugi opornik opisany jako R124 = 2,33 oma; jego końce są wpięte bezpośrednio w górny i dolny przewód, więc stanowi on jedną gałąź równoległą wobec gałęzi zawierającej opornik R3..}]{./imags/L4/fig1_b3.png}	
+				\caption{Przykładowe zadanie - postęp w rozwiązaniu.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame}  
+
+\begin{frame}{Zasada superpozycji - przykład}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			Wartości prądów przedstawiono na rysunku po prawej.
+			Dla poprawy czytelności napięcia nie zostały wypisane.
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku jest obwód elektryczny z jednym źródłem prądu i trzema opornikami, przy których zaznaczono wartości prądów.
+				Po prawej stronie znajduje się źródło prądu o wartości 1 A, narysowane jako koło ze strzałką w górę i opisem j = 1 A; jego dolny zacisk jest połączony z dolnym poziomym przewodem. Od górnego zacisku źródła przewód biegnie w lewo do węzła nad opornikiem R3, przy którym w dół przez opornik R3 płynie prąd 0,4375 A, zaznaczony strzałką w dół i napisem 0,4375 A.
+				Od tego węzła górny przewód biegnie dalej w lewo do opornika R1; nad przewodem, między węzłem a R1, jest strzałka w lewo i napis 0,5625 A, oznaczający prąd płynący przez R1 w lewo. Za opornikiem R1 przewód dochodzi do kolejnego węzła nad opornikiem R2, z którego pionowo w dół przez R2 płynie prąd 0,375 A (strzałka w dół z napisem 0,375 A).
+				Od tego węzła górny przewód biegnie jeszcze dalej w lewo do opornika R4; na odcinku przed R4 zaznaczono strzałkę w lewo i napis 0,1875 A, co oznacza prąd 0,1875 A płynący przez R4. Dolne końce oporników R2 i R3 są połączone z dolnym poziomym przewodem, który wraca do dolnego zacisku źródła prądu, zamykając pętlę obwodu.}]{./imags/L4/fig1_b4.png}	
+				\caption{Przykładowe zadanie - postęp w rozwiązaniu.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame}  
+
+\begin{frame}{Przykład - symulacja (wygaszone źródło prądowe)}
+	\begin{block}{Przykład - symulacja (wygaszone źródło prądowe)}
+		\url{https://www.falstad.com/circuit/circuitjs.html}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Zasada superpozycji - przykład}
+Ostatnim krokiem zasady superpozycji jest połączenie prądów i napięć uzyskanych na poszczególnych elementach w poprzednich krokach.
+	\begin{figure}
+		\includegraphics[scale=0.08, alt={Na rysunku jest obwód elektryczny z jednym źródłem napięcia i trzema opornikami, przy których zaznaczono wartości prądów.
+		Po lewej stronie widoczne jest źródło napięcia oznaczone literą e; od jego górnego zacisku przewód biegnie w prawo do opornika R4. Nad przewodem między źródłem a R4 znajduje się napis 0,9375 A, a obok strzałka skierowana w prawo, co oznacza prąd 0,9375 ampera płynący przez opornik R4 w kierunku od źródła w prawo.
+		Za opornikiem R4 jest węzeł. Z tego węzła przewód idzie w prawo do opornika R1, przy którym po prawej stronie narysowana jest strzałka w prawo z napisem 0,3125 A, oznaczająca prąd 0,3125 ampera płynący przez R1. Z tego samego węzła pionowo w dół schodzi opornik R2, przy którym wzdłuż jego symbolu umieszczono strzałkę skierowaną w dół i napis 0,625 A, co oznacza prąd 0,625 ampera płynący z węzła w dół przez R2 do dolnego przewodu.
+		Po prawej stronie za opornikiem R1 przewód biegnie w dół do opornika R3, a następnie dalej do dolnego poziomego przewodu, który wraca do dolnego zacisku źródła napięcia, zamykając pętlę obwodu.}]{./imags/L4/fig1_a4.png}	
+		\caption{Przykładowe zadanie - postęp w rozwiązaniu.}
+	\end{figure}	
+\end{frame}  
+
+
+\begin{frame}{Zasada superpozycji - przykład}
+	Ostatnim krokiem zasady superpozycji jest połączenie prądów i napięć uzyskanych na poszczególnych elementach w poprzednich krokach.
+	\begin{figure}
+		\includegraphics[scale=0.08, alt={Na rysunku jest obwód elektryczny z jednym źródłem prądu i trzema opornikami, przy których zaznaczono wartości prądów.
+		Po prawej stronie znajduje się źródło prądu o wartości 1 A, narysowane jako koło ze strzałką w górę i opisem j = 1 A; jego dolny zacisk jest połączony z dolnym poziomym przewodem. Od górnego zacisku źródła przewód biegnie w lewo do węzła nad opornikiem R3, przy którym w dół przez opornik R3 płynie prąd 0,4375 A, zaznaczony strzałką w dół i napisem 0,4375 A.
+		Od tego węzła górny przewód biegnie dalej w lewo do opornika R1; nad przewodem, między węzłem a R1, jest strzałka w lewo i napis 0,5625 A, oznaczający prąd płynący przez R1 w lewo. Za opornikiem R1 przewód dochodzi do kolejnego węzła nad opornikiem R2, z którego pionowo w dół przez R2 płynie prąd 0,375 A (strzałka w dół z napisem 0,375 A).
+		Od tego węzła górny przewód biegnie jeszcze dalej w lewo do opornika R4; na odcinku przed R4 zaznaczono strzałkę w lewo i napis 0,1875 A, co oznacza prąd 0,1875 A płynący przez R4. Dolne końce oporników R2 i R3 są połączone z dolnym poziomym przewodem, który wraca do dolnego zacisku źródła prądu, zamykając pętlę obwodu.}]{./imags/L4/fig1_b4.png}	
+		\caption{Przykładowe zadanie - postęp w rozwiązaniu.}
+	\end{figure}	
+\end{frame}  
+
+\begin{frame}{Zasada superpozycji - przykład}
+	Ostatnim krokiem zasady superpozycji jest połączenie prądów i napięć uzyskanych na poszczególnych elementach w poprzednich krokach.
+	Należy zwrócić uwagę, że prądy płynące przeciwnych kierunkach się odejmują, zgodne kierunki - dodają.
+	\begin{figure}
+		\includegraphics[scale=0.08, alt={Na rysunku jest obwód elektryczny z jednym źródłem napięcia po lewej i jednym źródłem prądu po prawej, a także trzema opornikami, przy których zaznaczono prądy w gałęziach.
+		Po lewej stronie znajduje się źródło napięcia oznaczone literą e; od jego górnego zacisku przewód biegnie w prawo i prąd 0,75 A płynie przez opornik R4, zaznaczony strzałką w prawo i napisem 0,75 A nad przewodem przed R4. Za opornikiem R4 przewód dochodzi do węzła, z którego pionowo w dół schodzi opornik R2, przez który płynie prąd 1 A w dół (strzałka w dół z napisem 1 A).
+		Z tego samego węzła górny przewód biegnie dalej w prawo do opornika R1. Za R1, w kierunku węzła nad R3, na przewodzie zaznaczono prąd 0,25 A płynący w lewo (strzałka w lewo z napisem 0,25 A). Z tego węzła pionowo w dół schodzi opornik R3, przez który płynie prąd 0,75 A w dół, opisany strzałką i napisem 0,75 A przy R3.
+		Dolny poziomy przewód łączy dolne końce oporników R2 i R3 oraz wraca do dolnego zacisku źródła napięcia po lewej, natomiast po prawej stronie jest włączone źródło prądu o wartości 1 A (koło ze strzałką w górę i napisem j = 1 A) między górnym i dolnym przewodem, zamykając pętlę obwodu..}]{./imags/L4/fig1_c.png}	
+		\caption{Przykładowe zadanie - postęp w rozwiązaniu.}
+	\end{figure}	
+\end{frame}  
+
+\begin{frame}{Przykład - pełna symulacja}
+	\begin{block}{Przykład - pełna symulacja}
+		\url{https://www.falstad.com/circuit/circuitjs.html}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Metoda zamiany źródeł}
+	Metoda zamiany źródeł Thévenina / Nortona polega na zastępowaniu fragmentu złożonego, liniowego obwodu prostym "dwójnikiem" równoważnym, co bardzo ułatwia obliczenia prądów i napięć w wybranej gałęzi.​
+	\begin{block}{Zamiana Thévenin - Norton}
+		Gałąź: źródło napięcia $e$ w szeregu z rezystancją $R$ (Thévenin) można zamienić na równoważne źródło prądu $j$ w równoległym połączeniu z tą samą rezystancją $R$ (Norton), przy czym $j=e/R$.\\
+		Odwrotnie, źródło prądu $j$ równolegle z rezystancją $R$ można zastąpić źródłem napięcia $e=jR$ w szeregu z tą samą rezystancją $R$, nie zmieniając prądów i napięć w dołączonej gałęzi A-B.
+	\end{block}
+\end{frame} 
+
+\begin{frame}{Zamiana źródeł - przykład}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			Przykładowe zadanie przedstawiono na rysunku po prawej stronie.
+			Można zauważyć, że występuje w nim zarówno źródło Thevenina jak i Nortona.
+			Przyjmijmy, że źródło Nortona pozostanie nieruszone, modyfikowane będzie źródło Thevenina.
+			W pierwszym kroku można zamienić je na źródło Nortona - o prądzie $j2=e/R_4=1,25A$.
+			Rezystancja wewnętrzna ($R_4$) pozostaje bez zmian, jednak przechodzi w połączenie równoległe.
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Po lewej stronie znajduje się źródło napięcia o wartości 5 V, narysowane jako koło ze strzałką skierowaną do góry i podpisem e = 5 V. Od górnego zacisku źródła przewód biegnie w prawo do opornika R4 o wartości 4 omy, narysowanego jako prostokąt z napisem R4 = 4 omy nad symbolem.
+				Za opornikiem R4 znajduje się węzeł łączący kilka przewodów. Od tego węzła pionowo w dół schodzi opornik R2 o wartości 2 omy, podpisany R2 = 2 omy, a jego dolny koniec jest połączony z poziomym przewodem biegnącym przy dolnej krawędzi rysunku. Z tego samego węzła przewód biegnie dalej w prawo do opornika R1 o wartości 1 om, narysowanego jako prostokąt z napisem R1 = 1 om nad nim.
+				Za opornikiem R1 znajduje się kolejny węzeł. Z tego węzła pionowo w dół schodzi opornik R3 o wartości 3 omy, oznaczony napisem R3 = 3 omy, którego dolny koniec także łączy się z dolnym poziomym przewodem. Od tego samego węzła przewód biegnie dalej w prawo aż do źródła prądu o wartości 1 A, narysowanego jako koło ze strzałką w górę i napisem j = 1 A.
+				Dolne końce obu źródeł, czyli źródła napięcia po lewej oraz źródła prądu po prawej, a także dolne końce oporników R2 i R3 są połączone jednym wspólnym poziomym przewodem, dzięki czemu cały obwód tworzy zamkniętą pętlę..}]{./imags/L4/fig1.png}	
+				\caption{Przykładowe zadanie.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Zamiana źródeł - przykład}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			W efekcie powstaje połączenie równoległe rezystorów $R_4$ i $R_2$, które można połączyć, co da rezystor $R_{24}$ o wartości $1,33\Omega$.
+			Powstanie również nowe źródło Nortona, które można zamienić w źródło Thevenina.
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Po lewej stronie znajduje się źródło napięcia o wartości 5 V, narysowane jako koło ze strzałką skierowaną do góry i podpisem e = 5 V. Od górnego zacisku źródła przewód biegnie w prawo do opornika R4 o wartości 4 omy, narysowanego jako prostokąt z napisem R4 = 4 omy nad symbolem.
+				Za opornikiem R4 znajduje się węzeł łączący kilka przewodów. Od tego węzła pionowo w dół schodzi opornik R2 o wartości 2 omy, podpisany R2 = 2 omy, a jego dolny koniec jest połączony z poziomym przewodem biegnącym przy dolnej krawędzi rysunku. Z tego samego węzła przewód biegnie dalej w prawo do opornika R1 o wartości 1 om, narysowanego jako prostokąt z napisem R1 = 1 om nad nim.
+				Za opornikiem R1 znajduje się kolejny węzeł. Z tego węzła pionowo w dół schodzi opornik R3 o wartości 3 omy, oznaczony napisem R3 = 3 omy, którego dolny koniec także łączy się z dolnym poziomym przewodem. Od tego samego węzła przewód biegnie dalej w prawo aż do źródła prądu o wartości 1 A, narysowanego jako koło ze strzałką w górę i napisem j = 1 A.
+				Dolne końce obu źródeł, czyli źródła napięcia po lewej oraz źródła prądu po prawej, a także dolne końce oporników R2 i R3 są połączone jednym wspólnym poziomym przewodem, dzięki czemu cały obwód tworzy zamkniętą pętlę..}]{./imags/L4/fig1.png}	
+				\caption{Przykładowe zadanie.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Zamiana źródeł - przykład}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			Będzie ono posiadało napięcie $e2=1,25A*1,33\Omega=1,667V$ i rezystancję wewnętrzną $R_{24}$, które będzie połączone szeregowe z rezystorem $R_1$.
+			Oba rezystory można połączyć, tworząc rezystor $R_{124}$ i ponownie zamieniając źródło.
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Po lewej stronie znajduje się źródło napięcia o wartości 5 V, narysowane jako koło ze strzałką skierowaną do góry i podpisem e = 5 V. Od górnego zacisku źródła przewód biegnie w prawo do opornika R4 o wartości 4 omy, narysowanego jako prostokąt z napisem R4 = 4 omy nad symbolem.
+				Za opornikiem R4 znajduje się węzeł łączący kilka przewodów. Od tego węzła pionowo w dół schodzi opornik R2 o wartości 2 omy, podpisany R2 = 2 omy, a jego dolny koniec jest połączony z poziomym przewodem biegnącym przy dolnej krawędzi rysunku. Z tego samego węzła przewód biegnie dalej w prawo do opornika R1 o wartości 1 om, narysowanego jako prostokąt z napisem R1 = 1 om nad nim.
+				Za opornikiem R1 znajduje się kolejny węzeł. Z tego węzła pionowo w dół schodzi opornik R3 o wartości 3 omy, oznaczony napisem R3 = 3 omy, którego dolny koniec także łączy się z dolnym poziomym przewodem. Od tego samego węzła przewód biegnie dalej w prawo aż do źródła prądu o wartości 1 A, narysowanego jako koło ze strzałką w górę i napisem j = 1 A.
+				Dolne końce obu źródeł, czyli źródła napięcia po lewej oraz źródła prądu po prawej, a także dolne końce oporników R2 i R3 są połączone jednym wspólnym poziomym przewodem, dzięki czemu cały obwód tworzy zamkniętą pętlę..}]{./imags/L4/fig1.png}	
+				\caption{Przykładowe zadanie.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Zamiana źródeł - przykład}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			Ostatecznie w układzie pozostaną dwa równolegle połączone rezystory oraz dwa źródła prądowe.
+			Rozwiązanie tego układu przy pomocy dzielnika prądowego nie powinno sprawić problemu, znając wartości prądu i napięcia na razystorze $R_3$ można wracać do wcześniejszych etapów przekształceń i odtwarzać wartości na poszczególnych elementach.
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Po lewej stronie znajduje się źródło napięcia o wartości 5 V, narysowane jako koło ze strzałką skierowaną do góry i podpisem e = 5 V. Od górnego zacisku źródła przewód biegnie w prawo do opornika R4 o wartości 4 omy, narysowanego jako prostokąt z napisem R4 = 4 omy nad symbolem.
+				Za opornikiem R4 znajduje się węzeł łączący kilka przewodów. Od tego węzła pionowo w dół schodzi opornik R2 o wartości 2 omy, podpisany R2 = 2 omy, a jego dolny koniec jest połączony z poziomym przewodem biegnącym przy dolnej krawędzi rysunku. Z tego samego węzła przewód biegnie dalej w prawo do opornika R1 o wartości 1 om, narysowanego jako prostokąt z napisem R1 = 1 om nad nim.
+				Za opornikiem R1 znajduje się kolejny węzeł. Z tego węzła pionowo w dół schodzi opornik R3 o wartości 3 omy, oznaczony napisem R3 = 3 omy, którego dolny koniec także łączy się z dolnym poziomym przewodem. Od tego samego węzła przewód biegnie dalej w prawo aż do źródła prądu o wartości 1 A, narysowanego jako koło ze strzałką w górę i napisem j = 1 A.
+				Dolne końce obu źródeł, czyli źródła napięcia po lewej oraz źródła prądu po prawej, a także dolne końce oporników R2 i R3 są połączone jednym wspólnym poziomym przewodem, dzięki czemu cały obwód tworzy zamkniętą pętlę..}]{./imags/L4/fig1.png}	
+				\caption{Przykładowe zadanie.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Przykład - symulacja zamiany źródeł}
+	\begin{block}{Przykład - symulacja zamiany źródeł}
+		\url{https://www.falstad.com/circuit/circuitjs.html}
+	\end{block}
+\end{frame}
