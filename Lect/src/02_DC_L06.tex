@@ -1,8 +1,493 @@
 \sect{Wykład 6}
-\begin{frame}{Źródła sterowane (4 sztuki)}
-	Placeholder
+\begin{frame}{Napięciowe źródła sterowane}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Sterowane źródła napięciowe to idealizowane elementy obwodu, które "wystawiają" na swoich zaciskach napięcie zależne od innego napięcia lub prądu w obwodzie, opisane równaniem typu $u_{out}=k u_{ster}$ albo $u_{out}=r i_{ster}$.
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na obrazku są dwa duże symbole obok siebie, przedstawione jako czarno‑białe rysunki.
+				Po lewej stronie jest duże koło narysowane grubą linią. W środku koła znajduje się pionowa strzałka skierowana do góry: jej trzon to pionowa linia od dolnej części koła aż prawie do góry, a na końcu linii u góry jest trójkąt tworzący grot strzałki.
+				Po prawej stronie jest bardzo podobny rysunek, ale zamiast koła jest romb (kwadrat obrócony tak, że jeden wierzchołek jest na górze, drugi na dole). Wewnątrz rombu jest taka sama pionowa strzałka skierowana do góry: pionowa linia od dolnego wierzchołka rombu do okolicy górnego, zakończona trójkątnym grotem u góry.}]{./imags/L6/zn.png}	
+				\caption{Źródła napięciowe - zwykłe i sterowane.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
 \end{frame} 
 
-\begin{frame}{Wzmacniacz operacyjny}
-	Placeholder
+\begin{frame}{Napięciowe źródła sterowane}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Sterowane źródło jest elementem czterozaciskowym: dwa zaciski wyjściowe, na których pojawia się napięcie źródła, oraz dwa zaciski sterujące, na których "mierzona" jest wielkość sterująca (napięcie lub prąd).\\
+			Wartość napięcia wyjściowego nie jest stała, lecz określona zależnością od wielkości sterującej, np. liniowo $u_{out}=A u_{ster}$ (współczynnik $A$ to wzmocnienie) lub ogólniej $u_{out}=f(u_{ster},i_{ster},t)$.
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na obrazku są dwa duże symbole obok siebie, przedstawione jako czarno‑białe rysunki.
+				Po lewej stronie jest duże koło narysowane grubą linią. W środku koła znajduje się pionowa strzałka skierowana do góry: jej trzon to pionowa linia od dolnej części koła aż prawie do góry, a na końcu linii u góry jest trójkąt tworzący grot strzałki.
+				Po prawej stronie jest bardzo podobny rysunek, ale zamiast koła jest romb (kwadrat obrócony tak, że jeden wierzchołek jest na górze, drugi na dole). Wewnątrz rombu jest taka sama pionowa strzałka skierowana do góry: pionowa linia od dolnego wierzchołka rombu do okolicy górnego, zakończona trójkątnym grotem u góry.}]{./imags/L6/zn.png}	
+				\caption{Źródła napięciowe - zwykłe i sterowane.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Napięciowe źródła sterowane}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+		\textbf{Dwa typy źródeł napięciowych}\\
+		Źródło napięcia sterowane napięciem (VCVS – Voltage Controlled Voltage Source): napięcie na wyjściu jest proporcjonalne do różnicy potencjałów między zaciskami sterującymi, np. $u_{out}=k (u_C-u_D)$. \\
+		Źródło napięcia sterowane prądem (CCVS – Current Controlled Voltage Source): napięcie na wyjściu jest proporcjonalne do prądu płynącego w wybranej gałęzi, np. $u_{out}=R i_x$, gdzie $i_x$ to prąd w gałęzi sterującej, a $R$ ma wymiar rezystancji.
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na obrazku są dwa duże symbole obok siebie, przedstawione jako czarno‑białe rysunki.
+				Po lewej stronie jest duże koło narysowane grubą linią. W środku koła znajduje się pionowa strzałka skierowana do góry: jej trzon to pionowa linia od dolnej części koła aż prawie do góry, a na końcu linii u góry jest trójkąt tworzący grot strzałki.
+				Po prawej stronie jest bardzo podobny rysunek, ale zamiast koła jest romb (kwadrat obrócony tak, że jeden wierzchołek jest na górze, drugi na dole). Wewnątrz rombu jest taka sama pionowa strzałka skierowana do góry: pionowa linia od dolnego wierzchołka rombu do okolicy górnego, zakończona trójkątnym grotem u góry.}]{./imags/L6/zn.png}	
+				\caption{Źródła napięciowe - zwykłe i sterowane.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Napięciowe źródła sterowane}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+		\textbf{Własności idealnego modelu}\\
+		Idealne sterowane źródło napięciowe ma zerową rezystancję wewnętrzną na zaciskach wyjściowych, więc utrzymuje zadane napięcie niezależnie od pobieranego prądu (w granicach modelu matematycznego).\\
+		W modelu nie płynie także prąd przez zaciski sterujące (szczególnie dla VCVS), aby nie zaburzać obwodu, z którego "pobierana" jest informacja sterująca – kontrola ma charakter pomiaru idealnego.
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na obrazku są dwa duże symbole obok siebie, przedstawione jako czarno‑białe rysunki.
+				Po lewej stronie jest duże koło narysowane grubą linią. W środku koła znajduje się pionowa strzałka skierowana do góry: jej trzon to pionowa linia od dolnej części koła aż prawie do góry, a na końcu linii u góry jest trójkąt tworzący grot strzałki.
+				Po prawej stronie jest bardzo podobny rysunek, ale zamiast koła jest romb (kwadrat obrócony tak, że jeden wierzchołek jest na górze, drugi na dole). Wewnątrz rombu jest taka sama pionowa strzałka skierowana do góry: pionowa linia od dolnego wierzchołka rombu do okolicy górnego, zakończona trójkątnym grotem u góry.}]{./imags/L6/zn.png}	
+				\caption{Źródła napięciowe - zwykłe i sterowane.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Napięciowe źródła sterowane}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+		\textbf{Zastosowania w praktyce i analizie}\\
+		Takie źródła służą do modelowania działania wzmacniaczy i elementów aktywnych: tranzystorów, wzmacniaczy operacyjnych, przetworników, gdzie sygnał wyjściowy jest funkcją sygnału wejściowego z pewnym wzmocnieniem lub przetwarzaniem. \\
+		W programach typu SPICE są podstawowym "klockiem" do budowy modeli bardziej złożonych układów (wzmacniacze, przetworniki, sprzężenia zwrotne), a w analizie teoretycznej pozwalają wygodnie rozwiązywać obwody z wzmocnieniem i nieliniowościami.
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na obrazku są dwa duże symbole obok siebie, przedstawione jako czarno‑białe rysunki.
+				Po lewej stronie jest duże koło narysowane grubą linią. W środku koła znajduje się pionowa strzałka skierowana do góry: jej trzon to pionowa linia od dolnej części koła aż prawie do góry, a na końcu linii u góry jest trójkąt tworzący grot strzałki.
+				Po prawej stronie jest bardzo podobny rysunek, ale zamiast koła jest romb (kwadrat obrócony tak, że jeden wierzchołek jest na górze, drugi na dole). Wewnątrz rombu jest taka sama pionowa strzałka skierowana do góry: pionowa linia od dolnego wierzchołka rombu do okolicy górnego, zakończona trójkątnym grotem u góry.}]{./imags/L6/zn.png}	
+				\caption{Źródła napięciowe - zwykłe i sterowane.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Prądowe źródła sterowane}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			Sterowane źródła prądowe to idealizowane elementy obwodu, które "wymuszają" prąd w swojej gałęzi, przy czym wartość tego prądu zależy od innego napięcia albo prądu w obwodzie, opisanego równaniem typu $i_{out}=g u_{ster}$ lub $i_{out}=k i_{ster}$.
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono dwa symbole obok siebie. Po lewej stronie znajduje się duże koło z podwójną obwódką, czyli dwa okręgi jeden w drugim tworzące szeroką ramkę; w środku koła umieszczona jest pionowa strzałka skierowana do góry, której trzon biegnie od dolnej części koła ku górze i kończy się trójkątnym grotem. Po prawej stronie znajduje się podobny symbol, lecz zamiast okręgów są dwa współśrodkowe romby przypominające kwadrat obrócony na róg; wewnątrz tych rombów biegnie pionowa strzałka w górę, startująca z dolnego wierzchołka wewnętrznego rombu i kończąca się trójkątną główką blisko górnego wierzchołka.}]{./imags/L6/zp.png}	
+				\caption{Źródła prądowe - zwykłe i sterowane.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Prądowe źródła sterowane}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+		\textbf{Ogólna definicja}
+		Sterowane źródło prądowe jest czterozaciskowe: dwa zaciski to wyjście, przez które płynie wymuszany prąd, a dwa kolejne to zaciski sterujące, na których "mierzona" jest wielkość sterująca (napięcie lub prąd). Wartość prądu wyjściowego nie jest stała, lecz wyznaczana zależnością od wielkości sterującej, najczęściej liniową, np. $i_{out}=g u_{ster}$ (współczynnik $g$ bywa nazywany transkonduktancją) lub $i_{out}=k i_{ster}$.
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono dwa symbole obok siebie. Po lewej stronie znajduje się duże koło z podwójną obwódką, czyli dwa okręgi jeden w drugim tworzące szeroką ramkę; w środku koła umieszczona jest pionowa strzałka skierowana do góry, której trzon biegnie od dolnej części koła ku górze i kończy się trójkątnym grotem. Po prawej stronie znajduje się podobny symbol, lecz zamiast okręgów są dwa współśrodkowe romby przypominające kwadrat obrócony na róg; wewnątrz tych rombów biegnie pionowa strzałka w górę, startująca z dolnego wierzchołka wewnętrznego rombu i kończąca się trójkątną główką blisko górnego wierzchołka.}]{./imags/L6/zp.png}	
+				\caption{Źródła prądowe - zwykłe i sterowane.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Prądowe źródła sterowane}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+		\textbf{Dwa typy źródeł prądowych}\\
+		Wśród sterowanych źródeł prądowych wyróżnia się:\\
+		Źródło prądu sterowane napięciem (VCCS – Voltage Controlled Current Source): prąd wyjściowy jest proporcjonalny do napięcia między zaciskami sterującymi, np. $i_{out}=g (u_C-u_D)$.\\
+		Źródło prądu sterowane prądem (CCCS – Current Controlled Current Source): prąd wyjściowy jest proporcjonalny do prądu płynącego w wskazanej gałęzi, np. $i_{out}=k i_x$.
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono dwa symbole obok siebie. Po lewej stronie znajduje się duże koło z podwójną obwódką, czyli dwa okręgi jeden w drugim tworzące szeroką ramkę; w środku koła umieszczona jest pionowa strzałka skierowana do góry, której trzon biegnie od dolnej części koła ku górze i kończy się trójkątnym grotem. Po prawej stronie znajduje się podobny symbol, lecz zamiast okręgów są dwa współśrodkowe romby przypominające kwadrat obrócony na róg; wewnątrz tych rombów biegnie pionowa strzałka w górę, startująca z dolnego wierzchołka wewnętrznego rombu i kończąca się trójkątną główką blisko górnego wierzchołka.}]{./imags/L6/zp.png}	
+				\caption{Źródła prądowe - zwykłe i sterowane.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Prądowe źródła sterowane}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+		\textbf{Własności idealnego modelu}\\
+		Idealne sterowane źródło prądowe ma nieskończenie dużą rezystancję wewnętrzną między zaciskami wyjściowymi, co oznacza, że stara się utrzymywać zadany prąd niezależnie od napięcia potrzebnego na swoich zaciskach (w granicach modelu). Zaciski sterujące nie powinny w idealnym modelu pobierać mocy ani zaburzać gałęzi, z której pochodzi sygnał sterujący – działają jak idealny czujnik napięcia lub prądu.
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono dwa symbole obok siebie. Po lewej stronie znajduje się duże koło z podwójną obwódką, czyli dwa okręgi jeden w drugim tworzące szeroką ramkę; w środku koła umieszczona jest pionowa strzałka skierowana do góry, której trzon biegnie od dolnej części koła ku górze i kończy się trójkątnym grotem. Po prawej stronie znajduje się podobny symbol, lecz zamiast okręgów są dwa współśrodkowe romby przypominające kwadrat obrócony na róg; wewnątrz tych rombów biegnie pionowa strzałka w górę, startująca z dolnego wierzchołka wewnętrznego rombu i kończąca się trójkątną główką blisko górnego wierzchołka.}]{./imags/L6/zp.png}	
+				\caption{Źródła prądowe - zwykłe i sterowane.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Prądowe źródła sterowane}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+		\textbf{Zastosowania w praktyce i analizie}\\
+		Takie źródła wykorzystuje się do modelowania tranzystorów, wzmacniaczy transkonduktancyjnych i wielu układów analogowych, w których prąd wyjściowy jest funkcją napięcia lub prądu wejściowego. W analizie teoretycznej oraz w symulacjach numerycznych pozwalają wygodnie opisać zachowanie układów wzmacniających, źródeł prądowych i układów ze sprzężeniem zwrotnym, traktując skomplikowane bloki jako proste zależności między gałęzią sterującą a prądowym wyjściem.
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono dwa symbole obok siebie. Po lewej stronie znajduje się duże koło z podwójną obwódką, czyli dwa okręgi jeden w drugim tworzące szeroką ramkę; w środku koła umieszczona jest pionowa strzałka skierowana do góry, której trzon biegnie od dolnej części koła ku górze i kończy się trójkątnym grotem. Po prawej stronie znajduje się podobny symbol, lecz zamiast okręgów są dwa współśrodkowe romby przypominające kwadrat obrócony na róg; wewnątrz tych rombów biegnie pionowa strzałka w górę, startująca z dolnego wierzchołka wewnętrznego rombu i kończąca się trójkątną główką blisko górnego wierzchołka.}]{./imags/L6/zp.png}	
+				\caption{Źródła prądowe - zwykłe i sterowane.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+\begin{frame}{Przykładowe zadania z źródłami sterowanymi (1)}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+		Parametry:\\
+		$R_1=10\Omega$\\
+		$R_2=20\Omega$\\ 
+		$e=12V$\\
+		$R_3=4\Omega$\\
+		$R_4=3\Omega$\\
+		$R_5=6\Omega$\\
+		$k=3$\\
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono poziomy schemat obwodu z pięcioma rezystorami i dwoma źródłami prądu: po lewej stronie jest niezależne źródło prądu, po prawej sterowane źródło prądu. Po lewej stronie, przy dolnej krawędzi, znajduje się okrągły symbol źródła prądu ze strzałką skierowaną do góry; nad nim jest poziomy prostokątny rezystor R1 włączony szeregowo. Prawy koniec R1 łączy się z pionowym rezystorem R2, który opada w dół do wspólnego dolnego przewodu, tworząc pętlę; obok R2 jest strzałka napięcia skierowana w górę z opisem UR2.
+				Na środku rysunku, pomiędzy lewą i prawą częścią, widnieje napis kUR2, czyli informacja, że dalszy element jest sterowany napięciem z R2 pomnożonym przez współczynnik k. Po prawej stronie tego napisu znajduje się rombowy symbol sterowanego źródła prądu z pionową strzałką w górę; jego dolny koniec jest połączony z dolnym wspólnym przewodem, a górny z poziomym rezystorem R3 położonym nad źródłem.
+				Od prawego końca R3 wychodzi przewód, który rozdziela się na dwie gałęzie. W dolnej gałęzi jest pionowy rezystor R4, którego górny koniec łączy się z punktem rozgałęzienia, a dolny z dolnym wspólnym przewodem. W górnej gałęzi znajduje się poziomy rezystor R5, połączony lewym końcem z tym samym punktem rozgałęzienia, a prawym końcem schodzący w dół do dolnego przewodu, tak że R4 i R5 są połączone równolegle.}]{./imags/L6/z1.png}	
+				\caption{Zadanie 1}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+
+\begin{frame}{Przykładowe zadania z źródłami sterowanymi (1)}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+		W zadaniu występuje sterowane źródło napięciowe, jednak specyfika zadania sprawia że nie jest ono znacznym utrudnieniem.\\
+		Na początku można zauważyć odseparowaną część obwodu po lewej stronie.
+		Znając wartości $R_1=10\Omega$, $R_2=20\Omega$, $e=12V$, można obliczyć napięcie sterujące $U_{R2}=e \frac{R_2}{R_1 + R_2} = 8V$.
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono poziomy schemat obwodu z pięcioma rezystorami i dwoma źródłami prądu: po lewej stronie jest niezależne źródło prądu, po prawej sterowane źródło prądu. Po lewej stronie, przy dolnej krawędzi, znajduje się okrągły symbol źródła prądu ze strzałką skierowaną do góry; nad nim jest poziomy prostokątny rezystor R1 włączony szeregowo. Prawy koniec R1 łączy się z pionowym rezystorem R2, który opada w dół do wspólnego dolnego przewodu, tworząc pętlę; obok R2 jest strzałka napięcia skierowana w górę z opisem UR2.
+				Na środku rysunku, pomiędzy lewą i prawą częścią, widnieje napis kUR2, czyli informacja, że dalszy element jest sterowany napięciem z R2 pomnożonym przez współczynnik k. Po prawej stronie tego napisu znajduje się rombowy symbol sterowanego źródła prądu z pionową strzałką w górę; jego dolny koniec jest połączony z dolnym wspólnym przewodem, a górny z poziomym rezystorem R3 położonym nad źródłem.
+				Od prawego końca R3 wychodzi przewód, który rozdziela się na dwie gałęzie. W dolnej gałęzi jest pionowy rezystor R4, którego górny koniec łączy się z punktem rozgałęzienia, a dolny z dolnym wspólnym przewodem. W górnej gałęzi znajduje się poziomy rezystor R5, połączony lewym końcem z tym samym punktem rozgałęzienia, a prawym końcem schodzący w dół do dolnego przewodu, tak że R4 i R5 są połączone równolegle.}]{./imags/L6/z1.png}	
+				\caption{Zadanie 1}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Przykładowe zadania z źródłami sterowanymi (1)}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+		Napięcie na źródle sterowanym wynosi zatem $k U_{R2} = 3 \cdot 8V = 24V$. \\
+		Następnym krokiem może być zastąpienie rezystancji $R_4$ i $R_5$ jedną rezystancją zastępczą $R_Z$ o wartości $R_Z = \frac{R_4 R_5}{R_4+R_5} = \frac{6 \cdot 3}{6+3} \Omega = 2 \Omega$.
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono poziomy schemat obwodu z pięcioma rezystorami i dwoma źródłami prądu: po lewej stronie jest niezależne źródło prądu, po prawej sterowane źródło prądu. Po lewej stronie, przy dolnej krawędzi, znajduje się okrągły symbol źródła prądu ze strzałką skierowaną do góry; nad nim jest poziomy prostokątny rezystor R1 włączony szeregowo. Prawy koniec R1 łączy się z pionowym rezystorem R2, który opada w dół do wspólnego dolnego przewodu, tworząc pętlę; obok R2 jest strzałka napięcia skierowana w górę z opisem UR2.
+				Na środku rysunku, pomiędzy lewą i prawą częścią, widnieje napis kUR2, czyli informacja, że dalszy element jest sterowany napięciem z R2 pomnożonym przez współczynnik k. Po prawej stronie tego napisu znajduje się rombowy symbol sterowanego źródła prądu z pionową strzałką w górę; jego dolny koniec jest połączony z dolnym wspólnym przewodem, a górny z poziomym rezystorem R3 położonym nad źródłem.
+				Od prawego końca R3 wychodzi przewód, który rozdziela się na dwie gałęzie. W dolnej gałęzi jest pionowy rezystor R4, którego górny koniec łączy się z punktem rozgałęzienia, a dolny z dolnym wspólnym przewodem. W górnej gałęzi znajduje się poziomy rezystor R5, połączony lewym końcem z tym samym punktem rozgałęzienia, a prawym końcem schodzący w dół do dolnego przewodu, tak że R4 i R5 są połączone równolegle.}]{./imags/L6/z1.png}	
+				\caption{Zadanie 1}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Przykładowe zadania z źródłami sterowanymi (1)}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+		Prąd płynący przez źródło sterowane jest zatem równy $i_k=\frac{24V}{R_3+R_Z}=\frac{24V}{4+2} A = 4A$, co z kolei sprawia że na rezystorze $R_3$ odkłada się napięcie $4A \cdot R_3 = 16V$.\\
+		Na rezystorach $R_4$ i $R_5$ musi się odkładać zatem pozostałe $8V$, co sprawia że płynie przez nie prąd wynoszący odpowiednio $i_{R4}=2,667A$ i $i_{R5}=1,333A$
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono poziomy schemat obwodu z pięcioma rezystorami i dwoma źródłami prądu: po lewej stronie jest niezależne źródło prądu, po prawej sterowane źródło prądu. Po lewej stronie, przy dolnej krawędzi, znajduje się okrągły symbol źródła prądu ze strzałką skierowaną do góry; nad nim jest poziomy prostokątny rezystor R1 włączony szeregowo. Prawy koniec R1 łączy się z pionowym rezystorem R2, który opada w dół do wspólnego dolnego przewodu, tworząc pętlę; obok R2 jest strzałka napięcia skierowana w górę z opisem UR2.
+				Na środku rysunku, pomiędzy lewą i prawą częścią, widnieje napis kUR2, czyli informacja, że dalszy element jest sterowany napięciem z R2 pomnożonym przez współczynnik k. Po prawej stronie tego napisu znajduje się rombowy symbol sterowanego źródła prądu z pionową strzałką w górę; jego dolny koniec jest połączony z dolnym wspólnym przewodem, a górny z poziomym rezystorem R3 położonym nad źródłem.
+				Od prawego końca R3 wychodzi przewód, który rozdziela się na dwie gałęzie. W dolnej gałęzi jest pionowy rezystor R4, którego górny koniec łączy się z punktem rozgałęzienia, a dolny z dolnym wspólnym przewodem. W górnej gałęzi znajduje się poziomy rezystor R5, połączony lewym końcem z tym samym punktem rozgałęzienia, a prawym końcem schodzący w dół do dolnego przewodu, tak że R4 i R5 są połączone równolegle.}]{./imags/L6/z1.png}	
+				\caption{Zadanie 1}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Przykładowe zadania z źródłami sterowanymi (2)}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+		Parametry:\\
+		$e=12V$\\
+		$R_1=10\Omega$\\
+		$R_2=20\Omega$\\ 
+		$R_x=18\Omega$\\
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono prosty, pojedynczy obwód zamknięty złożony z niezależnego źródła prądu, dwóch rezystorów i sterowanego źródła prądowego.
+				Po lewej stronie, przy dolnej części obwodu, znajduje się okrągły symbol niezależnego źródła prądu ze strzałką skierowaną do góry wewnątrz koła. Od górnego bieguna źródła przewód biegnie poziomo w prawo do prostokątnego rezystora R1, włączonego szeregowo w tę gałąź. Od prawego końca R1 przewód biegnie dalej poziomo w prawo do rombowego symbolu sterowanego źródła prądu; wewnątrz rombu znajduje się pozioma strzałka skierowana w prawo, a nad rombem jest napis iRx, który oznacza, że prąd źródła zależy od prądu i oraz parametru Rx.
+				Z prawej strony rombu przewód biegnie dalej poziomo w prawo do prostokątnego rezystora R2 ustawionego pionowo; z jego dolnego końca przewód schodzi w dół i zawraca w lewo, tworząc dolną gałąź obwodu. Na tym dolnym przewodzie, mniej więcej na środku, narysowana jest pozioma strzałka skierowana w lewo z opisem i, oznaczająca prąd płynący w obwodzie. Ten dolny przewód wraca do dolnego bieguna okrągłego źródła prądu, zamykając pętlę.}]{./imags/L6/z2.png}	
+				\caption{Zadanie 2}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Przykładowe zadania z źródłami sterowanymi (2)}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+		W tym przypadku sytuacja jest nieco bardziej złożona, napięcie źródła sterowanego jest zależne od przepływającego przez nie prądu.\\
+		Zadania to nadal pozostaje jednak względnie proste, ze względu na brak węzłów i występowanie tylko jednego oczka napięciowego.
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono prosty, pojedynczy obwód zamknięty złożony z niezależnego źródła prądu, dwóch rezystorów i sterowanego źródła prądowego.
+				Po lewej stronie, przy dolnej części obwodu, znajduje się okrągły symbol niezależnego źródła prądu ze strzałką skierowaną do góry wewnątrz koła. Od górnego bieguna źródła przewód biegnie poziomo w prawo do prostokątnego rezystora R1, włączonego szeregowo w tę gałąź. Od prawego końca R1 przewód biegnie dalej poziomo w prawo do rombowego symbolu sterowanego źródła prądu; wewnątrz rombu znajduje się pozioma strzałka skierowana w prawo, a nad rombem jest napis iRx, który oznacza, że prąd źródła zależy od prądu i oraz parametru Rx.
+				Z prawej strony rombu przewód biegnie dalej poziomo w prawo do prostokątnego rezystora R2 ustawionego pionowo; z jego dolnego końca przewód schodzi w dół i zawraca w lewo, tworząc dolną gałąź obwodu. Na tym dolnym przewodzie, mniej więcej na środku, narysowana jest pozioma strzałka skierowana w lewo z opisem i, oznaczająca prąd płynący w obwodzie. Ten dolny przewód wraca do dolnego bieguna okrągłego źródła prądu, zamykając pętlę.}]{./imags/L6/z2.png}	
+				\caption{Zadanie 2}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Przykładowe zadania z źródłami sterowanymi (2)}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+		Równanie oczka:\\
+		$e-U_{R1} + i R_x - U_{R2}=0V$\\
+		Napięcia na rezystorach można zapisać z wykorzystaniem prądu $i$ i ich rezystancji:\\
+		$e- i R_1 + i R_x - i R_2=0V$\\
+		$i (R_1 -R_x + R_2)=e$\\
+		Prąd w obwodzie jest zatem równy: \\
+		$i=\frac{e}{R_1+R_2 - R_x} = \frac{12V}{10\Omega + 20\Omega - 18\Omega} = 1A$.
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono prosty, pojedynczy obwód zamknięty złożony z niezależnego źródła prądu, dwóch rezystorów i sterowanego źródła prądowego.
+				Po lewej stronie, przy dolnej części obwodu, znajduje się okrągły symbol niezależnego źródła prądu ze strzałką skierowaną do góry wewnątrz koła. Od górnego bieguna źródła przewód biegnie poziomo w prawo do prostokątnego rezystora R1, włączonego szeregowo w tę gałąź. Od prawego końca R1 przewód biegnie dalej poziomo w prawo do rombowego symbolu sterowanego źródła prądu; wewnątrz rombu znajduje się pozioma strzałka skierowana w prawo, a nad rombem jest napis iRx, który oznacza, że prąd źródła zależy od prądu i oraz parametru Rx.
+				Z prawej strony rombu przewód biegnie dalej poziomo w prawo do prostokątnego rezystora R2 ustawionego pionowo; z jego dolnego końca przewód schodzi w dół i zawraca w lewo, tworząc dolną gałąź obwodu. Na tym dolnym przewodzie, mniej więcej na środku, narysowana jest pozioma strzałka skierowana w lewo z opisem i, oznaczająca prąd płynący w obwodzie. Ten dolny przewód wraca do dolnego bieguna okrągłego źródła prądu, zamykając pętlę.}]{./imags/L6/z2.png}	
+				\caption{Zadanie 2}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Przykładowe zadania z źródłami sterowanymi (2)}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+		Znajomość prądu $i=1A$ pozwala na wyznaczenie brakujących napięć:\\
+		$U_{R1}=i R_1 = 10V$\\
+		$U_{R2}=i R_2 = 20V$\\
+		$i R_X = 18V$\\
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono prosty, pojedynczy obwód zamknięty złożony z niezależnego źródła prądu, dwóch rezystorów i sterowanego źródła prądowego.
+				Po lewej stronie, przy dolnej części obwodu, znajduje się okrągły symbol niezależnego źródła prądu ze strzałką skierowaną do góry wewnątrz koła. Od górnego bieguna źródła przewód biegnie poziomo w prawo do prostokątnego rezystora R1, włączonego szeregowo w tę gałąź. Od prawego końca R1 przewód biegnie dalej poziomo w prawo do rombowego symbolu sterowanego źródła prądu; wewnątrz rombu znajduje się pozioma strzałka skierowana w prawo, a nad rombem jest napis iRx, który oznacza, że prąd źródła zależy od prądu i oraz parametru Rx.
+				Z prawej strony rombu przewód biegnie dalej poziomo w prawo do prostokątnego rezystora R2 ustawionego pionowo; z jego dolnego końca przewód schodzi w dół i zawraca w lewo, tworząc dolną gałąź obwodu. Na tym dolnym przewodzie, mniej więcej na środku, narysowana jest pozioma strzałka skierowana w lewo z opisem i, oznaczająca prąd płynący w obwodzie. Ten dolny przewód wraca do dolnego bieguna okrągłego źródła prądu, zamykając pętlę.}]{./imags/L6/z2.png}	
+				\caption{Zadanie 2}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Przykładowe zadania z źródłami sterowanymi (3)}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+		Parametry:\\
+		$j=10mA$\\
+		$R_1=1k\Omega$\\
+		$R_2=1k\Omega$\\ 
+		$R_3=3k\Omega$\\ 
+		$g=4mS$\\
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono pionowy, zamknięty obwód z trzema rezystorami, jednym niezależnym źródłem prądu i jednym sterowanym źródłem prądowego typu VCCS, czyli źródłem prądu sterowanym napięciem UR2.
+				Po lewej stronie obwodu, mniej więcej w jego środku, znajduje się rombowy symbol źródła prądu z pionową strzałką skierowaną do góry, otoczony dodatkową, nieco większą ramką rombu. To sterowane źródło prądowe opisane jest pionowym napisem g·UR2, umieszczonym wzdłuż lewej krawędzi rysunku: litera g u góry, poniżej litera U, a jeszcze niżej indeks R2, co oznacza, że prąd tego źródła jest równy g razy napięcie UR2 na rezystorze R2. Górny i dolny wierzchołek rombu są połączone pionowym przewodem z górnym i dolnym węzłem obwodu, tak że źródło jest włączone w lewą gałąź pionowego prostokąta tworzonego przez przewody obwodu.
+				Na prawo od sterowanego źródła, w środkowej pionowej gałęzi, znajduje się prostokątny rezystor R1 ustawiony pionowo; jego górny i dolny koniec są połączone odpowiednio z górnym i dolnym węzłem obwodu, tak że R1 jest w gałęzi równoległej do sterowanego źródła prądu.
+				Jeszcze dalej w prawo, w kolejnej pionowej gałęzi, są dwa rezystory jeden nad drugim: u góry rezystor R2, u dołu rezystor R3. Oba mają kształt pionowych prostokątów połączonych w słupek; górny koniec R2 jest połączony z górnym węzłem obwodu, dolny koniec R3 z dolnym, a ich styczne końce w środku gałęzi tworzą punkt połączenia między R2 i R3. Przy R2 znajduje się strzałka napięcia skierowana do góry z opisem UR2, wskazująca, że napięcie UR2 mierzone jest od dolnego do górnego końca tego rezystora.
+				Po prawej stronie rysunku, w skrajnej pionowej gałęzi, umieszczone jest okrągłe niezależne źródło prądu z pionową strzałką skierowaną do góry; jest ono połączone górą z górnym węzłem obwodu, a dołem z dolnym, i opisane literą j umieszczoną obok po prawej stronie. Górny i dolny węzeł obwodu, do których podłączone są wszystkie gałęzie, są połączone poziomymi przewodami biegnącymi wzdłuż górnej i dolnej krawędzi rysunku, z zaznaczonymi kropkami w miejscach, gdzie łączą się z gałęziami.}]{./imags/L6/z3.png}	
+				\caption{Zadanie 3}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+
+\begin{frame}{Przykładowe zadania z źródłami sterowanymi (3)}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+		Nieco bardziej złożone zadanie z sterowanym źródłem prądowym. Całość upraszcza jednak występowanie tylko dwóch węzłów.
+		Ich równania będą identyczne, z tego powodu wystarczy skupić się na jednym z nich, którego równanie będzie miało postać:\\
+		$gU_{R2} + j - i_{R1} - i_{R2} =0A$
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono pionowy, zamknięty obwód z trzema rezystorami, jednym niezależnym źródłem prądu i jednym sterowanym źródłem prądowego typu VCCS, czyli źródłem prądu sterowanym napięciem UR2.
+				Po lewej stronie obwodu, mniej więcej w jego środku, znajduje się rombowy symbol źródła prądu z pionową strzałką skierowaną do góry, otoczony dodatkową, nieco większą ramką rombu. To sterowane źródło prądowe opisane jest pionowym napisem g·UR2, umieszczonym wzdłuż lewej krawędzi rysunku: litera g u góry, poniżej litera U, a jeszcze niżej indeks R2, co oznacza, że prąd tego źródła jest równy g razy napięcie UR2 na rezystorze R2. Górny i dolny wierzchołek rombu są połączone pionowym przewodem z górnym i dolnym węzłem obwodu, tak że źródło jest włączone w lewą gałąź pionowego prostokąta tworzonego przez przewody obwodu.
+				Na prawo od sterowanego źródła, w środkowej pionowej gałęzi, znajduje się prostokątny rezystor R1 ustawiony pionowo; jego górny i dolny koniec są połączone odpowiednio z górnym i dolnym węzłem obwodu, tak że R1 jest w gałęzi równoległej do sterowanego źródła prądu.
+				Jeszcze dalej w prawo, w kolejnej pionowej gałęzi, są dwa rezystory jeden nad drugim: u góry rezystor R2, u dołu rezystor R3. Oba mają kształt pionowych prostokątów połączonych w słupek; górny koniec R2 jest połączony z górnym węzłem obwodu, dolny koniec R3 z dolnym, a ich styczne końce w środku gałęzi tworzą punkt połączenia między R2 i R3. Przy R2 znajduje się strzałka napięcia skierowana do góry z opisem UR2, wskazująca, że napięcie UR2 mierzone jest od dolnego do górnego końca tego rezystora.
+				Po prawej stronie rysunku, w skrajnej pionowej gałęzi, umieszczone jest okrągłe niezależne źródło prądu z pionową strzałką skierowaną do góry; jest ono połączone górą z górnym węzłem obwodu, a dołem z dolnym, i opisane literą j umieszczoną obok po prawej stronie. Górny i dolny węzeł obwodu, do których podłączone są wszystkie gałęzie, są połączone poziomymi przewodami biegnącymi wzdłuż górnej i dolnej krawędzi rysunku, z zaznaczonymi kropkami w miejscach, gdzie łączą się z gałęziami.}]{./imags/L6/z3.png}	
+				\caption{Zadanie 3}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+
+\begin{frame}{Przykładowe zadania z źródłami sterowanymi (3)}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+		Bazując na równaniu dzielnika prądowego, można zauważyć, że prąd $i_{R2}$ będzie równy:\\
+		$i_{R2}=(j+g U_{R2}) \frac{R_1}{R_1+R_2+R_3} = 0.2 (j + g U_{R2}) A$
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono pionowy, zamknięty obwód z trzema rezystorami, jednym niezależnym źródłem prądu i jednym sterowanym źródłem prądowego typu VCCS, czyli źródłem prądu sterowanym napięciem UR2.
+				Po lewej stronie obwodu, mniej więcej w jego środku, znajduje się rombowy symbol źródła prądu z pionową strzałką skierowaną do góry, otoczony dodatkową, nieco większą ramką rombu. To sterowane źródło prądowe opisane jest pionowym napisem g·UR2, umieszczonym wzdłuż lewej krawędzi rysunku: litera g u góry, poniżej litera U, a jeszcze niżej indeks R2, co oznacza, że prąd tego źródła jest równy g razy napięcie UR2 na rezystorze R2. Górny i dolny wierzchołek rombu są połączone pionowym przewodem z górnym i dolnym węzłem obwodu, tak że źródło jest włączone w lewą gałąź pionowego prostokąta tworzonego przez przewody obwodu.
+				Na prawo od sterowanego źródła, w środkowej pionowej gałęzi, znajduje się prostokątny rezystor R1 ustawiony pionowo; jego górny i dolny koniec są połączone odpowiednio z górnym i dolnym węzłem obwodu, tak że R1 jest w gałęzi równoległej do sterowanego źródła prądu.
+				Jeszcze dalej w prawo, w kolejnej pionowej gałęzi, są dwa rezystory jeden nad drugim: u góry rezystor R2, u dołu rezystor R3. Oba mają kształt pionowych prostokątów połączonych w słupek; górny koniec R2 jest połączony z górnym węzłem obwodu, dolny koniec R3 z dolnym, a ich styczne końce w środku gałęzi tworzą punkt połączenia między R2 i R3. Przy R2 znajduje się strzałka napięcia skierowana do góry z opisem UR2, wskazująca, że napięcie UR2 mierzone jest od dolnego do górnego końca tego rezystora.
+				Po prawej stronie rysunku, w skrajnej pionowej gałęzi, umieszczone jest okrągłe niezależne źródło prądu z pionową strzałką skierowaną do góry; jest ono połączone górą z górnym węzłem obwodu, a dołem z dolnym, i opisane literą j umieszczoną obok po prawej stronie. Górny i dolny węzeł obwodu, do których podłączone są wszystkie gałęzie, są połączone poziomymi przewodami biegnącymi wzdłuż górnej i dolnej krawędzi rysunku, z zaznaczonymi kropkami w miejscach, gdzie łączą się z gałęziami.}]{./imags/L6/z3.png}	
+				\caption{Zadanie 3}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Przykładowe zadania z źródłami sterowanymi (3)}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+		Oznacza to że napięcie $U_{R2}$ wynosi:\\
+		$U_{R2} = i_{R2} R_2 = 0.2 R_2 (j + g U_{R2})$\\
+		Równanie to można przekształcić do postaci:
+		$U_{R2} = 0.2 R_2 j + 0.2 R_2 g U_{R2}$\\
+		$U_{R2} - 0.2 R_2 g U_{R2} = 0.2 R_2 j$\\
+		$U_{R2} (1 - 0.2 R_2 g) = 0.2 R_2 j$\\
+		$U_{R2} = \frac{0.2 R_2 j}{1-0.2 R_2 g} = 10V$
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono pionowy, zamknięty obwód z trzema rezystorami, jednym niezależnym źródłem prądu i jednym sterowanym źródłem prądowego typu VCCS, czyli źródłem prądu sterowanym napięciem UR2.
+				Po lewej stronie obwodu, mniej więcej w jego środku, znajduje się rombowy symbol źródła prądu z pionową strzałką skierowaną do góry, otoczony dodatkową, nieco większą ramką rombu. To sterowane źródło prądowe opisane jest pionowym napisem g·UR2, umieszczonym wzdłuż lewej krawędzi rysunku: litera g u góry, poniżej litera U, a jeszcze niżej indeks R2, co oznacza, że prąd tego źródła jest równy g razy napięcie UR2 na rezystorze R2. Górny i dolny wierzchołek rombu są połączone pionowym przewodem z górnym i dolnym węzłem obwodu, tak że źródło jest włączone w lewą gałąź pionowego prostokąta tworzonego przez przewody obwodu.
+				Na prawo od sterowanego źródła, w środkowej pionowej gałęzi, znajduje się prostokątny rezystor R1 ustawiony pionowo; jego górny i dolny koniec są połączone odpowiednio z górnym i dolnym węzłem obwodu, tak że R1 jest w gałęzi równoległej do sterowanego źródła prądu.
+				Jeszcze dalej w prawo, w kolejnej pionowej gałęzi, są dwa rezystory jeden nad drugim: u góry rezystor R2, u dołu rezystor R3. Oba mają kształt pionowych prostokątów połączonych w słupek; górny koniec R2 jest połączony z górnym węzłem obwodu, dolny koniec R3 z dolnym, a ich styczne końce w środku gałęzi tworzą punkt połączenia między R2 i R3. Przy R2 znajduje się strzałka napięcia skierowana do góry z opisem UR2, wskazująca, że napięcie UR2 mierzone jest od dolnego do górnego końca tego rezystora.
+				Po prawej stronie rysunku, w skrajnej pionowej gałęzi, umieszczone jest okrągłe niezależne źródło prądu z pionową strzałką skierowaną do góry; jest ono połączone górą z górnym węzłem obwodu, a dołem z dolnym, i opisane literą j umieszczoną obok po prawej stronie. Górny i dolny węzeł obwodu, do których podłączone są wszystkie gałęzie, są połączone poziomymi przewodami biegnącymi wzdłuż górnej i dolnej krawędzi rysunku, z zaznaczonymi kropkami w miejscach, gdzie łączą się z gałęziami.}]{./imags/L6/z3.png}	
+				\caption{Zadanie 3}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Przykładowe zadania z źródłami sterowanymi (3)}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+		Dalej można obliczyć:\\
+		$gU_{R2} = 0.004S*10V=40mA$\\
+		$i_{R1}=\frac{R_2+R_3}{R_1+R_2+R_3}*(40mA+10mA)=40mA$\\
+		$U_{R1}=R_1 \cdot 40mA = 40V$
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono pionowy, zamknięty obwód z trzema rezystorami, jednym niezależnym źródłem prądu i jednym sterowanym źródłem prądowego typu VCCS, czyli źródłem prądu sterowanym napięciem UR2.
+				Po lewej stronie obwodu, mniej więcej w jego środku, znajduje się rombowy symbol źródła prądu z pionową strzałką skierowaną do góry, otoczony dodatkową, nieco większą ramką rombu. To sterowane źródło prądowe opisane jest pionowym napisem g·UR2, umieszczonym wzdłuż lewej krawędzi rysunku: litera g u góry, poniżej litera U, a jeszcze niżej indeks R2, co oznacza, że prąd tego źródła jest równy g razy napięcie UR2 na rezystorze R2. Górny i dolny wierzchołek rombu są połączone pionowym przewodem z górnym i dolnym węzłem obwodu, tak że źródło jest włączone w lewą gałąź pionowego prostokąta tworzonego przez przewody obwodu.
+				Na prawo od sterowanego źródła, w środkowej pionowej gałęzi, znajduje się prostokątny rezystor R1 ustawiony pionowo; jego górny i dolny koniec są połączone odpowiednio z górnym i dolnym węzłem obwodu, tak że R1 jest w gałęzi równoległej do sterowanego źródła prądu.
+				Jeszcze dalej w prawo, w kolejnej pionowej gałęzi, są dwa rezystory jeden nad drugim: u góry rezystor R2, u dołu rezystor R3. Oba mają kształt pionowych prostokątów połączonych w słupek; górny koniec R2 jest połączony z górnym węzłem obwodu, dolny koniec R3 z dolnym, a ich styczne końce w środku gałęzi tworzą punkt połączenia między R2 i R3. Przy R2 znajduje się strzałka napięcia skierowana do góry z opisem UR2, wskazująca, że napięcie UR2 mierzone jest od dolnego do górnego końca tego rezystora.
+				Po prawej stronie rysunku, w skrajnej pionowej gałęzi, umieszczone jest okrągłe niezależne źródło prądu z pionową strzałką skierowaną do góry; jest ono połączone górą z górnym węzłem obwodu, a dołem z dolnym, i opisane literą j umieszczoną obok po prawej stronie. Górny i dolny węzeł obwodu, do których podłączone są wszystkie gałęzie, są połączone poziomymi przewodami biegnącymi wzdłuż górnej i dolnej krawędzi rysunku, z zaznaczonymi kropkami w miejscach, gdzie łączą się z gałęziami.}]{./imags/L6/z3.png}	
+				\caption{Zadanie 3}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Przykładowe zadania z źródłami sterowanymi (4)}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+		Parametry:\\
+		$j_1=10mA$\\
+		$j_2=30mA$\\
+		$R=1k\Omega$\\
+		$k=5$\\ 
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono obwód złożony z rezystorów, dwóch niezależnych źródeł prądu oraz jednego sterowanego źródła prądowego, ułożony w kształt prostokątnej ramki z gałęziami wewnętrznymi.
+				Górna gałąź prostokąta biegnie poziomo z lewej do prawej; mniej więcej pośrodku górnej gałęzi znajduje się poziomy prostokątny rezystor oznaczony literą R. Lewa pionowa gałąź prostokąta zawiera pionowy rezystor R, którego górny koniec łączy się z lewym końcem górnej gałęzi, a dolny z lewym końcem dolnej gałęzi. Dolna gałąź prostokąta, biegnąca poziomo z lewej do prawej, zawiera pośrodku prostokątny rezystor R; przy jego prawym końcu, na dolnym przewodzie, znajduje się pozioma strzałka skierowana w prawo z opisem ix, oznaczająca prąd w dolnej gałęzi.
+				Wewnątrz prostokątnej ramki, mniej więcej na środku, narysowane jest rombowe źródło sterowane z poziomą strzałką skierowaną w lewo; nad nim widnieje napis k·ix, co oznacza, że wartość prądu tego źródła jest proporcjonalna do prądu ix pomnożonego przez współczynnik k. Lewa strona rombu jest połączona krótkim poziomym odcinkiem z lewą pionową gałęzią obwodu w jej środku, a prawa strona rombu – z prawą pionową gałęzią w jej środku.
+				Na prawej pionowej gałęzi, między górną a dolną gałęzią prostokąta, znajduje się pionowy prostokątny rezystor R umieszczony mniej więcej w górnej połowie tej gałęzi. Pod nim, bliżej dolnej gałęzi, w tę samą pionową gałąź włączone jest okrągłe niezależne źródło prądu ze strzałką skierowaną do góry; obok, po prawej stronie, znajduje się oznaczenie j2.
+				Po prawej stronie całego prostokątnego obwodu, równolegle do prawej pionowej gałęzi, narysowana jest dodatkowa pionowa gałąź z drugim okrągłym źródłem prądu. Źródło to ma strzałkę skierowaną do góry i oznaczone jest j1; jego górny koniec jest połączony z prawym końcem górnej gałęzi prostokąta, a dolny koniec z prawym końcem dolnej gałęzi, tworząc równoległą zewnętrzną ścieżkę względem gałęzi z rezystorem R i źródłem j2.}]{./imags/L6/z4.png}	
+				\caption{Zadanie 4}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+
+\begin{frame}{Przykładowe zadania z źródłami sterowanymi (4)}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+		Pozornie złożony układ: 3 oczka, 4 węzły.
+		Klasyczne podejście wymagałoby ułożenia 6 równań (3 węzłowe, 3 oczkowe) i wykonania operacji na macierzach $6 \times 6$.
+		Można jednak zauważyć, że dolny węzeł posiada proste równanie:\\
+		$i_x - j_2 - j_1 =0A$\\
+		$i_x = 40mA$, co z kolei pozwala wyznaczyć wydajność sterowanego źródła prądowego jako:\\
+		$k i_x = 5 \cdot 40mA = 200mA$.
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono obwód złożony z rezystorów, dwóch niezależnych źródeł prądu oraz jednego sterowanego źródła prądowego, ułożony w kształt prostokątnej ramki z gałęziami wewnętrznymi.
+				Górna gałąź prostokąta biegnie poziomo z lewej do prawej; mniej więcej pośrodku górnej gałęzi znajduje się poziomy prostokątny rezystor oznaczony literą R. Lewa pionowa gałąź prostokąta zawiera pionowy rezystor R, którego górny koniec łączy się z lewym końcem górnej gałęzi, a dolny z lewym końcem dolnej gałęzi. Dolna gałąź prostokąta, biegnąca poziomo z lewej do prawej, zawiera pośrodku prostokątny rezystor R; przy jego prawym końcu, na dolnym przewodzie, znajduje się pozioma strzałka skierowana w prawo z opisem ix, oznaczająca prąd w dolnej gałęzi.
+				Wewnątrz prostokątnej ramki, mniej więcej na środku, narysowane jest rombowe źródło sterowane z poziomą strzałką skierowaną w lewo; nad nim widnieje napis k·ix, co oznacza, że wartość prądu tego źródła jest proporcjonalna do prądu ix pomnożonego przez współczynnik k. Lewa strona rombu jest połączona krótkim poziomym odcinkiem z lewą pionową gałęzią obwodu w jej środku, a prawa strona rombu – z prawą pionową gałęzią w jej środku.
+				Na prawej pionowej gałęzi, między górną a dolną gałęzią prostokąta, znajduje się pionowy prostokątny rezystor R umieszczony mniej więcej w górnej połowie tej gałęzi. Pod nim, bliżej dolnej gałęzi, w tę samą pionową gałąź włączone jest okrągłe niezależne źródło prądu ze strzałką skierowaną do góry; obok, po prawej stronie, znajduje się oznaczenie j2.
+				Po prawej stronie całego prostokątnego obwodu, równolegle do prawej pionowej gałęzi, narysowana jest dodatkowa pionowa gałąź z drugim okrągłym źródłem prądu. Źródło to ma strzałkę skierowaną do góry i oznaczone jest j1; jego górny koniec jest połączony z prawym końcem górnej gałęzi prostokąta, a dolny koniec z prawym końcem dolnej gałęzi, tworząc równoległą zewnętrzną ścieżkę względem gałęzi z rezystorem R i źródłem j2.}]{./imags/L6/z4.png}	
+				\caption{Zadanie 4}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Przykładowe zadania z źródłami sterowanymi (4)}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+		Znając tą wartość i wykorzystując równania węzłów można w prosty sposób uzyskać napięcia na każdym z elementów obwodu.
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku przedstawiono obwód złożony z rezystorów, dwóch niezależnych źródeł prądu oraz jednego sterowanego źródła prądowego, ułożony w kształt prostokątnej ramki z gałęziami wewnętrznymi.
+				Górna gałąź prostokąta biegnie poziomo z lewej do prawej; mniej więcej pośrodku górnej gałęzi znajduje się poziomy prostokątny rezystor oznaczony literą R. Lewa pionowa gałąź prostokąta zawiera pionowy rezystor R, którego górny koniec łączy się z lewym końcem górnej gałęzi, a dolny z lewym końcem dolnej gałęzi. Dolna gałąź prostokąta, biegnąca poziomo z lewej do prawej, zawiera pośrodku prostokątny rezystor R; przy jego prawym końcu, na dolnym przewodzie, znajduje się pozioma strzałka skierowana w prawo z opisem ix, oznaczająca prąd w dolnej gałęzi.
+				Wewnątrz prostokątnej ramki, mniej więcej na środku, narysowane jest rombowe źródło sterowane z poziomą strzałką skierowaną w lewo; nad nim widnieje napis k·ix, co oznacza, że wartość prądu tego źródła jest proporcjonalna do prądu ix pomnożonego przez współczynnik k. Lewa strona rombu jest połączona krótkim poziomym odcinkiem z lewą pionową gałęzią obwodu w jej środku, a prawa strona rombu – z prawą pionową gałęzią w jej środku.
+				Na prawej pionowej gałęzi, między górną a dolną gałęzią prostokąta, znajduje się pionowy prostokątny rezystor R umieszczony mniej więcej w górnej połowie tej gałęzi. Pod nim, bliżej dolnej gałęzi, w tę samą pionową gałąź włączone jest okrągłe niezależne źródło prądu ze strzałką skierowaną do góry; obok, po prawej stronie, znajduje się oznaczenie j2.
+				Po prawej stronie całego prostokątnego obwodu, równolegle do prawej pionowej gałęzi, narysowana jest dodatkowa pionowa gałąź z drugim okrągłym źródłem prądu. Źródło to ma strzałkę skierowaną do góry i oznaczone jest j1; jego górny koniec jest połączony z prawym końcem górnej gałęzi prostokąta, a dolny koniec z prawym końcem dolnej gałęzi, tworząc równoległą zewnętrzną ścieżkę względem gałęzi z rezystorem R i źródłem j2.}]{./imags/L6/z4.png}	
+				\caption{Zadanie 4}
+			\end{figure}	
+		\end{column}
+	\end{columns}
 \end{frame} 
