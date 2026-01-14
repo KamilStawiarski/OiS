@@ -1,0 +1,178 @@
+\sect{Wykład 10}
+
+\begin{frame}{Przekształcenie Laplace’a}
+	\begin{itemize}
+		\item[\bt] Transformacja Laplace’a – przekształcenie transformujące funkcję w dziedzinie czasu ($f(t)$) do funkcji w dziedzinie zmiennej zespolonej $s$ ($F(s)$ – transformata funkcji).
+		\item[\bt] Przekształcenie proste:
+	\end{itemize}
+	\begin{equation*}
+		F(s) = \mathcal{L} \left( f(t) \right) = \int_{0}^{\infty} f(t) e^{-st} dt
+	\end{equation*}
+	\begin{itemize}
+		\item[\bt] Przekształcenie odwrotne:
+	\end{itemize}
+	\begin{equation*}
+		f(t) = \mathcal{L}^{-1} \left( F(s) \right) = \frac{1}{2 \pi j} \int_{-\infty}^{\infty} F(s) e^{st} ds
+	\end{equation*}
+
+	\begin{itemize}
+		\item[\bt] Transformata Laplace`a - $F(s)=\mathcal{L}(f(t))$ - funkcja w dziedzinie zespolonej $s$.
+		\item[\bt] Oryginał funkcji - $f(t)=\mathcal{L}^{-1}(F(s))$ - funkcja w dziedzinie czasu.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Przekształcenie Laplace’a}
+	\begin{itemize}
+		\item[\bt] Metoda umożliwia zamianę równań różniczkowych zwyczajnych w równania algebraiczne (w dziedzinie zespolonej $s$).
+		\item[\bt] Rozwiązania równania różniczkowego uzyskuje się po wykonaniu odwrotnej transformaty.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Przykład z definicji}
+	\begin{enumerate}
+		\item[\bt] $s_1(t) = \delta (t)$
+		\item[\bt] $s_2(t) = \mathbf{1} (t)$
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{Ważniejsze własności transformacji Laplace`a}
+	\begin{table}
+		\centering
+		\tagpdfsetup{table/header-rows={1}}
+		\caption{Ważniejsze własności transformacji Laplace`a}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			Nr & Działanie w dz. czasu & $f(t)$ & $F(s)$\\[1ex]
+			\hline
+			1 & Dodawanie & $f_1(t)+f_2(t)$ & $F_1(s)+F_2(s)$ \\[1ex]
+			\hline
+			2 & Mnożenie przez skalar & $k \cdot f(t)$ & $k \cdot F(s)$ \\[1ex]
+			\hline
+			3 & Skalowanie ($a>0$) & $f(at)$ & $\frac{1}{a} F(\frac{s}{a})$  \\[1ex]
+			\hline
+			4a & Pochodna & $\frac{d}{dt} f(t)$ & $sF(s)-f(0^{-})$ \\[1ex]
+			\hline
+			4b & Pochodna & $\frac{d^2}{dt^2} f(t)$ & $s^2F(s)-sf(0^{-})-f'(0^{-})$ \\[1ex]
+			\hline
+			5 & Całkowanie & $\int_{0^{-}}^t f(\tau) d \tau$ & $\frac{1}{s} F(s)$ \\[1ex]
+			\hline
+			6 & Opóźnienie o $t_o > 0$ & $\mathbf{1}(t-t_0)f(t-t_0)$ & $F(s) \cdot e^{- s t_0}$ \\[1ex]
+			\hline
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+
+\begin{frame}{Ważniejsze własności transformacji Laplace`a}
+	\begin{table}
+		\centering
+		\tagpdfsetup{table/header-rows={1}}
+		\caption{Ważniejsze własności transformacji Laplace`a}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			Nr & Działanie w dz. czasu & $f(t)$ & $F(s)$\\[1ex]
+			\hline
+			7 & Splot funkcji przyczynowych & $\mathbf{1}(t) f_1(t) * \mathbf{1}(t) f_2(t)$ & $F_1(t) \cdot F_2(t)$ \\[1ex]
+			\hline
+			8 & Mnożenie funkcji & $f_1(t) \cdot f_2(t)$ & $\frac{1}{2 \pi j}  \cdot F_1(s) * F_2(s)$ \\[1ex]
+			\hline
+			9 & Mnożenie przez funkcję wykładniczą o wykładniku $s_0t$ & $f(t) \cdot e^{s_0 t}$ & $F(s-s_0)$ \\[1ex]
+			\hline
+			10 & Mnożenie przez $t$ & $t \cdot f(t)$ & $- \frac{d}{ds} F(s)$ \\[1ex]
+			\hline
+			11 & Dzielenie przez $t$ & $\frac{1}{t} \cdot f(t)$ & $\int_s^\infty F(p) dp$ \\[1ex]
+			\hline
+			12 & Obliczanie wartości początkowej dla $f(t)$ & $f(0^{+})$ & $\lim_{s\to\infty} s F(s)$ \\[1ex]
+			\hline
+			13 & Obliczanie wartości końcowej dla $f(t)$ & $f(\infty)$ & $\lim_{s \to 0} s F(s)$ \\[1ex]
+			\hline
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}{Tabela transformat Laplace`a}
+	\begin{table}
+		\centering
+		\tagpdfsetup{table/header-rows={1}}
+		\caption{Ważniejsze własności transformacji Laplace`a}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			Nr & $f(t)$ & $F(s)$\\[1ex]
+			\hline
+			1 & $\delta (t)$ & $1$ \\[1ex]
+			\hline
+			2 & $\mathbf{1}(t)$ & $\frac{1}{s}$ \\[1ex]
+			\hline
+			3 & $\mathbf{1}(t) t$ & $\frac{1}{s^2}$ \\[1ex]
+			\hline
+			4 & $\mathbf{1}(t) t^n$ & $\frac{n!}{s^{n+1}}$ \\[1ex]
+			\hline
+			5 & $\mathbf{1}(t) e^{-\alpha t}$ & $\frac{1}{s+\alpha}$ \\[1ex]
+			\hline
+			6 & $\mathbf{1}(t) t e^{-\alpha t}$ & $\frac{1}{(s+\alpha)^2}$ \\[1ex]
+			\hline
+			7 & $\mathbf{1}(t) t^n e^{-\alpha t}$ & $\frac{n!}{(s+\alpha)^{n+1}}$ \\[1ex]
+			\hline
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}{Tabela transformat Laplace`a}
+	\begin{table}
+		\centering
+		\tagpdfsetup{table/header-rows={1}}
+		\caption{Ważniejsze własności transformacji Laplace`a}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			Nr & $f(t)$ & $F(s)$\\[1ex]
+			\hline
+			8a & $\mathbf{1}(t) sin(\omega_0 t) $ & $\frac{\omega_0}{s^2+\omega_0^2}$ \\[1ex]
+			\hline
+			8b & $\mathbf{1}(t) cos(\omega_0 t) $ & $\frac{s}{s^2+\omega_0^2}$ \\[1ex]
+			\hline
+			9a & $\mathbf{1}(t) e^{-\alpha t} sin(\omega_0 t) $ & $\frac{\omega_0}{(s+\alpha)^2+\omega_0^2}$ \\[1ex]
+			\hline
+			9b & $\mathbf{1}(t) e^{-\alpha t} cos(\omega_0 t) $ & $\frac{s+\alpha}{(s+\alpha)^2+\omega_0^2}$ \\[1ex]
+			\hline
+			10a & $\mathbf{1}(t) t sin(\omega_0 t) $ & $\frac{2 \omega_0 s}{(s^2+\omega_0^2)^2}$ \\[1ex]
+			\hline
+			10b & $\mathbf{1}(t) \left( sin(\omega_0 t) - \omega_0 t cos(\omega_0 t) \right)$ & $\frac{2 \omega_0^3}{(s^2+\omega_0^2)^2}$ \\[1ex]
+			\hline
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}{Przykłady}
+	\begin{enumerate}
+		\item[\bt] $\frac{1}{s+4}$
+		\item[\bt] $\frac{1}{(s+2)^3}$
+		\item[\bt] $\frac{5}{s^2+16}$
+		\item[\bt] $\frac{1}{s^2+8s+16}$
+		\item[\bt] $\frac{1}{(s+1)(s+2)} = \frac{A}{s+1} + \frac{B}{s+2}$
+		\item[\bt] $\frac{s}{(s+1)^3} = \frac{A}{(s+1)^3} + \frac{B}{(s+1)^2} + \frac{C}{s+1}$
+		\item[\bt] $\frac{s^2}{(s+1)^2(s+2)} = \frac{A}{(s+1)^2} + \frac{B}{s+1} + \frac{C}{s+2}$
+		\item[\bt] $\frac{1}{(s^2+1)(s^2-1)} = \frac{As+B}{s^2+1} + \frac{C}{s+1} + \frac{D}{s-1}$
+	\end{enumerate}
+	Wolframalpha do sprawdzenia poprawności\\
+	\url{https://www.wolframalpha.com/}
+\end{frame}
+
+\begin{frame}{Przykłady użycia}
+	\begin{figure}
+		\includegraphics[scale=0.08, alt={Na rysunku jest prosty obwód elektryczny prądu stałego złożony z trzech elementów: źródła, rezystora i kondensatora, połączonych szeregowo w pętlę.
+		Po lewej stronie widnieje źródło napięcia opisane symbolem e od t, czyli napięcie zależne od czasu. Powyżej źródła, w górnej gałęzi obwodu, znajduje się rezystor o rezystancji równej 5 omów, włączony w szereg z wyłącznikiem (przełącznikiem), który może otwierać lub zamykać obwód. Po prawej stronie, za wyłącznikiem, jest kondensator o pojemności 10 mili faradów, również włączony szeregowo, a jego drugi zacisk wraca do dolnego bieguna źródła napięcia, zamykając obwód.​}]{./imags/L10/s1.png}	
+		\caption{Przykład 1.}
+	\end{figure}	
+	\textbf{Symulacja 1}\\
+	\url{https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWEAOM0CcAmSAWMA2SAdn3xLCQUhCRwGYaBTAWjDACgA3cMTEHODz4Fqo-tSRiYCdgCch4QiEzJkisTIDOy1epB1kOPdQgAzAIYAbTY3YBjfYb0GjAqbAgw4n2JA4B3R1dBNj43KHYAe30QfCNqAXR0KF8cVRVeSV84dBIEfExJZRi6diA}
+\end{frame}
+
+\begin{frame}{Przykłady użycia}
+	\begin{figure}
+		\includegraphics[scale=0.08, alt={Na rysunku jest obwód elektryczny składający się z cewki, rezystora i wyłącznika połączonych równolegle.
+		Po lewej stronie znajduje się cewka o indukcyjności 10 mili henrów, podłączona między górną i dolną szyną obwodu. W środku jest pionowa gałąź z wyłącznikiem, który może zwierać górną i dolną szynę. Po prawej stronie w równoległej gałęzi umieszczony jest rezystor o rezystancji 1 oma, również podłączony między górną i dolną szyną.​}]{./imags/L10/s2.png}	
+				\caption{Przykład 2.}
+	\end{figure}	
+	\textbf{Symulacja 2}\\
+	\url{https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcBOaAOAbAdgCwCYsBmHMBMHZNQkYkJHahAUwFowwAoAJxD0jXAZINNDkHDhnAO4ixYIbJA44UDgBtwYPEpXtt8iVFgQwkyBxl6dwvgOUSLvftcX3VlreKcCDqgM7eXrYuhgBmAIZqfkwcAPZQIBhiwsrIyEbwkFgYeMiEyDgIhFpIMJnI2Qg5pbwJhBxAA}
+\end{frame}

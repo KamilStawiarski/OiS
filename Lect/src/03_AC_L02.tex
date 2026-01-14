@@ -1,0 +1,142 @@
+\sect{Wykład 9}
+
+\begin{frame}{Sygnały czasu ciągłego}
+	\textbf{Sygnał - przebieg fizyczny niosący informację będący funkcją czasu.}\\
+	\textbf{Sygnały dzielimy na:}
+		\begin{itemize}
+		\item[\bt] Deterministyczne - znamy ich dokładne wartości (sygnał z generatora - znamy amplitudę i fazę, sygnał jest zdeterminowany) - tylko takimi będziemy się zajmować w tej części wykładu
+		\item[\bt] Stochastyczny - nie znamy dokładnych wartości, ale znamy własności i wartości mogą zostać przewidziane (np. jutrzejsza temperatura)
+	\end{itemize}
+\end{frame} 
+
+\begin{frame}{Sygnały czasu ciągłego a nieciągłego}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item[\bt] Sygnał czasu ciągłego: sygnał, który ma zdefiniowaną wartość dla każdej chwili czasu (funkcja x(t) o dziedzinie ciągłej).
+				\item[\bt] Sygnał czasu nieciągłego (dyskretnego): sygnał, który ma zdefiniowaną wartość tylko w wybranych, najczęściej równomiernie rozmieszczonych chwilach czasu (ciąg próbek x[n]).
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.2, alt={Na górnym wykresie jest ciągły sygnał sinusoidalny: gładka fala, która płynnie rośnie z wartości 0 do maksimum, potem opada do minimum i wraca do 0; czas na osi poziomej zmienia się bez skoków.
+				Na dolnym wykresie jest dyskretny sygnał: zamiast ciągłej linii widać pojedyncze pionowe słupki (próbki) w równych odstępach położone na poziomej osi; między tymi chwilami nie ma żadnych wartości sygnału.​}]{./imags/L9/sim1.png}	
+				\caption{Przykłady sygnału ciągłego i nieciągłego.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Sygnały przyczynowe a nieprzyczynowe}
+	\begin{itemize}
+		\item[\bt] Sygnał przyczynowy to taki sygnał, który przed ustaloną chwilą odniesienia (zwykle czasem zero) ma wszędzie wartość zerowe.
+		\item[\bt] Sygnał nieprzyczynowy to sygnał, który ma jakieś niezerowe wartości już przed tą chwilą odniesienia.
+	\end{itemize}
+\end{frame} 
+
+\begin{frame}{Okresowość sygnałów}
+	\begin{itemize}
+		\item[\bt] Sygnały okresowe: $x(t) = x(t+T)$
+		\item[\bt] Prawie okresowe - jego kształt powtarza się w przybliżeniu, a nie co do punktu.
+		\item[\bt] Poza okresowe - żadne z powyższych
+	\end{itemize}
+\end{frame} 
+
+\begin{frame}{Najważniejsze sygnały}
+	\begin{itemize}
+		\item[\bt] Jedynka Heaviside’a (skok jednostkowy) - $\mathbf{1}(t)=0.5(1+sgn(t))$
+		\item[\bt] Impuls Diraca (impuls jednostkowy) – $\delta (t)$
+	\end{itemize}
+\end{frame} 
+
+\begin{frame}{Skok jednostkowy}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+		$\mathbf{1}(t)=
+		\begin{cases}
+			0 & \text{dla } t<0,\\
+			1 & \text{dla } t>0
+		\end{cases}$\\
+		
+		$\mathbf{1}(t-a)=
+		\begin{cases}
+			0 & \text{dla } t<a,\\
+			1 & \text{dla } t>a
+		\end{cases}$\\
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.2, alt={Na górnym rysunku widać sygnał s1(t) równy 1(t). Dla wszystkich czasów mniejszych od zera sygnał ma wartość 0. W chwili t = 0 nagle skacze na wartość 1 i pozostaje równy 1 dla wszystkich późniejszych chwil.
+				Na dolnym rysunku widać sygnał s2(t) równy 1(t−2). Dla czasów mniejszych od 2 sygnał ma wartość 0. W chwili t = 2 wykonuje skok z 0 na 1 i od tego momentu pozostaje równy 1.​}]{./imags/L9/step.png}	
+				\caption{Przykłady działania skoku jednostkowego.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Impuls jednostkowy}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+		$\delta(t)=
+		\begin{cases}
+			0 & \text{dla } t \neq 0,\\
+			\infty & \text{dla } t = 0
+		\end{cases}$\\
+		$\int_{-\infty}^{\infty} \delta(\tau) d\tau = 1$
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.2, alt={Na górnym rysunku widać impuls s1(t) równy delta od t. Przez cały czas sygnał ma wartość zero, z wyjątkiem jednej chwili czasu równej zero, w której pojawia się pojedynczy, pionowy impuls do góry.
+				Na dolnym rysunku widać impuls s2(t) równy delta od t minus dwa. Również wszędzie poza jedną chwilą sygnał jest równy zero, natomiast pojedynczy pionowy impuls pojawia się dopiero w chwili czasu równej dwa i zaraz potem sygnał znowu jest równy zero.}]{./imags/L9/delta.png}	
+				\caption{Przykłady działania impulsu jednostkowego.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame} 
+
+\begin{frame}{Własności delty Diraca}
+	\begin{itemize}
+		\item[\bt] Mnożenie $\delta(t)$ przez stałą: $a \delta(t)=
+		\begin{cases}
+			0 & \text{dla } t \neq 0,\\
+			\infty & \text{dla } t = 0
+		\end{cases}$; $\int_{-\infty}^{\infty} a \delta(\tau) d\tau = a$
+		\item[\bt] Związek z skokiem jednostkowym: $\int_{-\infty}^t \delta(\tau) d\tau = \mathbf{1}(t)$; $\delta(t) = \frac{d \mathbf{1}(t)}{dt}$
+		\item[\bt] Własność próbkowania: $x(t)\delta(t)=x(0)\delta(t)$; $x(t)\delta(t-t_0) = x(t_0)\delta(t-t_0)$
+	\end{itemize}
+\end{frame} 
+
+\begin{frame}{Przykładowe sygnały}
+	\begin{figure}
+		\includegraphics[scale=0.25, alt={Na górnym rysunku pokazany jest schodkowy sygnał s1(t). Od chwili t równej zero do chwili t równej jeden ma wartość zero. Od jednego do dwóch sygnał ma wartość jeden. Od dwóch do trzech sygnał ma wartość dwa. W chwili t równej trzy następuje skok w dół do wartości minus jeden i ta wartość utrzymuje się do chwili t równej cztery. Od chwili t równej cztery aż do końca wykresu sygnał znowu ma wartość zero.
+		Na dolnym rysunku widać pochodną tego sygnału oznaczoną s prim od t, złożoną z impulsów delta w momentach skoków. W chwili t równej jeden jest dodatni impuls o wysokości jeden, odpowiadający skokowi z zera do jednego. W chwili t równej dwa jest dodatni impuls o wysokości jeden, odpowiadający skokowi z jednego do dwóch. W chwili t równej trzy jest silny ujemny impuls o wysokości minus trzy, bo sygnał zmienia się z dwóch na minus jeden. W chwili t równej cztery jest dodatni impuls o wysokości jeden, odpowiadający skokowi z minus jednego do zera.}]{./imags/L9/examples/ex1.png}	
+		\caption{Przykładowe sygnały (I).}
+	\end{figure}	
+\end{frame} 
+
+\begin{frame}{Przykładowe sygnały}
+	\begin{figure}
+		\includegraphics[scale=0.25, alt={Na górnym rysunku sygnał s1(t) ma kształt "trapezu". Od chwili t równej zero do chwili t równej dwa rośnie liniowo z wartości zero do wartości dwa. Od t równej dwa do t równej trzy pozostaje na stałym poziomie dwa. Od t równej trzy do t równej cztery maleje liniowo z wartości dwóch do zera. Od chwili t równej cztery aż do końca wykresu sygnał jest równy zero.
+		Na dolnym rysunku widać pochodną s prim od t. Od t równej zero do t równej dwa ma stałą dodatnią wartość jeden, co odpowiada liniowemu wzrostowi sygnału. Od dwóch do trzech pochodna jest równa zero, bo sygnał jest tam stały. Od t równej trzy do t równej cztery pochodna ma stałą ujemną wartość minus dwa, co odpowiada liniowemu spadkowi. Od t równej cztery dalej pochodna znowu jest równa zero, bo sygnał nie zmienia się w czasie..}]{./imags/L9/examples/ex2.png}	
+		\caption{Przykładowe sygnały (II).}
+	\end{figure}	
+\end{frame} 
+
+\begin{frame}{Przykładowe sygnały}
+	\begin{figure}
+		\includegraphics[scale=0.25, alt={Górny lewy wykres: sygnał s1(t) jest schodkowy. Od czasu 0 do 1 ma wartość 0, od 1 do 2 wartość 1, od 2 do 3 wartość 2, od 3 do 4 wartość 1, od 4 do 5 wartość 0, od 5 do 6 wartość minus 1, a od 6 dalej wartość minus 2.
+		Górny prawy wykres: sygnał s2(t) jest „ząbkowany”. Odcinkami rośnie liniowo z 0 do 1, po czym skacze w dół do 0 i znowu rośnie do 1 (powtarza się to dwa razy). Potem od około czasu 4 zaczyna maleć liniowo z 0 do minus 1, skacze do 0, znowu maleje liniowo do minus 1 i na końcu wraca skokowo do 0.
+		Dolny lewy wykres: sygnał s3 prim (t) zawiera tylko impulsy delta w miejscach skoków s2(t). W punktach, gdzie s2(t) skacze w górę, są krótkie dodatnie impulsy, a tam, gdzie skacze w dół, są krótkie ujemne impulsy, z jednym dużym ujemnym impulsem tam, gdzie spadek jest największy.
+		Dolny prawy wykres: sygnał s4 prim (t) jest schodkowy i przyjmuje tylko wartości całkowite. Najpierw rośnie do 1, potem do 2, następnie stopniowo maleje przez 1, 0, minus 2, i w końcu wraca do poziomu 0, odzwierciedlając w przybliżeniu kształt zmian sygnału z górnych wykresów.}]{./imags/L9/examples/ex3.png}	
+		\caption{Przykładowe sygnały (III).}
+	\end{figure}	
+\end{frame} 
+
+\begin{frame}{Przykładowe sygnały}
+	\begin{itemize}
+		\item[\bt] $s_1(t)=\mathbf{1}(t-1)-2\mathbf{1}(t-2)+\mathbf{1}(t-3)$
+		\item[\bt] $s_2(t)=t\mathbf{1}(t-1)-\delta(t-2)-2t\mathbf{1}(t-3)+t\mathbf{1}(t-4)$
+		\item[\bt] $s'_3(t) = \delta(t) + \delta(t-1) - 2 \delta(t-3)$
+		\item[\bt] $s'_4(t) = \mathbf{1}(t-1)+\delta(t-1)-\mathbf{1}(t-2)-3\delta(t-3)$
+	\end{itemize}
+\end{frame} 
