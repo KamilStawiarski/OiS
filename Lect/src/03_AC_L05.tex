@@ -1,0 +1,66 @@
+\sect{Wykład 12}
+
+\begin{frame}{Metoda wskazowa - analiza w stanie ustalonym}
+	\begin{enumerate}
+		\item[\bt] \textbf{Impedancja} - uogólnienie rezystancji, zespolona zależność między napięciem i natężeniem w obwodach prądu sinusoidalnego. W przypadku elementów inercyjnych jest funkcją częstotliwości.
+		\item[\bt] Przy metodzie wskazowej zakładamy pobudzenie sinusoidalne.
+		\item[\bt] Analiza wykonywana jest w stanie ustalonym (z tego powodu nie bierzemy też pod uwagę warunków początkowych)
+	\end{enumerate}
+	Oznaczenia:
+	\begin{itemize}
+		\item[\bt] $x(t)$ - sygnał rzeczywisty
+		\item[\bt] $\hat{x}(t)$ - sygnał zespolony / wskaz wirujący
+		\item[\bt] $\hat{X}$ - zespolona amplituda / wskaz
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Metoda wskazowa - sygnały}
+	\begin{equation*}
+		e^{jx} = cosx + j sinx
+	\end{equation*}
+	Jeżeli układ pobudzany jest sygnałem $e(t)=sin(\omega t)$, to możemy przedstawić go jako:
+	\begin{equation*}
+		e(t)=sin(\omega t) = cos(\omega t - 90^{\circ} ) = \Re \left( e^{j(\omega t + 90^{\circ})} \right) = \Re \left( e^{j\omega t} e^{j90^{\circ}} \right)
+	\end{equation*}
+	\begin{equation*}
+		\hat{e}(t) = e^{j\omega t} e^{j90^{\circ}}, \ \ \hat{E}= e^{j90^{\circ}}
+	\end{equation*}
+	Na powyższym przykładzie widać że w przypadku liczb zespolonych przesunięcie fazy można przedstawić w postaci mnożenia przez liczbę zespoloną. \\
+\end{frame}
+
+\begin{frame}{Metoda wskazowa - sygnały}
+	Załóżmy sygnał postaci $e(t) = sin(\omega t) = \Re(e^{j (\omega t - 90^{\circ})}); \ \hat{e}(t) = e^{j (\omega t - 90^{\circ})}$ \\ 
+	Jego pochodna wynosi: $\frac{d e(t)}{dt} = \omega cos(\omega t)$.
+	Analogiczne przekształcenie wykonane przy pomocy liczb zespolonych:
+	$\frac{d e(t)}{dt} = \Re( \frac{d \hat{e}(t)}{dt}) = \Re( \frac{e^{j (\omega t - 90^{\circ})}}{dt}) = \omega \Re( j e^{j (\omega t - 90^{\circ})} )= \omega \Re( e^{j \omega t} e^{-j90^{\circ}} e^{j90^{\circ}}) = \omega \Re( e^{j \omega}) = \omega cos(\omega t)$ 
+	Na podstawie powyższego równania można zauważyć że w przypadku operacji na liczbach zespolonych, pochodna również może być wyrażona jako przesunięcie fazy (albo przemnożenie przez liczbę zespoloną) z dodatkowym skalowaniem o współczynnik rzeczywisty.
+\end{frame}
+
+\begin{frame}{Metoda wskazowa - sygnały}
+	Impedancja przez swój zespolony charakter nie tylko działa jak zależna od częstotliwości "rezystancja" ale skutkuje ona dodatkowym przesunięciem fazy wynikowego sygnału.\\
+	\textbf{Jeżeli obwód liniowy pobudzany jest sygnałem sinusoidalnym, w stanie ustalonym na jego wyjściu może pojawić się wyłącznie sygnał sinusoidalny o tej samej pulsacji (ewentualnie przesunięty w fazie i przeskalowany).}
+\end{frame}
+
+\begin{frame}{Metoda wskazowa - kondensator}
+	\begin{equation*}
+		\hat{i_C}(t) = C \frac{d \hat{u_C}(t)}{dt} \rightarrow \left( \hat{u_C}(t) \sim e^{j\omega t} \right) \rightarrow \hat{i_C}(t) = j \omega C e^{j \omega t}
+	\end{equation*}
+	\begin{equation*}
+		Z_C(j \omega) = \frac{\hat{u_C}(t)}{\hat{i_C}(t)} = \frac{1}{j \omega C}
+	\end{equation*}
+	$Z_C(j \omega) = \frac{1}{j \omega C} = \frac{-j}{\omega C} = \frac{1}{\omega C} e^{-j90^{\circ}}$  - impedancja kondensator. \\
+	Na podstawie powyższej zależności widać że napięcie na kondensatorze jest opóźnione o $90^{\circ}$ do prądu płynącego przez niego. \\
+	Moduł prądu płynącego przez kondensator jest ponadto przeskalowany o wartość $\omega C$ względem wartości napięcia.
+\end{frame}
+
+\begin{frame}{Metoda wskazowa - induktor}
+	\begin{equation*}
+		\hat{u_L}(t) = L \frac{d \hat{i_L}(t)}{dt} \rightarrow \left( \hat{i_L}(t) \sim e^{j\omega t} \right) \rightarrow \hat{u_L}(t) = j \omega L e^{j \omega t}
+	\end{equation*}
+	\begin{equation*}
+		Z_L(j \omega) = \frac{\hat{u_L}(t)}{\hat{i_L}(t)} = j \omega L
+	\end{equation*}
+	$Z_L(j \omega) = j \omega L = \omega C e^{j90^{\circ}}$  - impedancja induktora. \\
+	Na podstawie powyższej zależności widać że napięcie na cewce zawsze wyprzedza w fazie prąd o $90^{\circ}$. \\
+	Moduł napięcia na induktorze jest ponadto przeskalowany o wartość $\omega L$ względem wartości płynącego przez niego prądu.
+\end{frame}

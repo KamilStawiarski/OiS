@@ -1,0 +1,68 @@
+\sect{Wykład 13}
+
+\begin{frame}{Źródła zastępcze}
+	\begin{itemize}
+		\item[\bt] Wszystko działa tak samo jak w prądzie stałym (zamiast rezystancji wewnętrznej jest impedancja wewnętrzna).
+		\item[\bt] Wszystko można liczyć na wskazach, dopiero w ostatecznej postaci zamienić do postaci liczb rzeczywistych z odpowiednim przesunięciem fazowym.
+		\item[\bt] \href{https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWEAOAnLAzKgbBsqB2AJiMgwwBYQFJqQKNqBTAWjDACgA3EFjBIvTDZe-QUWJRw1WklrzoCDgHdRAkBMEtNGyZA4AnXjp3bJYqWDgcAxsfPqzgisKkx4kCBmiphYFy4YBOTYyARU7p4q9s6ufOouIvqqTiAWbAQiFskxulpgmXlQ0dhUibyu5fo8bCLltUW0EDTgipbQRNilVqiQAhQEkMgIcoocAOZqsSLxzhTIbhMVdXGV84tGDTqljSC+sAW2IDs6-lQ6CvDsYIzuRJTYwcgSBDTsnVCwUao75TvZJSoFjOaXU+gANhVCqZ3mlIBFpJErBQEMg4OwMEMcFYFvpNrDMVQMlkweB4IYNEM4VQQdkydZISCTFTCZZPuj4Y9MqgGJ5sAgUcUAPbgEQ7WgUSCoVB0SLYIhyDSitIcEUFY4IyXS2VfeVICCCdUYDhAA}{Przykład}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Moc w obwodach prądu przemiennego}
+	\begin{itemize}
+		\item[\bt] $P(t)$ - moc chwilowa: $P(t)=u(t)*i(t)$
+		\item[\bt] $\bar{P}$ - moc średnia: $\bar{P} = \frac{1}{T} \int_0^T P(\tau) d\tau$
+		\item[\bt] Napięcie skuteczne – wartość skuteczna napięcia elektrycznego okresowego równa stałemu napięciu przyłożonemu do danego oporu, powodującemu wydzielanie się na tym oporze takiej samej energii, jak przy napięciu zmiennym.
+		\item[\bt] W przypadku prądu sinusoidalnego - $U_{sk} = A\frac{\sqrt{2}}{2}$. Dla innych przebiegów (prostokątny, piłokształtny, trójkątny) współczynnik kształtu może przyjmować inne wartości.
+		\item[\bt] Dla napięcia sieciowego $U_{sk} \approx 230V$ co oznacza amplitudę $A \approx 325V$.
+		\item[\bt] \href{https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxG3KQBZsQEBTAWjDACgAncYlEavbrzDVqUZJDYAbQeBEyU1SGJjYweOimhgEhBKT2LiIlDqhsA7vMXgwvBUomWwPPgNa9+ZgG4271965iEAhK2CbKUNAIbAD2fCCEokqGxAnW2NC8Sh4UsWKJYikUaBSZ4CBZuXEQBcmQpMWhZXbl2GxAA}{Przykład}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Czy da się prościej?}
+	\begin{itemize}
+		\item[\bt] Przyjmijmy:
+		\item[\bt] $U_{sk}$ - napięcie skuteczne na elemencie
+		\item[\bt] $I_{sk}$ - natężenie skuteczne przepływające przez element
+		\item[\bt] $\phi$ - kąt przesunięcia fazy między napięciem i natężeniem
+		\item[\bt] $P$ - moc czynna $P=U_{sk} I_{sk} cos(\phi)$ - faktycznie wykonująca pracę [W]
+		\item[\bt] $Q$ - moc bierna $Q=U_{sk} I_{sk} sin(\phi)$ - gromadząca się w elementach inercyjnych [var]
+		\item[\bt] $S$ - moc pozorna $S=U_{sk} I_{sk} = \sqrt{P^2+Q^2}$ - suma obu powyższych mocy [VA] 
+	\end{itemize}
+	W przypadku podłączenia wyłącznie rezystancji do obwodu prądu przemiennego moc bierna jest zerowa. \\
+	Włączenie elementów inercyjnych może spowodować pojawienie się mocy biernej - zgromadzonej w obwodzie.
+\end{frame}
+
+\begin{frame}{Maksymalna moc pobierana z obwodu}
+	Maksymalną moc z źródła Thevenina/Nortona można uzyskać dołączając impedancję o wartości:
+	\begin{equation*}
+		Z_{dol} = Z^*_{wewn}
+	\end{equation*}
+	\href{https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWEAOAnLAzKgbBsqB2AJiMgwwBYQFJqQKNqBTAWjDACgA3EFjBIvTDZe-QUWJRw1WklrzoCDgHdRAkBMEtNGyZA4AnXjp3bJYqWDgcAxsfPqzgisKkx4kCCwrRcNNKh4RAiokHqwnir2zq586i4i+qpOIBZsBCIWSdG6WmAZuVBR2FQJvK5l+jxsImU1hbQQNOCKltBE2CVWoQIUBJDICHKKHADmajEicc4UyG5j5bWxFbPzRvU6JQ0gqGCw+bYgWzpgFFQ6CvDsYIws7hjIZEMY2IEYBKdb7pGqW2VbWWKVAsp2B6n0ABtygVTOxBBhIFRGlAInB8qR2I8iJQiDdcUV1nDUojoZlweB4IYNANiVRQalyVZrFD6SYaQikdJvmjiO8EAjsERHp1yEUoRRjpIBHMOW5YLtIIJvri0MgSEQJRIhsg+gTqELafQAeTdvsCFEHmDnMalRadUJMvbAXZLYUJec9CiruxbjASB9QngBhRINhkPlGN9OEZZTpXRcdntPObxrKymnVvJuIb0ySE01Gq1Cx0upAehr+oNhkpVK7c6VXPoAPbgERbAj0MuoOjfQVyLkRQjYBB9jgt-JHKgdkOobvDOB96QQdz4flgYJj6mTkDTrsaIv7YIaAdkUKjoA}{Przykład}
+\end{frame}
+
+\begin{frame}{Obwody rezonansowe}
+	\begin{itemize}
+		\item[\bt] Obwód rezonansowy - układ LC w którym energia w stanie ustalonym, przy określonej częstotliwości przepływa między kondensatorem a induktorem. Moc w takim układzie nie jest pobierana z źródła ani do niego nie wraca.
+		\item[\bt] Impedancja połączonych elementów LC posiada wyłącznie charakter rzeczywisty, nie wprowadza zatem przesunięcia fazy między prądem i napięciem.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Obwody rezonansowe - rezonans napięciowy}
+	\begin{itemize}
+		\item[\bt] Rezonans powstający w obwodzie, w którym elementy L i C (oraz dodatkowo R) są połączone szeregowo nazywamy rezonansem szeregowym lub rezonansem napięć.
+		\item[\bt] Przy częstotliwości rezonansowej szeregowe połączenie LC zachowuje się jak zwarcie w obwodzie.
+		\item[\bt] Przy częstotliwości rezonansowej napięcie i prąd na źródle są zgodne w fazie, zatem obwód przyjmuje charakter rzeczywisty.
+		\item[\bt] \href{https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWEAWaAmBayQBxvpAGxoDsAnCApJZdQgKYC0YYAUAE6UmHjLJc8MPatjisAxgJBCpAZkI4oUWPFlgcskIxj4SYMslnwcB2SWVw2AGzkKpyHNSfQ1GtBcjIEVTGVn5ZMkIgikhWAHd7R0owdwcnCKkwPhj3ZP4wgDdUlGiEWN4M8FoaJ2UEVgB7YsIi5EgyCjRoJBhIDCU0kFkq6RBapXrG6RaLDoh3dx7qpAHqIYpW2A7Jmh6gA}{Przykład}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Obwody rezonansowe - rezonans prądowy}
+	\begin{itemize}
+		\item[\bt] Rezonans powstający w obwodzie, w którym elementy L i C (oraz dodatkowo R) są połączone równolegle nazywamy rezonansem równoległym lub rezonansem prądów.
+		\item[\bt] Przy częstotliwości rezonansowej równoległe połączenie LC zachowuje się jak rozwarcie w obwodzie.
+		\item[\bt] Przy częstotliwości rezonansowej napięcie i prąd na źródle są zgodne w fazie, zatem obwód przyjmuje charakter rzeczywisty.
+		\item[\bt] \href{https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3AWAnC1b0DYQGYBM0B2AViIA4i4jdIEKSQKGHIGBTAWjDACgA3BsLhwZSAoWCRCWERkSjyYRbgCcx4SSAxEsEqeHiRuAd03bhoooPNRjpnRoLV1424+kPSCZzYA2IN94B2CIK0NhgpOFQsAgYCGCx2JAEGBhIkLixNgDG-p6B+cGiLDAG4ZHg0OSWpAQJCI4EGWalkDwmBIUhQSGGHU5FdtaGAPaaml7SuLhIEAjQKJ6kkERIGHUZCdE0i+GxkKQYuJG4YFgsQljY3GNycfKCM3MLSEsraxunkzGLsauzqS0ljkECEcmuQA}{Przykład}
+	\end{itemize}
+\end{frame}

@@ -1,0 +1,74 @@
+\sect{Wykład 11}
+
+\begin{frame}{Przykłady użycia}
+	\href{https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgLCAMB0l3BWEAmAzNMB2SCCcyBGANiMwUlSVUhCTFVoFMBaAggKADdwAOES5LxAEwEGjQJxhUGTATsA7kJERkYCaKjsATinXDNamsjUyOAGz3HTRlDz4TZ7AMZW7fWwLNOlnhILA+L0h2AHtwECIxcEhcXChYAlwEVAJkJBhBYwjUdiA}{Symulacja 3}
+	\begin{figure}
+		\includegraphics[scale=0.08, alt={Na schemacie jest jeden zamknięty obwód elektryczny, w którym wszystkie elementy są połączone kolejno w pętlę, czyli szeregowo.
+		Na lewej stronie znajduje się źródło napięcia oznaczone e(t), które według napisu pod rysunkiem przyjmuje w czasie przebieg jednostkowy: od zera do jednego wolta, czyli tzw. skok jednostkowy.
+		Od górnego bieguna źródła przewód prowadzi w prawo do prostokątnego symbolu opornika z podpisem R równe jeden om.
+		Dalej przewód biegnie w prawo i w dół do symbolu cewki, czyli kilku zwojów, opisanego L równe jeden henr.
+		Z dolnego końca cewki przewód schodzi w lewo do symbolu kondensatora płaskiego, oznaczonego C równe jeden farad, a następnie wraca do dolnego bieguna źródła, domykając pętlę obwodu.​}]{./imags/L11/s3.png}	
+		\caption{Przykład 3.}
+	\end{figure}	
+\end{frame}
+
+\begin{frame}{Impedancja operatorowa}
+	\textbf{Impedancja operatorowa} - stosunek transformaty Laplace`a funkcji napięcia na elemencie do transformaty Laplace`a płynącego przez niego prądu
+	\begin{equation*}
+	Z(s) = \frac{U(s)}{I(s)}
+	\end{equation*}
+	\begin{itemize}
+		\item[\bt] Rezystor: $r(t) \Rightarrow R(s)=Z_R(s)=R$
+		\item[\bt] Kondensator: $i_C(t) = C \frac{d u_C(t)}{dt}$ \\
+		$I_C(s) = C \left( sU_C(s) - u_C(0^{-}) \right) \Rightarrow \bigg| u_C(0^{-}) = 0 \bigg| \Rightarrow \frac{U_C(s)}{I_C(s)} = \frac{1}{sC}$\\ $Z_C(s) = \frac{U_C(s)}{I_C(s)} = \frac{1}{sC}$ 
+		\item[\bt] Induktor: $u_L(t) = L \frac{d i_L(t)}{dt}$ \\
+$U_L(s) = L \left( sI_L(s) - i_L(0^{-}) \right) \Rightarrow \bigg| i_L(0^{-}) = 0 \bigg| \Rightarrow \frac{U_L(s)}			{I_L(s)} = sL$\\ $Z_L(s) = \frac{U_L(s)}{I_L(s)} = sL$ 
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Impedancja operatorowa - przykład}
+	\href{https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgLCAMB0l3BWEAmAzNMB2SCCcyBGANiMwUlSVUhCTFVoFMBaAggKADdwAOES5LxAEwEGgSjQCeaWFz1IuAj1xIJNDdATsA7kJERkYcaKjsATimPDTRmsiNRh7ADZX7juyh59xkyISYyJioyEQ8wRSqmGYAxu7efF4CTuqwkMQUCJjSuKHURAgMkLoJKWB8KSUA9uAgRGLgirj+AaIikETISDABPSh1qOxAA}{Symulacja 4}
+	\begin{figure}
+		\includegraphics[scale=0.08, alt={Na rysunku jest ten sam jednokrotny, szeregowy obwód elektryczny złożony z jednego źródła napięcia, jednego opornika, jednej cewki i jednego kondensatora połączonych w zamkniętą pętlę.
+		Po lewej stronie znajduje się źródło napięcia oznaczone e(t), od którego przewód idzie w górę, następnie w prawo do prostokątnego symbolu opornika z napisem R równe jeden om.
+		Dalej przewód biegnie poziomo w prawo i w dół do symbolu cewki z podpisem L równe jeden henr, a z jej dolnego końca w lewo do symbolu kondensatora płaskiego oznaczonego C równe jeden farad, po czym wraca do dolnego bieguna źródła.
+		Pod schematem jest napis określający przebieg napięcia źródła: e(t) równe jeden od t krotnie sinus t wolta, co oznacza, że napięcie jest sinusoidą włączaną dopiero od chwili czasu równej zero za pomocą funkcji skoku jednostkowego.​}]{./imags/L11/s4.png}	
+		\caption{Przykład 4.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Transmitancja}
+	\textbf{Transmitancja} - stosunek transformaty Laplace`a wyjścia układu do transformaty Laplace`a jego wejścia przy zerowych warunkach początkowych. 
+	Zwykle oznaczana jako $G(s)$.
+	\href{https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWEAWAnNAbADgOwCZlk4NUxUtIkFIQlkBmWgUwFowwAoANxHrxDxYsvfmEFQJRWhJowEHADYjw4sDgwrhNCLI4AncOs2GNgreDgcA7iYFDlZqBwDGtscPqRkx2bEg6-ALhOJU9vd14vO3MdJxsw6NtHSA4AexQQDG8aIlRUCyhofhp+b3oOIA}{Symulacja 5}
+	\begin{figure}
+		\includegraphics[scale=0.08, alt={Na rysunku jest obwód elektryczny z jednym źródłem napięcia po lewej stronie oraz trzema elementami RLC, które tworzą częściowo połączenie szeregowe, a częściowo równoległe.
+		Źródło napięcia oznaczone e(t) jest idealnym źródłem, którego napięcie w czasie opisano pod schematem jako e(t) równe pięć razy funkcja skoku jednostkowego, czyli od chwili czasu zero napięcie ma wartość stałą pięć woltów.
+		Od górnego bieguna źródła przewód prowadzi w prawo do cewki L1 o indukcyjności jeden henr, dalej ten sam przewód biegnie poziomo w prawo do węzła, z którego w dół podłączony jest opornik o wartości sto omów do dolnego przewodu powrotnego, a poziomo w prawo do kondensatora o pojemności jeden milifarad.
+		Za kondensatorem przewód idzie dalej w prawo do drugiej cewki L2 o indukcyjności jeden henr, której dolny koniec jest połączony z dolnym przewodem obwodu wracającym do dolnego bieguna źródła, zamykając pętlę..​}]{./imags/L11/s5.png}	
+		\caption{Przykład 5.}
+	\end{figure}
+
+\end{frame}
+
+
+\begin{frame}{Transmitancja - układ niestabilny}
+	\href{https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgrCAMB0l3EBMA2AzLZAOZBGAnJInnjqsuJOCACyrgCmAtDjgFACGIii1IOA7OVSJKA8pj5h4IZlLh940yqMWRWANy48u-RFt749omnyhmYYVgHd9OvcMqJdUVgCcQDvoI8i7ZnPCsAMa2eEK+YeawOFCwkDEwcGw2npGeYi423LyR2XzIytZ8iBI4BbZlhTY4JX55TkasADbFpeU1Eg3+5qwA9h4gyLyU1JDEXNAQifFgyIhTXAOorEA}{Symulacja 6}
+	\begin{figure}
+		\includegraphics[scale=0.08, alt={Na rysunku jest obwód z wzmacniaczem operacyjnym, rezystorem, kondensatorem, cewką oraz źródłem napięcia, połączonych w jednej pętli z kilkoma węzłami.
+		U dołu po lewej znajduje się źródło napięcia e(t), którego dodatni biegun jest połączony z wejściem nieodwracającym wzmacniacza oznaczonym plusem, a jego napięcie opisane pod schematem to e(t) równe funkcja skoku jednostkowego razy sinus osiem pi t wolta, czyli sinusoidalne napięcie włączane od chwili zero.
+		Dolny węzeł źródła jest jednocześnie wspólnym punktem odniesienia całego obwodu i łączy się z dolnym końcem cewki o indukcyjności jeden henr po lewej stronie oraz z dolnym końcem rezystora o wartości jeden kilo om po prawej stronie.
+		Górny koniec cewki jest połączony z wejściem odwracającym wzmacniacza oznaczonym minusem, a z wyjścia wzmacniacza sygnał idzie w prawo do górnego węzła rezystora, który następnie łączy się z dolnym węzłem wspólnym, tworząc pętlę sprzężenia.
+		Między wyjściem wzmacniacza a węzłem przy wejściu odwracającym jest włączony kondensator o pojemności dziesięć milifaradów, co oznacza, że sygnał wyjściowy jest przez kondensator zwrotnie podawany na wejście odwracające, tworząc dynamiczne sprzężenie zwrotne z udziałem cewki i kondensatora.​}]{./imags/L11/s6.png}	
+		\caption{Przykład 6.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Uwagi}
+	\begin{enumerate}
+		\item[\bt] W przypadku niezerowych warunków początkowych energia układu musi być zachowana: $u_C(0^{-})=u_C(0^{+})$, $i_L(0^{-})=i_L(0^{+})$.
+		\item[\bt] \textbf{Stan ustalony} - sytuacja w której zakładamy że wszystkie człony $e^{-\alpha t}$ już wygasły i mają pomijalnie mały wpływ na wyjście układu.
+		\item[\bt] \textbf{Transmitancja} - stosunek transformaty Laplace`a wyjścia układu do transformaty Laplace`a jego wejścia przy zerowych warunkach początkowych. Zwykle oznaczana jako $G(s)$ lub $H(s)$.
+	\end{enumerate}
+\end{frame}
