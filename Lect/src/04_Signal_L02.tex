@@ -1,0 +1,167 @@
+\sect{Wykład 15}
+
+\begin{frame}{Transformacja Fouriera}
+	Transformacja Fouriera - przekształcenie pozwalające przedstawić okresową funkcję w postaci sumy sinusów i cosinusów.\\
+	Równanie syntezy funkcji:
+	\begin{equation*}
+		f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} \left( a_n cos \left( \frac{2n \pi }{T} x \right) + b_n sin \left(\frac{2n \pi }{T} x \right) \right)
+	\end{equation*}
+	\begin{equation*}
+		f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} \left( a_n cos \left( 2 \pi f n x \right) + b_n sin \left( 2 \pi f n x \right) \right)
+	\end{equation*}
+\end{frame}
+
+\begin{frame}{Transformacja Fouriera}
+	Transformacja Fouriera - przekształcenie pozwalające przedstawić okresową funkcję w postaci sumy sinusów i cosinusów.\\
+	Równania analizy funkcji:
+	\begin{equation*}
+		a_n = \frac{2}{T} \int_{-0.5T}^{0.5T} f(x) cos \left(\frac{2 n \pi}{T} x \right) dx, \ \ n=0,1,2,...
+	\end{equation*}
+	\begin{equation*}
+		b_n = \frac{2}{T} \int_{-0.5T}^{0.5T} f(x) sin \left(\frac{2 n \pi}{T} x \right) dx, \ \ n=1,2,...
+	\end{equation*}
+	W przypadku funkcji nieokresowej zamiast ważonej sumy sinusów i cosinusów jest całka ($a_n$ i $b_n$ stają się funkcjami ciągłymi).
+\end{frame}
+
+\begin{frame}{Transformacja Fouriera, przykład}
+	\begin{equation*}
+		f(x) = 
+		\begin{cases}
+			1, & \text{dla}\ x \in ( 0+kT; 0.5T+kT \rangle \\
+			-1, & \text{dla}\ x \in ( 0.5T+kT; T+kT \rangle
+		\end{cases}
+	\end{equation*}
+	\begin{figure}
+		\includegraphics[scale=0.15, alt={Na obrazku przedstawiony jest wykres funkcji w układzie współrzędnych. Pozioma oś na dole to oś X, pionowa oś po lewej to oś oznaczona jako f od x.
+		Wartości funkcji przyjmują tylko dwie wysokości: jedna linia pozioma znajduje się mniej więcej na wysokości plus jeden, druga na wysokości minus jeden. Wykres składa się z szeregu prostokątnych "schodków", które na przemian biegną raz na górnej wysokości, raz na dolnej, zawsze poziomo, a między tymi poziomami przechodzą pionowo w dół lub w górę.
+		Cały rysunek pokazuje kilka takich powtarzających się bloków od lewego brzegu, gdzie X jest około minus trzy, do prawego, gdzie X jest około trzy. Oznacza to, że funkcja jest okresowa: jej kształt powtarza się regularnie wzdłuż osi poziomej, mniej więcej co jeden odstęp na osi X.​}]{./imags/L15/f1.png}	
+		\caption{Sygnał prostokątny w dziedzinie czasu.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Transformacja Fouriera, przykład:}
+	\begin{equation*}
+		a[n]=0 \quad b[n]=\frac{2-2cos(\pi n)}{\pi n}
+	\end{equation*}
+	\begin{figure}
+		\includegraphics[scale=0.15, alt={Na obrazku znajdują się cztery wykresy obok siebie, u góry dwa, na dole dwa. Każdy pokazuje tę samą funkcję prostokątną jako niebieską linię oraz jej przybliżenie szeregiem Fouriera jako pomarańczową linię. 
+		W lewym górnym rogu tytuł brzmi N równe 3. Widać, że pomarańczowy przebieg jest falisty i tylko z grubsza przypomina prostokąt: ma duże zaokrąglenia i wyraźne oscylacje.
+		W prawym górnym rogu wykres z napisem N równe 10. Tutaj pomarańczowa linia znacznie lepiej przylega do kształtu prostokąta, ale przy przejściach między poziomami nadal pojawiają się drobne oscylacje, takie "falowanie" wokół wartości plus jeden i minus jeden.
+		W lewym dolnym rogu jest wykres z N równe 20. Pomarańczowy przebieg jest jeszcze bliżej idealnego prostokąta, oscylacje są mniejsze i bardziej skupione w okolicach pionowych krawędzi sygnału.
+		W prawym dolnym rogu jest wykres z N równe 100. W tym przypadku pomarańczowa linia prawie pokrywa się z niebieską: odcinki poziome są bardzo równe, a oscylacje przy skokach są krótkie i silnie skoncentrowane. Obraz ilustruje, że wraz ze wzrostem liczby składników N przybliżenie szeregiem Fouriera coraz lepiej odwzorowuje sygnał prostokątny.​}]{./imags/L15/f1_1.png}
+		\caption{Przykłady sygnału oryginalnego i syntezowanego z różnej liczby harmonicznych.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Widmo sygnału}
+	\begin{equation*}
+		a[n]=0 \quad b[n]=\frac{2-2cos(\pi n)}{\pi n}
+	\end{equation*}
+	\begin{figure}
+		\includegraphics[scale=0.15, alt={Na obrazku widoczne są dwa wykresy jeden nad drugim, oba przedstawiają współczynniki szeregu Fouriera w funkcji numeru n.
+		Górny wykres pokazuje współczynniki a od n. Na osi poziomej rośnie n od 0 do 30, na osi pionowej są wartości a od minus jeden do jeden. Wszystkie niebieskie punkty leżą praktycznie na poziomie zera, co oznacza, że współczynniki a są równe zero lub bardzo bliskie zeru dla wszystkich n.
+		Dolny wykres pokazuje współczynniki b od n, także dla n od 0 do 30, przy czym skala pionowa sięga od zera do około jeden i cztery dziesiąte. Widać wyraźny pierwszy słupek o wysokości około jeden i trzy dziesiąte, po nim malejące dodatnie wartości dla kolejnych nieparzystych n, natomiast dla parzystych n punkty znajdują się na poziomie zera, więc te współczynniki są równe zero.​}]{./imags/L15/f1_2.png}
+		\caption{Amplituda kolejnych harmonicznych.}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}{Wpływ filtracji na sygnał złożony}
+	\begin{equation*}
+	f(x) = 
+	\begin{cases}
+		1, & \text{dla}\ x \in ( 0+kT; 0.5T+kT \rangle \\
+		-1, & \text{dla}\ x \in ( 0.5T+kT; T+kT \rangle
+	\end{cases}
+	\end{equation*}
+	gdzie $T=1ms (f=1kHz)$.\\
+	Powyższy sygnał można zdekomponować do postaci sumy sygnałów sinusoidalnych (harmonicznych) o częstotliwościach $f$, $2f$, $3f$...:
+	\begin{equation*}
+		f(x) = \sum_{n=1}^\infty b[n] sin(2 \pi f n x)
+	\end{equation*}
+	\begin{equation*}
+		b[n]=\frac{2-2cos(\pi n)}{\pi n}
+	\end{equation*}
+\end{frame}
+
+
+\begin{frame}{Wpływ filtracji na sygnał złożony}
+	\begin{figure}
+		\includegraphics[scale=0.15, alt={Na rysunku pokazany jest prosty obwód elektryczny z jednym źródłem napięcia, rezystorem i kondensatorem połączonymi w szereg.
+		Po lewej stronie znajduje się okrąg symbolizujący źródło napięcia oznaczone jako e od t, czyli napięcie zależne od czasu. Od źródła przewód biegnie w górę do prostokątnego symbolu rezystora z podpisem 1 kilo om, następnie dalej w prawo do symbolu kondensatora po prawej stronie.
+		Kondensator jest podpisany po prawej wartościowością 159,15 nano farada, a przy nim strzałka skierowana w górę z opisem u out od t, co oznacza napięcie wyjściowe mierzone na kondensatorze. Dolne końce źródła i kondensatora są połączone wspólnym przewodem, zamykając pętlę obwodu..​}]{./imags/L15/filter.png}
+		\caption{Schemat układu z filtrem.}
+	\end{figure}
+	\begin{equation*}
+		H(j\omega)=\frac{2000 \pi}{j \omega + 2000 \pi} \quad H(j f)=\frac{1000}{j f + 1000}
+	\end{equation*}
+\end{frame}
+
+\begin{frame}{Wpływ filtracji na sygnał złożony}
+	Zgodnie z zasadą superpozycji każdą z harmonicznych można filtrować niezależnie:
+	\begin{equation*}
+		f_{filtered}(x) = \sum_{n=1}^\infty b[n] |H(j 2 \pi f)| sin \left( 2 \pi f n x + arg \left( H(j 2 \pi f) \right) \right)
+	\end{equation*}
+	W powyższym przykładzie parzyste harmoniczne posiadają zerowe współczynniki.
+	\begin{table}[]
+		\begin{tabular}{llllll}
+		$n$ & $f_n$  & $b[n]$ & $H(j 2 \pi f_n)$ & $|H|$  &  $arg(H)$ \\
+		$1$ & $1kHz$ & $1.2732$ & $0.7071 e^{-45^\circ}$  & $0.7071$ & $-45^\circ$ \\
+		$3$ & $3kHz$ & $0.4244$ & $0.3162 e^{-71.565^\circ}$  & $0.3162$ & $-71.565^\circ$ \\
+		$5$ & $5kHz$ & $0.2546$ & $0.1961 e^{-78.690^\circ}$  & $0.1961$ & $-78.690^\circ$ \\
+		$7$ & $7kHz$ & $0.1819$ & $0.1414 e^{-81.870^\circ}$  & $0.1414$ & $-81.870^\circ$
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+
+\begin{frame}{Wpływ filtracji na sygnał złożony}
+	\begin{figure}
+		\includegraphics[scale=0.2, alt={.Na obrazku znajdują się dwa wykresy jeden nad drugim. Górny pokazuje w czasie sygnał prostokątny, dolny – wartości współczynników szeregu Fouriera b od n.
+		Na górnym wykresie pozioma oś to czas w milisekundach od około minus trzech tysięcznych do plus trzech tysięcznych sekundy, pionowa oś to f od t od minus półtora do plus półtora. Przebieg przełącza się skokowo między poziomem około plus jeden a minus jeden, tworząc regularne, powtarzalne prostokąty o stałym okresie.
+		Na dolnym wykresie oś pozioma to numer harmonicznej n od 0 do 30, a oś pionowa to współczynniki b od n od zera do około jeden i cztery dziesiąte. Widać najwyższy słupek przy n równym 1 o wartości około jeden i trzy dziesiąte, a kolejne nieparzyste n mają coraz mniejsze dodatnie wartości, natomiast dla większości parzystych n punkty leżą na poziomie zera.}]{./imags/L15/filter_1.png}
+		\caption{Testowy sygnał w dziedzinie czasu oraz częstotliwości.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Wpływ filtracji na sygnał złożony}
+	\begin{figure}
+		\includegraphics[scale=0.2, alt={Na obrazku są dwa wykresy umieszczone jeden nad drugim, oba w funkcji czasu w milisekundach od około minus trzech do plus trzech tysięcznych sekundy.
+		Górny wykres przedstawia sygnał wejściowy f od t: jest to idealny przebieg prostokątny skaczący między poziomem około plus jeden a minus jeden, z równymi czasami trwania na każdym poziomie i ostrymi pionowymi przejściami.
+		Dolny wykres pokazuje sygnał po przejściu przez filtr, opisany jako f filtered od t. Zamiast ostrych prostokątów widać gładkie, zaokrąglone przebiegi: po każdym skoku sygnał narasta lub opada wykładniczo, tworząc łagodne "łuki", które zbliżają się do wartości plus jeden lub minus jeden, ale z opóźnieniem względem sygnału prostokątnego.​}]{./imags/L15/filter_2.png}
+		\caption{Sygnał w dziedzinie czasu przed oraz po filtracji.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Coś dla fanów liczb zespolonych}
+	Równanie syntezy funkcji:
+	\begin{equation*}
+		f(x) = \sum_{n=-\infty}^{\infty} c_n e^{j 2 \pi n x}
+	\end{equation*}
+	Równania analizy funkcji:
+	\begin{equation*}
+		c_n = \frac{1}{T} \int_{-0.5T}^{0.5T} f(x) e^{- j 2 \pi n x} dx
+	\end{equation*}
+	\href{https://www.falstad.com/fourier/Fourier.html}{Applet pokazujący działanie transformacji Fouriera.}
+\end{frame}
+
+
+\begin{frame}{Fourier a Laplace}
+	Równania analizy funkcji:
+	\begin{equation*}
+		\hat{f}(\eta) = \int_{-\infty}^{\infty} f(x) e^{-j 2 \pi \eta x} dx
+	\end{equation*}
+
+	\begin{equation*}
+		F(s) = \int_{0}^{\infty} f(x) e^{-sx} dx
+	\end{equation*}
+
+	Równanie syntezy funkcji:
+	\begin{equation*}
+		f(x) = \int_{-\infty}^{\infty} \hat{f}(\eta) e^{j 2 \pi \eta x} d\eta
+	\end{equation*}
+	\begin{equation*}
+		f(x) = \frac{1}{j 2 \pi} \lim_{\omega \rightarrow \infty} \int_{\lambda-j\omega}^{\lambda-j\omega} F(s) e^{sx} ds
+	\end{equation*}
+\href{https://www.falstad.com/fourier/Fourier.html}{Applet pokazujący działanie transformacji Fouriera.}
+\end{frame}
