@@ -1,0 +1,484 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Presentation: Beamer PG Theme
+% Author: Michał Czubenko and Karolina Marciniuk
+% Affiliation: Politechnika Gdańska
+% TASL: “Beamer PG Theme by M. Czubenko and K. Marciuniuk, PG, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+%
+%
+% This work is licensed under a Creative Commons Attribution 
+% 4.0 International License (CC BY 4.0).
+%
+% To view a copy of this license, visit:
+% https://creativecommons.org/licenses/by/4.0/
+%
+% You are free to:
+%  - Share — copy and redistribute the material in any medium or format
+%  - Adapt — remix, transform, and build upon the material
+%    for any purpose, even commercially.
+%
+% Under the following terms:
+%  - Attribution — You must give appropriate credit, provide a link to the license,
+%    and indicate if changes were made.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\mode<presentation>
+\ProvidesPackage{beamerthemepg}
+\PassOptionsToClass{aspectratio=169}{beamer}
+
+% Custom commands associated with options 
+
+% Default: 'none' style
+\newcommand{\beamer@custom@facultystyle}{none}
+\newcommand{\beamer@custom@facultyimage}{}
+\newcommand{\beamer@custom@facultylogo}{}
+\newcommand{\beamer@custom@color}{standard}
+\newcommand{\beamer@custom@copyrights}{none}
+\newcommand{\beamer@custom@copyrightsimage}{}
+\newcommand{\beamer@custom@qrcode}{none}
+\newcommand{\beamer@custom@imark}{none}
+\newcommand{\beamer@custom@custom}{none}
+
+% Define option 'faculty=' to allow predefined styles
+\DeclareOptionBeamer{faculty}{%  
+  \renewcommand{\beamer@custom@facultystyle}{#1}
+}
+\DeclareOptionBeamer{color}{%  
+  \renewcommand{\beamer@custom@color}{#1}
+}
+\DeclareOptionBeamer{copyrights}{%  
+  \renewcommand{\beamer@custom@copyrights}{#1}
+}
+\DeclareOptionBeamer{qr}{%  
+  \renewcommand{\beamer@custom@qrcode}{#1}
+}
+\DeclareOptionBeamer{i5}{%  
+  \renewcommand{\beamer@custom@imark}{#1}
+}
+\DeclareOptionBeamer{custom}{%  
+  \renewcommand{\beamer@custom@custom}{#1}
+}
+\DeclareOptionBeamer*{%
+  \PackageWarning{beamerthemepg}{Unknown option `\CurrentOption'}%
+}
+% \ProcessOptions
+\ProcessOptionsBeamer
+
+% Beamer notifications
+\PackageWarning{beamerthemepg}{Selected faculty style: \beamer@custom@facultystyle}
+\PackageWarning{beamerthemepg}{Selected color style: \beamer@custom@color}
+\PackageWarning{beamerthemepg}{Selected copyrights style: \beamer@custom@copyrights}
+\PackageWarning{beamerthemepg}{Selected qr code as: \beamer@custom@qrcode}
+\PackageWarning{beamerthemepg}{Selected i5 mark as: \beamer@custom@imark}
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Requirements
+% Load required packages
+\RequirePackage{etoolbox} % Just in case you want conditional logic
+\RequirePackage{ifluatex}
+\RequirePackage{ifpdf}
+
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[OT4]{fontenc}
+
+\RequirePackage[polish]{babel}
+\RequirePackage{polski}
+%%% fix for \lll
+\let\mathdollar\relax
+\ifluatex
+  % LuaTeX-specific settings
+	\RequirePackage{unicode-math}
+	\RequirePackage{fontspec}
+	\setmainfont{Arial}
+	\message{Compiling with LuaLaTeX}
+%\else\ifxetex
+%  % LuaTeX-specific settings
+%	\RequirePackage{fontspec}
+%  	\setmainfont{Arial}
+%	\message{Compiling with Xetex}
+\else
+	\RequirePackage{tgheros}
+	\renewcommand{\familydefault}{\sfdefault}
+  % Default for pdfTeX or XeTeX
+	\message{pdfTeX}
+\fi
+
+\RequirePackage{scalerel}
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+\RequirePackage{listings}
+\RequirePackage{pifont}
+\RequirePackage{hyperref}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Settings
+\usefonttheme{pg}
+\usecolortheme{pg}
+\useinnertheme{pg}
+\useoutertheme{pg}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%===========================================
+% DRACULA THEME COLORS
+%===========================================
+\definecolor{draculabg}{HTML}{282a36}
+\definecolor{draculafg}{HTML}{f8f8f2}
+\definecolor{draculacomment}{HTML}{6272a4}
+\definecolor{draculacyan}{HTML}{8be9fd}
+\definecolor{draculagreen}{HTML}{50fa7b}
+\definecolor{draculaorange}{HTML}{ffb86c}
+\definecolor{draculapink}{HTML}{ff79c6}
+\definecolor{draculapurple}{HTML}{bd93f9}
+\definecolor{draculared}{HTML}{ff5555}
+\definecolor{draculayellow}{HTML}{f1fa8c}
+
+%===========================================
+% WCAG HIGH CONTRAST COLORS
+%===========================================
+\definecolor{wcagbg}{HTML}{ffffff}
+\definecolor{wcagfg}{HTML}{000000}
+\definecolor{wcagcomment}{HTML}{006600}
+\definecolor{wcagkeyword}{HTML}{0000cc}
+\definecolor{wcagstring}{HTML}{cc0000}
+\definecolor{wcagnumber}{HTML}{800080}
+\definecolor{wcagtype}{HTML}{008080}
+\definecolor{wcagoperator}{HTML}{000080}
+
+% Python Dracula Theme
+\lstdefinestyle{python-dracula}{
+    language=Python,
+    backgroundcolor=\color{draculabg},
+    basicstyle=\ttfamily\color{draculafg}\small,
+    keywordstyle=\color{draculapink}\bfseries,
+    keywordstyle=[2]\color{draculapurple}\bfseries,
+    stringstyle=\color{draculayellow},
+    commentstyle=\color{draculacomment}\itshape,
+    numberstyle=\color{draculaorange}\small,
+    identifierstyle=\color{draculacyan},
+    emphstyle=\color{draculagreen}\bfseries,
+    frame=single,
+    framerule=0pt,
+    rulecolor=\color{draculacomment},
+    numbers=left,
+    numbersep=8pt,
+    tabsize=4,
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b,
+    morekeywords={self, True, False, None, __init__, __str__, __repr__},
+    emph={def, class, import, from, as, return, yield, with, lambda},
+    sensitive=true
+}
+
+% C++ Dracula Theme
+\lstdefinestyle{cpp-dracula}{
+    language=C++,
+    backgroundcolor=\color{draculabg},
+    basicstyle=\ttfamily\color{draculafg}\small,
+    keywordstyle=\color{draculapink}\bfseries,
+    keywordstyle=[2]\color{draculapurple}\bfseries,
+    stringstyle=\color{draculayellow},
+    commentstyle=\color{draculacomment}\itshape,
+    numberstyle=\color{draculaorange}\small,
+    identifierstyle=\color{draculacyan},
+    emphstyle=\color{draculagreen}\bfseries,
+    frame=single,
+    framerule=0pt,
+    rulecolor=\color{draculacomment},
+    numbers=left,
+    numbersep=8pt,
+    tabsize=4,
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b,
+    morekeywords={nullptr, override, final, constexpr, decltype, auto},
+    emph={std, vector, string, map, set, unique_ptr, shared_ptr},
+    sensitive=true
+}
+
+% C Dracula Theme
+\lstdefinestyle{c-dracula}{
+    language=C,
+    backgroundcolor=\color{draculabg},
+    basicstyle=\ttfamily\color{draculafg}\small,
+    keywordstyle=\color{draculapink}\bfseries,
+    stringstyle=\color{draculayellow},
+    commentstyle=\color{draculacomment}\itshape,
+    numberstyle=\color{draculaorange}\small,
+    identifierstyle=\color{draculacyan},
+    emphstyle=\color{draculagreen}\bfseries,
+    frame=single,
+    framerule=0pt,
+    rulecolor=\color{draculacomment},
+    numbers=left,
+    numbersep=8pt,
+    tabsize=4,
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b,
+    morekeywords={size_t, ssize_t, uint8_t, uint16_t, uint32_t, uint64_t},
+    emph={printf, scanf, malloc, free, sizeof},
+    sensitive=true
+}
+
+% Rust Dracula Theme
+\lstdefinestyle{rust-dracula}{
+    language=Rust,
+    backgroundcolor=\color{draculabg},
+    basicstyle=\ttfamily\color{draculafg}\small,
+    keywordstyle=\color{draculapink}\bfseries,
+    keywordstyle=[2]\color{draculapurple}\bfseries,
+    stringstyle=\color{draculayellow},
+    commentstyle=\color{draculacomment}\itshape,
+    numberstyle=\color{draculaorange}\small,
+    identifierstyle=\color{draculacyan},
+    emphstyle=\color{draculagreen}\bfseries,
+    frame=single,
+    framerule=0pt,
+    rulecolor=\color{draculacomment},
+    numbers=left,
+    numbersep=8pt,
+    tabsize=4,
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b,
+    morekeywords={fn, let, mut, match, impl, trait, struct, enum, use, mod, pub, crate, self, Self, super},
+    emph={Vec, String, Option, Result, Some, None, Ok, Err},
+    sensitive=true
+}
+
+% Go Dracula Theme
+\lstdefinestyle{go-dracula}{
+    language=Go,
+    backgroundcolor=\color{draculabg},
+    basicstyle=\ttfamily\color{draculafg}\small,
+    keywordstyle=\color{draculapink}\bfseries,
+    stringstyle=\color{draculayellow},
+    commentstyle=\color{draculacomment}\itshape,
+    numberstyle=\color{draculaorange}\small,
+    identifierstyle=\color{draculacyan},
+    emphstyle=\color{draculagreen}\bfseries,
+    frame=single,
+    framerule=0pt,
+    rulecolor=\color{draculacomment},
+    numbers=left,
+    numbersep=8pt,
+    tabsize=4,
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b,
+    morekeywords={func, var, const, type, struct, interface, package, import, go, defer, select, chan},
+    emph={fmt, string, int, int64, float64, bool, error, nil},
+    sensitive=true
+}
+
+% LaTeX Dracula Theme
+\lstdefinestyle{latex-dracula}{
+    language=TeX,
+    backgroundcolor=\color{draculabg},
+    basicstyle=\ttfamily\color{draculafg}\small,
+    keywordstyle=\color{draculapink}\bfseries,
+    stringstyle=\color{draculayellow},
+    commentstyle=\color{draculacomment}\itshape,
+    numberstyle=\color{draculaorange}\small,
+    identifierstyle=\color{draculacyan},
+    emphstyle=\color{draculagreen}\bfseries,
+    frame=single,
+    framerule=1pt,
+    rulecolor=\color{draculacomment},
+    numbers=left,
+    numbersep=8pt,
+    tabsize=4,
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b,
+    texcsstyle=*\color{draculapurple}\bfseries,
+    moretexcs={documentclass, usepackage, begin, end, section, subsection, textbf, textit, emph},
+    sensitive=false
+}
+
+%===========================================
+% WCAG HIGH CONTRAST THEME DEFINITIONS
+%===========================================
+
+% Python WCAG Theme
+\lstdefinestyle{python-wcag}{
+    language=Python,
+    backgroundcolor=\color{wcagbg},
+    basicstyle=\ttfamily\color{wcagfg}\small,
+    keywordstyle=\color{wcagkeyword}\bfseries,
+    stringstyle=\color{wcagstring},
+    commentstyle=\color{wcagcomment}\itshape,
+    numberstyle=\color{wcagnumber}\small,
+    identifierstyle=\color{wcagfg},
+    emphstyle=\color{wcagtype}\bfseries,
+    frame=single,
+    framerule=1pt,
+    rulecolor=\color{wcagfg},
+    numbers=left,
+    numbersep=8pt,
+    tabsize=4,
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b,
+    morekeywords={self, True, False, None, __init__, __str__, __repr__},
+    emph={def, class, import, from, as, return, yield, with, lambda},
+    sensitive=true
+}
+
+% C++ WCAG Theme
+\lstdefinestyle{cpp-wcag}{
+    language=C++,
+    backgroundcolor=\color{wcagbg},
+    basicstyle=\ttfamily\color{wcagfg}\small,
+    keywordstyle=\color{wcagkeyword}\bfseries,
+    stringstyle=\color{wcagstring},
+    commentstyle=\color{wcagcomment}\itshape,
+    numberstyle=\color{wcagnumber}\small,
+    identifierstyle=\color{wcagfg},
+    emphstyle=\color{wcagtype}\bfseries,
+    frame=single,
+    framerule=1pt,
+    rulecolor=\color{wcagfg},
+    numbers=left,
+    numbersep=8pt,
+    tabsize=4,
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b,
+    morekeywords={nullptr, override, final, constexpr, decltype, auto},
+    emph={std, vector, string, map, set, unique_ptr, shared_ptr},
+    sensitive=true
+}
+
+% C WCAG Theme
+\lstdefinestyle{c-wcag}{
+    language=C,
+    backgroundcolor=\color{wcagbg},
+    basicstyle=\ttfamily\color{wcagfg}\small,
+    keywordstyle=\color{wcagkeyword}\bfseries,
+    stringstyle=\color{wcagstring},
+    commentstyle=\color{wcagcomment}\itshape,
+    numberstyle=\color{wcagnumber}\small,
+    identifierstyle=\color{wcagfg},
+    emphstyle=\color{wcagtype}\bfseries,
+    frame=single,
+    framerule=1pt,
+    rulecolor=\color{wcagfg},
+    numbers=left,
+    numbersep=8pt,
+    tabsize=4,
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b,
+    morekeywords={size_t, ssize_t, uint8_t, uint16_t, uint32_t, uint64_t},
+    emph={printf, scanf, malloc, free, sizeof},
+    sensitive=true
+}
+
+% Rust WCAG Theme
+\lstdefinestyle{rust-wcag}{
+    language=Rust,
+    backgroundcolor=\color{wcagbg},
+    basicstyle=\ttfamily\color{wcagfg}\small,
+    keywordstyle=\color{wcagkeyword}\bfseries,
+    stringstyle=\color{wcagstring},
+    commentstyle=\color{wcagcomment}\itshape,
+    numberstyle=\color{wcagnumber}\small,
+    identifierstyle=\color{wcagfg},
+    emphstyle=\color{wcagtype}\bfseries,
+    frame=single,
+    framerule=1pt,
+    rulecolor=\color{wcagfg},
+    numbers=left,
+    numbersep=8pt,
+    tabsize=4,
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b,
+    morekeywords={fn, let, mut, match, impl, trait, struct, enum, use, mod, pub, crate, self, Self, super},
+    emph={Vec, String, Option, Result, Some, None, Ok, Err},
+    sensitive=true
+}
+
+% Go WCAG Theme
+\lstdefinestyle{go-wcag}{
+    language=Go,
+    backgroundcolor=\color{wcagbg},
+    basicstyle=\ttfamily\color{wcagfg}\small,
+    keywordstyle=\color{wcagkeyword}\bfseries,
+    stringstyle=\color{wcagstring},
+    commentstyle=\color{wcagcomment}\itshape,
+    numberstyle=\color{wcagnumber}\small,
+    identifierstyle=\color{wcagfg},
+    emphstyle=\color{wcagtype}\bfseries,
+    frame=single,
+    framerule=1pt,
+    rulecolor=\color{wcagfg},
+    numbers=left,
+    numbersep=8pt,
+    tabsize=4,
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b,
+    morekeywords={func, var, const, type, struct, interface, package, import, go, defer, select, chan},
+    emph={fmt, string, int, int64, float64, bool, error, nil},
+    sensitive=true
+}
+
+% LaTeX WCAG Theme
+\lstdefinestyle{latex-wcag}{
+    language=[LaTeX]TeX,
+    backgroundcolor=\color{wcagbg},
+    basicstyle=\ttfamily\color{wcagfg}\small,
+    keywordstyle=\color{wcagkeyword}\bfseries,
+    stringstyle=\color{wcagstring},
+    commentstyle=\color{wcagcomment}\itshape,
+    numberstyle=\color{wcagnumber}\small,
+    identifierstyle=\color{wcagfg},
+    emphstyle=\color{wcagtype}\bfseries,
+    frame=single,
+    framerule=1pt,
+    rulecolor=\color{wcagfg},
+    numbers=left,
+    numbersep=8pt,
+    tabsize=4,
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b,
+    texcsstyle=*\color{wcagoperator}\bfseries,
+    moretexcs={documentclass, usepackage, begin, end, section, subsection, textbf, textit, emph},
+    sensitive=false
+}
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Hide navigation buttons
+\setbeamertemplate{navigation symbols}{} 
+
+% Check slide size
+%\ifnum\beamer@aspectratio=169
+%  % Do something specific for 16:9 layout
+%  \setlength{\textwidth}{13.5cm}
+%\else
+%  % Default fallback
+%  \setlength{\textwidth}{11cm}
+%\fi
+
+
+
+% Custom margins
+\setbeamersize{text margin left=0.05\paperwidth,text margin right=0.05\paperwidth}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\def\titlepage{\usebeamertemplate{title page}}
+\def\endpage{\usebeamertemplate{end page}}  	
+
+\linespread{1.25}
+\newcommand\bt{$\bullet$}
+
+
+\newtheorem{twierdzenie}{Twierdzenie}
+\newtheorem{zalozenia}{Założenia}
+
+
+\mode<all>
