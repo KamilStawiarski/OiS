@@ -52,6 +52,22 @@
 					= i_R R_1 + i_R R_2
 					= i_R (R_1 + R_2).
 				\]
+			\end{block}
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku widać dwa rezystory R1 i R2 połączone szeregowo w jednym obwodzie elektrycznym, przez które płynie ten sam prąd iR od góry do dołu. Strzałki uR1 i uR2 pokazują kierunki spadków napięcia na rezystorach R1 i R2, czyli napięcia odkładające się na każdym z oporników wzdłuż kierunku prądu iR.}]{imags/L2/Series.png}
+				\caption{Szeregowe połączenie rezystorów.}
+			\end{figure}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+\begin{frame}{Szeregowe łączenie rezystorów}
+	\begin{columns}
+		\begin{column}{0.7\textwidth}
+			\begin{block}{Połączenie szeregowe}
 				Oznacza to, że dwa szeregowo połączone rezystory o wartościach $R_1$ i $R_2$ można
 				zastąpić rezystancją zastępczą o wartości
 				\[
@@ -71,6 +87,7 @@
 		\end{column}
 	\end{columns}
 \end{frame}
+
 
 \begin{frame}{Dzielnik napięciowy}
 	\begin{columns}
@@ -203,6 +220,22 @@
 					i_R = i_{R1} + i_{R2}.
 				\]
 				Z perspektywy reszty układu, przyłożonemu napięciu $u_R$ towarzyszy przepływ prądu $i_R$.
+			\end{block}
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku widać dwa rezystory R1 i R2 połączone równolegle, do których doprowadzony jest prąd całkowity iR rozdzielający się na prądy gałęziowe iR1 oraz iR2. Strzałki uR1 i uR2 oznaczają spadki napięcia na rezystorach R1 i R2, które w połączeniu równoległym mają jednakową wartość dla obu gałęzi obwodu.}]{imags/L2/Parallel.png}
+				\caption{Równoległe połączenie rezystorów.}
+			\end{figure}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+\begin{frame}{Równoległe łączenie rezystorów}
+	\begin{columns}
+		\begin{column}{0.7\textwidth}
+			\begin{block}{Połączenie równoległe}
 				Na tej podstawie można określić rezystancję zastępczą:
 				\[
 					R_Z = \frac{u_R}{i_R}
@@ -281,7 +314,7 @@
 
 \begin{frame}{Połączenie gwiazda–trójkąt}
 	\begin{figure}
-		\includegraphics[scale=0.08, alt={Na rysunku po lewej stronie przedstawiono układ trzech rezystorów połączonych w gwiazdę, oznaczonych jako Rgx, Rgy i Rgz, których wspólny punkt znajduje się w środku, a wolne końce wyprowadzone są do węzłów X, Y i Z. Po prawej stronie pokazano równoważny układ trzech rezystorów połączonych w trójkąt (delta), oznaczonych jako Rtx, Rty i Rtz, tworzących zamkniętą pętlę między tymi samymi węzłami X, Y i Z.}]{imags/L2/GT.png}
+		\includegraphics[scale=0.05, alt={Na rysunku po lewej stronie przedstawiono układ trzech rezystorów połączonych w gwiazdę, oznaczonych jako Rgx, Rgy i Rgz, których wspólny punkt znajduje się w środku, a wolne końce wyprowadzone są do węzłów X, Y i Z. Po prawej stronie pokazano równoważny układ trzech rezystorów połączonych w trójkąt (delta), oznaczonych jako Rtx, Rty i Rtz, tworzących zamkniętą pętlę między tymi samymi węzłami X, Y i Z.}]{imags/L2/GT.png}
 		\caption{Połączenia typu gwiazda i trójkąt.}
 	\end{figure}
 	\begin{columns}
