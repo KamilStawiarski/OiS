@@ -1,30 +1,30 @@
-\sect{Wykład 5}
+\section{Wykład 5}
 
 \begin{frame}{Równania węzłowe}
 	\begin{block}{Równania węzłowe}
 		Równania prądowe w obwodzie to równania, które zapisuje się na podstawie I prawa Kirchhoffa (prawa prądowego) w węzłach obwodu.
-		Określają one, jak prądy "rozchodzą się" w rozgałęzieniach, zgodnie z zasadą zachowania ładunku.
+		Określają one, jak prądy „rozchodzą się” w rozgałęzieniach, zgodnie z zasadą zachowania ładunku.
 	\end{block}
 \end{frame}
 
 \begin{frame}{Równania węzłowe}
 	\begin{block}{Istota równań prądowych}
 		I prawo Kirchhoffa mówi, że suma prądów wpływających do węzła jest równa sumie prądów z niego wypływających, czyli ładunek w węźle nie może się gromadzić ani znikać.\\
-		W zapisie algebraicznym przyjmuje się znak "+" dla prądów wpływających i "-" dla wypływających, a równanie ma postać $\sum i=0 A$ dla danego węzła.
+		W zapisie algebraicznym przyjmuje się znak „+” dla prądów wpływających i „-” dla wypływających, a równanie ma postać \(\sum i = 0\,\text{A}\) dla danego węzła.
 	\end{block}
 \end{frame}
 
 \begin{frame}{Równania węzłowe}
 	\begin{block}{Jak je się zapisuje}
-		Wybiera się węzły obwodu (punkty, gdzie łączą się co najmniej trzy gałęzie) i dla każdego z nich zapisuje się równanie, uwzględniając wszystkie prądy, które do niego dochodzą i z niego wychodzą. \\
-		Dla prostego węzła z prądami $i_1$, $i_2$ wpływającymi i $i_3$ wypływającym równanie prądowe będzie np. $i_1+i_2-i_3=0A$ lub równoważnie $i_1+i_2=i_3$.
+		Wybiera się węzły obwodu (punkty, gdzie łączą się co najmniej trzy gałęzie) i dla każdego z nich zapisuje się równanie, uwzględniając wszystkie prądy, które do niego dochodzą i z niego wychodzą.\\
+		Dla prostego węzła z prądami \(i_1\), \(i_2\) wpływającymi i \(i_3\) wypływającym równanie prądowe będzie np. \(i_1 + i_2 - i_3 = 0\,\text{A}\) lub równoważnie \(i_1 + i_2 = i_3\).
 	\end{block}
 \end{frame}
 
 \begin{frame}{Równania węzłowe}
 	\begin{block}{Do czego służą}
-		Zestaw równań prądowych (wraz z równaniami elementów typu prawo Ohma i równaniami napięciowymi) pozwala obliczyć nieznane prądy w gałęziach obwodu.\\
-		Używa się ich w analizie zarówno prostych, jak i złożonych obwodów, zwłaszcza tam, gdzie występuje wiele rozgałęzień i trzeba wyznaczyć "rozpływ" prądu w całej sieci.
+		Zestaw równań prądowych (wraz z równaniami elementów, takimi jak prawo Ohma, oraz równaniami napięciowymi) pozwala obliczyć nieznane prądy w gałęziach obwodu.\\
+		Używa się ich w analizie zarówno prostych, jak i złożonych obwodów, zwłaszcza tam, gdzie występuje wiele rozgałęzień i trzeba wyznaczyć „rozpływ” prądu w całej sieci.
 	\end{block}
 \end{frame}
 
@@ -38,20 +38,20 @@
 \begin{frame}{Równania oczkowe}
 	\begin{block}{Istota równań oczkowych}
 		II prawo Kirchhoffa mówi, że w każdym zamkniętym oczku suma przyrostów i spadków napięć jest równa zero.\\
-		W zapisie algebraicznym, przechodząc wzdłuż oczka, przyjmuje się odpowiednie znaki dla spadków napięć i źródeł, a równanie ma postać $\sum u=0V$ dla danego oczka.
+		W zapisie algebraicznym, przechodząc wzdłuż oczka, przyjmuje się odpowiednie znaki dla spadków napięć i źródeł, a równanie ma postać \(\sum u = 0\,\text{V}\) dla danego oczka.
 	\end{block}
 \end{frame}
 
 \begin{frame}{Równania oczkowe}
 	\begin{block}{Jak je się zapisuje}
-		Wybiera się niezależne oczka obwodu (najmniejsze zamknięte pętle) i dla każdego z nich zapisuje się równanie, sumując spadki napięć na elementach oraz uwzględniając źródła napięcia. \\
-		Dla prostego oczka z rezystorami o spadkach $u_1$, $u_2$ i źródłem napięcia $e$ równanie oczkowe może mieć postać $-e+u_1+u_2=0V$ lub równoważnie $e=u_1+u_2$.
+		Wybiera się niezależne oczka obwodu (najmniejsze zamknięte pętle) i dla każdego z nich zapisuje się równanie, sumując spadki napięć na elementach oraz uwzględniając źródła napięcia.\\
+		Dla prostego oczka z rezystorami o spadkach \(u_1\), \(u_2\) i źródłem napięcia \(e\) równanie oczkowe może mieć postać \(-e + u_1 + u_2 = 0\,\text{V}\) lub równoważnie \(e = u_1 + u_2\).
 	\end{block}
 \end{frame}
 
 \begin{frame}{Równania oczkowe}
 	\begin{block}{Do czego służą}
-		Zestaw równań oczkowych (wraz z prawem Ohma i zależnościami elementów) pozwala obliczyć nieznane prądy oczkowe, a następnie prądy w poszczególnych gałęziach obwodu. \\
+		Zestaw równań oczkowych (wraz z prawem Ohma i zależnościami elementów) pozwala obliczyć nieznane prądy oczkowe, a następnie prądy w poszczególnych gałęziach obwodu.\\
 		Metoda równań oczkowych jest szczególnie przydatna w obwodach płaskich z wieloma gałęziami, ponieważ umożliwia zmniejszenie liczby niewiadomych w porównaniu z metodą równań węzłowych.
 	\end{block}
 \end{frame}
@@ -59,8 +59,8 @@
 \begin{frame}{Równania węzłowe - przykład}
 	\begin{columns}
 		\begin{column}{0.4\textwidth}
-			Po prawej stronie przedstawiono przykładowe zadania.
-			Zaznaczone na nim są wartości rezystorów, napięcie źródła $e$, prąd źródła $j$.
+			Po prawej stronie przedstawiono przykładowe zadanie.
+			Zaznaczone na nim są wartości rezystorów, napięcie źródła \(e\) oraz prąd źródła \(j\).
 			Będzie ono stanowiło bazę do dalszych rozważań.
 		\end{column}
 		\begin{column}{0.6\textwidth}
@@ -80,7 +80,7 @@
 \begin{frame}{Równania węzłowe - przykład}
 	\begin{columns}
 		\begin{column}{0.4\textwidth}
-			Na schemacie po prawej usunięto oznaczenia wartości, dodano za to prądy na napięcia na elementach, węzły oraz oczka.
+			Na schemacie po prawej usunięto oznaczenia wartości, dodano za to prądy i napięcia na elementach, węzły oraz oczka.
 		\end{column}
 		\begin{column}{0.6\textwidth}
 			\begin{figure}
@@ -103,9 +103,9 @@
 	\begin{columns}
 		\begin{column}{0.4\textwidth}
 			Na początku skupmy się na węzłach.
-			Można zauważyć, że w obwodzie występują 4 węzły, jednak w rzeczywistości, dwa dolne węzły stanowią jeden węzeł (oznaczony jako $W_3$).
-			Można sobie to wyobrazić jako utworzenia trójkąta z rezystorów $R_1$, $R_2$ i $R_3$.
-			Wtedy będzie dobrze widoczne że na dole istnieje jeden węzeł.
+			Można zauważyć, że w obwodzie występują 4 węzły, jednak w rzeczywistości dwa dolne węzły stanowią jeden węzeł (oznaczony jako \(W_3\)).
+			Można sobie to wyobrazić jako utworzenie trójkąta z rezystorów \(R_1\), \(R_2\) i \(R_3\).
+			Wtedy będzie dobrze widoczne, że na dole istnieje jeden wspólny węzeł.
 		\end{column}
 		\begin{column}{0.6\textwidth}
 			\begin{figure}
@@ -124,40 +124,13 @@
 	\end{columns}
 \end{frame}
 
-
 \begin{frame}{Równania węzłowe - przykład}
 	\begin{columns}
 		\begin{column}{0.4\textwidth}
-			Strzałki prądowe oznaczone zostały w sposób dowolny, warto jednak przyjąć, że są one zgodne z kierunkowością źródeł.
-			Na rezystorach można oznaczać dowolnie.
-			Istotne jest za to aby strzałki napięć na rezystorach były skierowane przeciwnie do strzałek przepływających przez nie prądów.
-			W przypadku kiedy strzałka powinna być skierowana odwrotnie - w wyniku wyjdzie ujemny prąd i napięcie (to nie jest problemem, moc nadal wyjdzie dodatnia).
-		\end{column}
-		\begin{column}{0.6\textwidth}
-			\begin{figure}
-				\includegraphics[scale=0.08, alt={Na rysunku znajduje się ten sam obwód co poprzednio, ale uzupełniony o oznaczenia prądów, spadków napięć oraz trzy oczka oznaczone O jeden, O dwa i O trzy, a także o oznaczenia trzech węzłów W jeden, W dwa oraz dolnej szyny jako W trzy.
-							Po lewej w dolnej gałęzi nadal jest źródło napięcia e, obok którego zaznaczono strzałką kierunek napięcia od dołu do góry.
-							Na górze, w pierwszym rezystorze po lewej, oznaczonym wcześniej jako R cztery, jest strzałka prądu skierowana w prawo z opisem i e, obok zaznaczono też spadek napięcia u R cztery strzałką skierowaną w lewo.
-							W punkcie między R cztery a R jeden znajduje się węzeł W jeden, z którego w dół biegnie rezystor R dwa z prądem i R dwa skierowanym w dół i ze strzałką napięcia u R dwa skierowaną w górę.
-							W kolejnym rezystorze w górnej gałęzi, R jeden, zaznaczono prąd i R jeden skierowany w lewo oraz spadek napięcia u R jeden strzałką w prawo; węzeł po prawej stronie tego rezystora opisany jest jako W dwa.
-							Z węzła W dwa w dół biegnie rezystor R trzy, przy którym strzałka prądu i R trzy skierowana jest w dół, a napięcie u R trzy zaznaczono strzałką w górę.
-							Po prawej stronie dolnej gałęzi nadal znajduje się źródło prądowe z prądem j skierowanym w górę, a obok zaznaczono napięcie u j między górnym a dolnym zaciskiem źródła.
-							Wewnątrz obwodu narysowano trzy pętle oczkowe: po lewej oczko O jeden obejmuje źródło napięcia, rezystor R cztery i rezystor R dwa; środkowe oczko O dwa obejmuje rezystory R jeden, R dwa i R trzy; prawe oczko O trzy obejmuje rezystor R trzy i źródło prądowe.
-							Przy dolnej szynie zaznaczono opis W trzy, wskazując, że jest to wspólny węzeł odniesienia dla wszystkich gałęzi obwodu.}]{./imags/L5/fig2b.png}
-				\caption{Przykładowe zadanie.}
-			\end{figure}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-
-\begin{frame}{Równania węzłowe - przykład}
-	\begin{columns}
-		\begin{column}{0.4\textwidth}
-			Równania węzłów:\\
-			$w_1$: $i_e+i_{R1}-i_{R2}=0$\\
-			$w_2$: $-i_{R1}-i_{R3}+j=0$\\
-			$w_3$: $-i_e+i_{R2}+i_{R3}-j=0$
+			Strzałki prądowe oznaczone zostały w sposób dowolny; warto jednak przyjąć, że są one zgodne z kierunkowością źródeł.
+			Na rezystorach można je oznaczać dowolnie.
+			Istotne jest natomiast, aby strzałki napięć na rezystorach były skierowane przeciwnie do strzałek przepływających przez nie prądów.
+			Jeśli „intuicyjnie” strzałka zostałaby narysowana odwrotnie, to w wyniku obliczeń pojawi się ujemny prąd lub napięcie (co nie jest problemem – moc nadal wyjdzie dodatnia).
 		\end{column}
 		\begin{column}{0.6\textwidth}
 			\begin{figure}
@@ -180,12 +153,37 @@
 	\begin{columns}
 		\begin{column}{0.4\textwidth}
 			Równania węzłów:\\
-			$w_1$: $i_e+i_{R1}-i_{R2}=0$\\
-			$w_2$: $-i_{R1}-i_{R3}+j=0$\\
-			$w_3$: $-i_e+i_{R2}+i_{R3}-j=0$\\
-			Można zauważyć, że suma 3 powyższych równań jest równa zero.
-			Oznacza to, że są one liniowo zależne, albo inaczej - że jedno z równań zawiera już informację zawartą w poprzednich.
-			Z tego powodu, w układzie gdzie występuje $N$ węzłów używa się równań z dowolnych $N-1$ węzłów.
+			\(w_1\): \(i_e + i_{R1} - i_{R2} = 0\)\\
+			\(w_2\): \(-i_{R1} - i_{R3} + j = 0\)\\
+			\(w_3\): \(-i_e + i_{R2} + i_{R3} - j = 0\)
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.08, alt={Na rysunku znajduje się ten sam obwód co poprzednio, ale uzupełniony o oznaczenia prądów, spadków napięć oraz trzy oczka oznaczone O jeden, O dwa i O trzy, a także o oznaczenia trzech węzłów W jeden, W dwa oraz dolnej szyny jako W trzy.
+							Po lewej w dolnej gałęzi nadal jest źródło napięcia e, obok którego zaznaczono strzałką kierunek napięcia od dołu do góry.
+							Na górze, w pierwszym rezystorze po lewej, oznaczonym wcześniej jako R cztery, jest strzałka prądu skierowana w prawo z opisem i e, obok zaznaczono też spadek napięcia u R cztery strzałką skierowaną w lewo.
+							W punkcie między R cztery a R jeden znajduje się węzeł W jeden, z którego w dół biegnie rezystor R dwa z prądem i R dwa skierowanym w dół i ze strzałką napięcia u R dwa skierowaną w górę.
+							W kolejnym rezystorze w górnej gałęzi, R jeden, zaznaczono prąd i R jeden skierowany w lewo oraz spadek napięcia u R jeden strzałką w prawo; węzeł po prawej stronie tego rezystora opisany jest jako W dwa.
+							Z węzła W dwa w dół biegnie rezystor R trzy, przy którym strzałka prądu i R trzy skierowana jest w dół, a napięcie u R trzy zaznaczono strzałką w górę.
+							Po prawej stronie dolnej gałęzi nadal znajduje się źródło prądowe z prądem j skierowanym w górę, a obok zaznaczono napięcie u j między górnym a dolnym zaciskiem źródła.
+							Wewnątrz obwodu narysowano trzy pętle oczkowe: po lewej oczko O jeden obejmuje źródło napięcia, rezystor R cztery i rezystor R dwa; środkowe oczko O dwa obejmuje rezystory R jeden, R dwa i R trzy; prawe oczko O trzy obejmuje rezystor R trzy i źródło prądowe.
+							Przy dolnej szynie zaznaczono opis W trzy, wskazując, że jest to wspólny węzeł odniesienia dla wszystkich gałęzi obwodu.}]{./imags/L5/fig2b.png}
+				\caption{Przykładowe zadanie.}
+			\end{figure}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Równania węzłowe - przykład}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			Równania węzłów:\\
+			\(w_1\): \(i_e + i_{R1} - i_{R2} = 0\)\\
+			\(w_2\): \(-i_{R1} - i_{R3} + j = 0\)\\
+			\(w_3\): \(-i_e + i_{R2} + i_{R3} - j = 0\)\\[0.5em]
+			Można zauważyć, że suma trzech powyższych równań jest równa zeru.
+			Oznacza to, że są one liniowo zależne, czyli jedno z równań zawiera informację już obecną w pozostałych.
+			Z tego powodu w układzie, w którym występuje \(N\) węzłów, używa się równań z dowolnych \(N-1\) węzłów.
 		\end{column}
 		\begin{column}{0.6\textwidth}
 			\begin{figure}
@@ -257,9 +255,9 @@
 \begin{frame}{Równania węzłowe - przykład}
 	\begin{columns}
 		\begin{column}{0.4\textwidth}
-			Zajmijmy się równaniami oczek.
-			W układzie występują 3 proste oczka, ich równania układa się korzystając z NPK.
-			Na ogół przyjmuje się że oczka "obracają się" zgodnie z kierunkiem wskazówek zegara, jednak przyjęcie odwrotnego kierunku zmieni jedynie znaki, a rozwiązanie wyjdzie identyczne.
+			Zajmijmy się teraz równaniami oczek.
+			W układzie występują 3 proste oczka; ich równania układa się, korzystając z NPK.
+			Na ogół przyjmuje się, że oczka „obracają się” zgodnie z kierunkiem wskazówek zegara, jednak przyjęcie odwrotnego kierunku zmieni jedynie znaki, a rozwiązanie pozostanie identyczne.
 		\end{column}
 		\begin{column}{0.6\textwidth}
 			\begin{figure}
@@ -282,11 +280,11 @@
 	\begin{columns}
 		\begin{column}{0.4\textwidth}
 			Równania oczek:\\
-			$O_1$: $e-U_{R4}-U_{R2}=0$\\
-			$O_2$: $U_{R2}+U_{R1}-U_{R3}=0$\\
-			$O_3$: $U_{R3}-u_j=0$\\
+			\(O_1\): \(e - U_{R4} - U_{R2} = 0\)\\
+			\(O_2\): \(U_{R2} + U_{R1} - U_{R3} = 0\)\\
+			\(O_3\): \(U_{R3} - u_j = 0\)\\[0.5em]
 			W tym przypadku wszystkie równania są istotne.
-			Można również budować oczka przekraczające elementy, np. połączone oczko $O_1$ i $O_2$, jednak w ogólnym przypadku nie jest to konieczne.
+			Można również budować oczka przekraczające elementy, np. połączone oczka \(O_1\) i \(O_2\), jednak w ogólnym przypadku nie jest to konieczne.
 		\end{column}
 		\begin{column}{0.6\textwidth}
 			\begin{figure}
@@ -308,15 +306,15 @@
 \begin{frame}{Równania węzłowe - przykład}
 	\begin{columns}
 		\begin{column}{0.4\textwidth}
-			Można zauważyć, że równania oczek oparte są o napięcia, które w przypadku rezystorów można uzależnić od prądów:\\
-			$U_{R1}=i_{R1} R_1$\\
-			$U_{R2}=i_{R2} R_2$\\
-			$U_{R3}=i_{R3} R_3$\\
-			$U_{R4}=i_{e} R_4$\\
-			Co z z kolei pozwala na modyfikację równań oczek:\\
-			$O_1$: $e-i_{e} R_4-i_{R2} R_2=0$\\
-			$O_2$: $i_{R2} R_2+i_{R1} R_1-i_{R3} R_3=0$\\
-			$O_3$: $i_{R3} R_3-u_j=0$\\
+			Można zauważyć, że równania oczek oparte są o napięcia, które w przypadku rezystorów można wyrazić przez prądy:\\
+			\(U_{R1} = i_{R1} R_1\)\\
+			\(U_{R2} = i_{R2} R_2\)\\
+			\(U_{R3} = i_{R3} R_3\)\\
+			\(U_{R4} = i_e R_4\)\\[0.5em]
+			Co z kolei pozwala na modyfikację równań oczek:\\
+			\(O_1\): \(e - i_e R_4 - i_{R2} R_2 = 0\)\\
+			\(O_2\): \(i_{R2} R_2 + i_{R1} R_1 - i_{R3} R_3 = 0\)\\
+			\(O_3\): \(i_{R3} R_3 - u_j = 0\)
 		\end{column}
 		\begin{column}{0.6\textwidth}
 			\begin{figure}
@@ -335,29 +333,28 @@
 	\end{columns}
 \end{frame}
 
-
 \begin{frame}{Równania węzłowe - przykład}
 	\begin{columns}
-		\begin{column}{0.4\textwidth}
+		\begin{column}{0.5\textwidth}
 			Ponownie, równania można przedstawić w postaci macierzowej:
 			\[
 				\begin{bmatrix}
-					-R_4 & 0   & -R_2 & 0    & 0  \\
-					0    & R_1 & R_2  & -R_3 & 0  \\
-					0    & 0   & 0    & R_3  & -1
+					- R_4 & 0   & - R_2 & 0     & 0  \\
+					0     & R_1 & R_2   & - R_3 & 0  \\
+					0     & 0   & 0     & R_3   & -1
 				\end{bmatrix}
 				\begin{bmatrix}
 					i_e \\ i_{R1} \\ i_{R2} \\ i_{R3} \\ u_j
 				\end{bmatrix}
 				=
 				\begin{bmatrix}
-					-e \\ 0 \\ 0
+					- e \\ 0 \\ 0
 				\end{bmatrix}
 			\]
 		\end{column}
-		\begin{column}{0.6\textwidth}
+		\begin{column}{0.5\textwidth}
 			\begin{figure}
-				\includegraphics[scale=0.08, alt={Na rysunku znajduje się ten sam obwód co poprzednio, ale uzupełniony o oznaczenia prądów, spadków napięć oraz trzy oczka oznaczone O jeden, O dwa i O trzy, a także o oznaczenia trzech węzłów W jeden, W dwa oraz dolnej szyny jako W trzy.
+				\includegraphics[scale=0.07, alt={Na rysunku znajduje się ten sam obwód co poprzednio, ale uzupełniony o oznaczenia prądów, spadków napięć oraz trzy oczka oznaczone O jeden, O dwa i O trzy, a także o oznaczenia trzech węzłów W jeden, W dwa oraz dolnej szyny jako W trzy.
 							Po lewej w dolnej gałęzi nadal jest źródło napięcia e, obok którego zaznaczono strzałką kierunek napięcia od dołu do góry.
 							Na górze, w pierwszym rezystorze po lewej, oznaczonym wcześniej jako R cztery, jest strzałka prądu skierowana w prawo z opisem i e, obok zaznaczono też spadek napięcia u R cztery strzałką skierowaną w lewo.
 							W punkcie między R cztery a R jeden znajduje się węzeł W jeden, z którego w dół biegnie rezystor R dwa z prądem i R dwa skierowanym w dół i ze strzałką napięcia u R dwa skierowaną w górę.
@@ -372,11 +369,10 @@
 	\end{columns}
 \end{frame}
 
-
 \begin{frame}{Równania węzłowe - przykład}
 	\begin{columns}
-		\begin{column}{0.4\textwidth}
-			Łącząc równania uzyskane z węzłów i oczek uzyskuje się równanie macierzowe postaci:
+		\begin{column}{0.5\textwidth}
+			Łącząc równania uzyskane z węzłów i oczek, uzyskuje się równanie macierzowe postaci:
 			\[
 				\begin{bmatrix}
 					- R_4 & 0   & - R_2 & 0     & 0  \\
@@ -394,9 +390,9 @@
 				\end{bmatrix}
 			\]
 		\end{column}
-		\begin{column}{0.6\textwidth}
+		\begin{column}{0.5\textwidth}
 			\begin{figure}
-				\includegraphics[scale=0.08, alt={Na rysunku znajduje się ten sam obwód co poprzednio, ale uzupełniony o oznaczenia prądów, spadków napięć oraz trzy oczka oznaczone O jeden, O dwa i O trzy, a także o oznaczenia trzech węzłów W jeden, W dwa oraz dolnej szyny jako W trzy.
+				\includegraphics[scale=0.07, alt={Na rysunku znajduje się ten sam obwód co poprzednio, ale uzupełniony o oznaczenia prądów, spadków napięć oraz trzy oczka oznaczone O jeden, O dwa i O trzy, a także o oznaczenia trzech węzłów W jeden, W dwa oraz dolnej szyny jako W trzy.
 							Po lewej w dolnej gałęzi nadal jest źródło napięcia e, obok którego zaznaczono strzałką kierunek napięcia od dołu do góry.
 							Na górze, w pierwszym rezystorze po lewej, oznaczonym wcześniej jako R cztery, jest strzałka prądu skierowana w prawo z opisem i e, obok zaznaczono też spadek napięcia u R cztery strzałką skierowaną w lewo.
 							W punkcie między R cztery a R jeden znajduje się węzeł W jeden, z którego w dół biegnie rezystor R dwa z prądem i R dwa skierowanym w dół i ze strzałką napięcia u R dwa skierowaną w górę.
@@ -411,11 +407,10 @@
 	\end{columns}
 \end{frame}
 
-
 \begin{frame}{Równania węzłowe - przykład}
 	\begin{columns}
-		\begin{column}{0.4\textwidth}
-			Równanie to posiada jednoznaczne rozwiązanie, które wyznaczyć można poprzez wykonanie operacji:\\
+		\begin{column}{0.5\textwidth}
+			Równanie to posiada jednoznaczne rozwiązanie, które można wyznaczyć, wykonując operację:
 			\[
 				\begin{bmatrix}
 					i_e \\ i_{R1} \\ i_{R2} \\ i_{R3} \\ u_j
@@ -433,9 +428,9 @@
 				\end{bmatrix}
 			\]
 		\end{column}
-		\begin{column}{0.6\textwidth}
+		\begin{column}{0.5\textwidth}
 			\begin{figure}
-				\includegraphics[scale=0.08, alt={Na rysunku znajduje się ten sam obwód co poprzednio, ale uzupełniony o oznaczenia prądów, spadków napięć oraz trzy oczka oznaczone O jeden, O dwa i O trzy, a także o oznaczenia trzech węzłów W jeden, W dwa oraz dolnej szyny jako W trzy.
+				\includegraphics[scale=0.07, alt={Na rysunku znajduje się ten sam obwód co poprzednio, ale uzupełniony o oznaczenia prądów, spadków napięć oraz trzy oczka oznaczone O jeden, O dwa i O trzy, a także o oznaczenia trzech węzłów W jeden, W dwa oraz dolnej szyny jako W trzy.
 							Po lewej w dolnej gałęzi nadal jest źródło napięcia e, obok którego zaznaczono strzałką kierunek napięcia od dołu do góry.
 							Na górze, w pierwszym rezystorze po lewej, oznaczonym wcześniej jako R cztery, jest strzałka prądu skierowana w prawo z opisem i e, obok zaznaczono też spadek napięcia u R cztery strzałką skierowaną w lewo.
 							W punkcie między R cztery a R jeden znajduje się węzeł W jeden, z którego w dół biegnie rezystor R dwa z prądem i R dwa skierowanym w dół i ze strzałką napięcia u R dwa skierowaną w górę.
@@ -452,46 +447,46 @@
 
 \begin{frame}[fragile]{Równania węzłowe - przykład}
 	Rozwiązanie tego typu równania można uzyskać dowolnym, ulubionym programem
-	obliczającym równania macierzowe:\\
-	Macierz A w Matlabie:
+	obliczającym równania macierzowe.\\
+	Macierz \(A\) w Matlabie:
 	\begin{lstlisting}[style=python-wcag]
-		>> A=[-4 0 -2 0 0; 0 1 2 -3 0; 0 0 0 3 -1; 1 1 -1 0 0; 0 -1 0 -1 0]
-		A =
-		
-		  -4   0  -2   0   0
-		   0   1   2  -3   0
-		   0   0   0   3  -1
-		   1   1  -1   0   0
-		   0  -1   0  -1   0
-	\end{lstlisting}
+>> A=[-4 0 -2 0 0; 0 1 2 -3 0; 0 0 0 3 -1; 1 1 -1 0 0; 0 -1 0 -1 0]
+A =
+
+-4     0    -2     0     0
+ 0     1     2    -3     0
+ 0     0     0     3    -1
+ 1     1    -1     0     0
+ 0    -1     0    -1     0
+\end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]{Równania węzłowe - przykład}
-	Wektor y w Matlabie:
+	Wektor \(y\) w Matlabie:
 	\begin{lstlisting}[style=python-wcag]
-		>> y=[-5; 0; 0; 0; -1]
-		y =
-		
-		  -5
-		   0
-		   0
-		   0
-		  -1
-	\end{lstlisting}
+>> y=[-5; 0; 0; 0; -1]
+y =
+
+    -5
+     0
+     0
+     0
+    -1
+\end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]{Równania węzłowe - przykład}
 	Rozwiązanie równania:
 	\begin{lstlisting}[style=python-wcag]
-		>> A^-1*y
-		ans =
-		
-		   0.7500
-		   0.2500
-		   1.0000
-		   0.7500
-		   2.2500
-	\end{lstlisting}
+>> A^-1*y
+ans =
+
+    0.7500
+    0.2500
+    1.0000
+    0.7500
+    2.2500
+\end{lstlisting}
 \end{frame}
 
 \begin{frame}{Przykład - symulacja}
