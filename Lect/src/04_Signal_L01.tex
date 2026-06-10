@@ -3,11 +3,11 @@
 \begin{frame}{Charakterystyki częstotliwościowe}
 	Charakterystyka Bodego – logarytmiczna charakterystyka częstotliwościowa układu: wzmocnienia (charakterystyka amplitudowa) oraz przesunięcia fazy (charakterystyka fazowa) w funkcji częstotliwości.
 	\begin{figure}
-		\includegraphics[scale=0.2, alt={Na obrazku widoczny jest jeden wykres przedstawiający przebiegi częstotliwościowe kilku typów głośników, wszystkie odniesione do średniego poziomu ciśnienia akustycznego.
-					Oś pozioma pokazuje częstotliwość w hercach w skali logarytmicznej, od około dziesięciu herców po lewej stronie do ponad dziesięciu tysięcy herców po prawej.
-					Oś pionowa to poziom ciśnienia akustycznego w decybelach, od około minus sto na dole do około plus dwudziestu na górze.
-					Na wykresie są cztery krzywe o różnych odcieniach szarości, podpisane u góry jako studio monitor, soundbar, flat panel oraz smart speaker.
-					Krzywe te pokazują, jak każdy z tych głośników odtwarza pasmo: jedne mają stosunkowo płaską charakterystykę w szerokim zakresie częstotliwości, inne wyraźnie opadają w basie lub w najwyższych częstotliwościach, co widać jako spadki lub falowania linii.}]{./imags/L14/Frequency-response-on-0-deg-axis-of-all-speakers-referenced-to-their-SPL-mean-and-shifted.png}
+		\includegraphics[scale=0.08, alt={Charakterystyka przenoszenia głośnika średniotonowego została przedstawiona na wykresie o białym tle z gęstą siatką pomocniczą, w układzie współrzędnych prostokątnych.
+					Oś pionowa obrazuje poziom ciśnienia akustycznego w decybelach w zakresie od 60 dB do 95 dB, natomiast oś pozioma przedstawia częstotliwość w hercach w skali logarytmicznej od 20 Hz do 20 kHz.
+					Na wykresie widoczna jest ciągła, pofalowana linia w kolorze niebieskim, która dla 20 Hz przyjmuje wartość około 65 dB, po czym w paśmie niskich częstotliwości gwałtownie rośnie, osiągając maksimum rzędu 86,5 dB w okolicy 500 Hz.
+					W szerokim zakresie tonów średnich, mniej więcej od kilkuset herców do około 6 kHz, poziom odpowiedzi utrzymuje się na wysokim poziomie i wykazuje jedynie niewielkie, regularne odchylenia od linii idealnie płaskiej.
+					Powyżej około 6 kHz charakterystyka zaczyna systematycznie opadać, co odpowiada zmniejszaniu się skuteczności przetwarzania wysokich częstotliwości, tak że przy 20 kHz poziom ciśnienia akustycznego wynosi w przybliżeniu 72,5 dB.}]{./imags/L14/glosnik.png}
 		\caption{Przykład charakterystyki częstotliwościowej.}
 	\end{figure}
 \end{frame}
@@ -25,27 +25,22 @@
 
 \begin{frame}{Filtry pasywne}
 	Układy z elementami RLC, w których stosunek zespolonych amplitud napięcia wyjściowego do wejściowego (transmitancja widmowa $H(j\omega)$) jest funkcją częstotliwości.
-	\begin{figure}
-		\includegraphics[scale=0.2, alt={Na obrazku znajdują się cztery schematyczne wykresy idealnych charakterystyk filtrów, rozmieszczone w prostokąt: dwa u góry i dwa u dołu.
-					W lewym górnym rogu czerwony wykres dolnoprzepustowy ma postać prostokąta: od lewej strony jest na wysokim poziomie, a w pewnym punkcie gwałtownie spada do zera i dalej pozostaje na zerze, co oznacza idealne przepuszczanie wszystkich częstotliwości poniżej granicy i całkowite tłumienie powyżej.
-					W prawym górnym rogu fioletowy wykres górnoprzepustowy jest odwrotny: od lewej jest na poziomie zera, w pewnym miejscu skokowo rośnie do maksymalnej wartości i dalej utrzymuje się na tym poziomie, pokazując przepuszczanie wyłącznie częstotliwości powyżej częstotliwości odcięcia.
-					W lewym dolnym rogu zielony wykres środkowoprzepustowy tworzy pionowo wznoszący się bok, następnie poziomy odcinek na wysokim poziomie i pionowy spadek, jak prostokąt stojący w środku osi poziomej; oznacza to przepuszczanie tylko pasma częstotliwości pośrednich, przy pełnym tłumieniu niskich i wysokich.
-					W prawym dolnym rogu szary wykres środkowozaporowy ma odwrotny kształt: poziomą linię na wysokim poziomie, w środku prostokątny dołek spadający do zera i znów powrót do wysokiego poziomu, co odpowiada idealnemu tłumieniu pasma środkowego przy przepuszczaniu częstotliwości poniżej i powyżej tego zakresu.}]{./imags/L14/f_ideal.png}
-		\caption{Idealna odpowiedź częstotliwościowa.}
-	\end{figure}
-\end{frame}
-
-\begin{frame}{Filtry pasywne}
 	\begin{itemize}
 		\item[\bt] Pasmo przenoszenia – zakres częstotliwości, dla których moduł transmitancji spełnia $|H(j\omega)| > \frac{1}{\sqrt{2}}$ (czyli tłumienie mniejsze niż $-3\,$dB).
 		\item[\bt] Pasmo zaporowe – zakres częstotliwości, dla których moduł transmitancji spełnia $|H(j\omega)| < \frac{1}{\sqrt{2}}$ (tłumienie większe niż $-3\,$dB).
 	\end{itemize}
+\end{frame}
+
+\begin{frame}{Filtry pasywne}
+
 	\begin{figure}
-		\includegraphics[scale=0.2, alt={Na obrazku znajdują się cztery małe wykresy charakterystyk filtrów, ułożone w prostokąt: dwa u góry, dwa u dołu.
-					W lewym górnym rogu jest czerwony wykres dolnoprzepustowy: linia zaczyna się wysoko z lewej strony i przy pewnej częstotliwości opada w dół, pokazując, że niskie częstotliwości są przepuszczane, a wyższe tłumione.
-					W prawym górnym rogu znajduje się niebieski wykres górnoprzepustowy: z lewej strony jest niski, a następnie gwałtownie rośnie i dalej pozostaje wysoki, co oznacza tłumienie niskich i przepuszczanie wysokich częstotliwości.
-					W lewym dolnym rogu jest zielony wykres środkowoprzepustowy: krzywa rośnie z niskiej wartości, tworzy wypukły garb w środku i potem znowu spada, co oznacza przepuszczanie tylko pasma częstotliwości pośrednich.
-					W prawym dolnym rogu szary wykres środkowozaporowy ma kształt odwrotny: od lewej i prawej strony jest wysoki, a w środku tworzy głęboki dołek, pokazując tłumienie częstotliwości środkowych i przepuszczanie niskich oraz wysokich.}]{./imags/L14/f_real.png}
+		\includegraphics[scale=0.08, alt={Obraz przedstawia cztery charakterystyki amplitudowe filtrów pasmowo-przepustowych, umieszczone na jednej planszy w układzie dwóch wierszy i dwóch kolumn, pod wspólnym tytułem Charakterystyki dla różnych Q.
+					Każdy z wykresów ma białe tło, szarą siatkę pomocniczą oraz osie opisane w układzie współrzędnych prostokątnych; oś pionowa przedstawia moduł transmitancji w decybelach w zakresie od około -50 dB do 0 dB, natomiast oś pozioma odwzorowuje częstotliwość w hercach w skali logarytmicznej od 10 Hz do 100 kHz.
+					Na wszystkich wykresach zilustrowano działanie filtrów pasmowo-przepustowych o jednakowej częstotliwości środkowej równej 1000 Hz, różniących się jedynie wartością dobroci Q, co skutkuje istotnymi zmianami szerokości pasma przenoszenia wyznaczanego na poziomie -3 dB.
+					Na każdej charakterystyce zaznaczono pasmo 3 dB za pomocą poziomego odcinka czarnej linii przerywanej, zakończonego po obu stronach czarnymi punktami, leżącego dokładnie na poziomie -3 dB względem maksimum charakterystyki.
+					Lewy górny wykres odpowiada filtrów o dobroci Q równej 0,1 i przedstawia bardzo szerokie, łagodnie ukształtowane wzniesienie krzywej w kolorze niebieskim, o wyraźnie spłaszczonym wierzchołku, przy czym punkty wyznaczające granice pasma 3 dB są znacznie od siebie oddalone, a opisana przy wykresie szerokość pasma 3 dB wynosi 9976,28 Hz, co wskazuje na filtr o bardzo małej selektywności.
+					Prawy górny wykres przedstawia charakterystykę filtru o dobroci Q równej 1, dla którego maksimum krzywej osiąga poziom 0 dB; kształt wierzchołka jest wyraźnie bardziej stromy, punkty odpowiadające częstotliwościom granicznym znajdują się bliżej siebie niż w poprzednim przypadku, a podana szerokość pasma 3 dB równa 997,63 Hz jest istotnie mniejsza, co odzwierciedla wzrost selektywności filtru.Lewy dolny wykres ilustruje filtr o dobroci Q równej 10 i ukazuje bardzo wąską, silnie wyostrzoną górę charakterystyki, przy której punkty wyznaczające pasmo 3 dB są umieszczone bardzo blisko szczytu, a deklarowana szerokość pasma 3 dB równa 99,76 Hz wskazuje na typowy przykład wąskopasmowego filtru pasmowo-przepustowego.
+					Prawy dolny wykres prezentuje charakterystykę filtru o dobroci Q równej 100, w której maksimum krzywej przyjmuje postać ekstremalnie wąskiego, igłowego szczytu; boczne odcinki charakterystyki opadają bardzo stromo, punkty odpowiadające częstotliwościom granicznym praktycznie zlewają się w jednym miejscu, a szerokość pasma 3 dB równa zaledwie 9,98 Hz potwierdza, że wraz ze wzrostem dobroci Q pasmo przenoszenia ulega znacznemu zawężeniu.}]{./imags/L14/filters.png}
 		\caption{Przybliżona odpowiedź częstotliwościowa.}
 	\end{figure}
 \end{frame}
@@ -79,15 +74,14 @@
 
 \begin{frame}{Dobroć filtra – przykład}
 	\begin{figure}
-		\includegraphics[scale=0.4, alt={Na obrazku jest pojedynczy wykres pokazujący, jak zmienia się wzmocnienie filtru w zależności od częstotliwości, dla trzech różnych wartości współczynnika dobroci Q.
-					Oś pozioma to częstotliwość w hercach, od około jednego kiloherca do dwóch przecinek czterech kiloherca.
-					Oś pionowa to amplituda w decybelach, od zera na górze do około minus dwudziestu na dole.
-					Na wykresie znajdują się trzy krzywe.
-					Zielona, szeroka, łagodnie zaokrąglona na górze, jest opisana jako Q równe 1 i ma maksimum w okolicach częstotliwości środkowej, ale zmienia się powoli.
-					Niebieska krzywa o średniej szerokości jest podpisana Q równe 10 i jest znacznie bardziej stroma, z wyraźnym szpicem w środku.
-					Żółto-brązowa krzywa jest bardzo wąska i wysoka, podpisana Q równe 100, tworzy prawie pionowy szczyt w pobliżu częstotliwości środkowej.
-					W środku wykresu, przy częstotliwości około jeden przecinek sześć kiloherca, znajduje się pionowa linia i opis szesnaście herców z poziomą strzałką nad nią oznaczoną jako sto pięćdziesiąt dziewięć herców, co wskazuje szerokość pasma wokół częstotliwości środkowej.
-					Obraz ilustruje, że im większa dobroć Q, tym węższe pasmo przepuszczanych częstotliwości i bardziej strome zbocza charakterystyki.}]{./imags/L14/Q-Factor.png}
+		\includegraphics[scale=0.08, alt={Obraz przedstawia cztery charakterystyki amplitudowe filtrów idealnych umieszczone na jednej planszy w układzie dwóch wierszy i dwóch kolumn.
+					Wspólny tytuł rysunku brzmi Charakterystyki amplitudowe filtrów idealnych.
+					Każdy z wykresów ma białe tło, gęstą szarą siatkę pomocniczą oraz osie opisane w układzie współrzędnych prostokątnych, przy czym oś częstotliwości ma skalę logarytmiczną, a oś amplitudy wyrażona jest w decybelach.
+					Oś pionowa na wszystkich wykresach przedstawia moduł transmitancji w skali od około -60 dB do 0 dB, natomiast oś pozioma prezentuje częstotliwość w hercach w zakresie od 1 Hz do 10⁶ Hz.
+					Na każdym z wykresów naniesiono pionową, przerywaną linię w kolorze czerwonym, wyznaczającą częstotliwość odniesienia równą 1000 Hz.
+					Lewy górny wykres, zatytułowany Filtr dolnoprzepustowy, przedstawia charakterystykę filtru, którego transmitancja w pasmie niskich częstotliwości jest stała i równa 0 dB, a powyżej częstotliwości granicznej 1000 Hz zaczyna monotonnie maleć, osiągając wartości rzędu -60 dB w zakresie wysokich częstotliwości.
+					Prawy górny wykres, zatytułowany Filtr górnoprzepustowy, obrazuje filtr o charakterystyce rosnącej: dla częstotliwości znacznie mniejszych od 1000 Hz transmitancja ma wartości około -60 dB, a w pobliżu częstotliwości granicznej krzywa dochodzi do poziomu 0 dB i następnie utrzymuje się na tym poziomie w zakresie częstotliwości wyższych.Lewy dolny wykres, zatytułowany Filtr pasmowo przepustowy, prezentuje charakterystykę filtru, który posiada wyraźne pasmo przenoszenia ograniczone z dołu i z góry, co na wykresie przyjmuje postać pojedynczego wzniesienia o kształcie zbliżonym do symetrycznego wzgórza, z maksimum nieco poniżej 0 dB, zlokalizowanym w pobliżu częstotliwości 1000 Hz.
+					Prawy dolny wykres, zatytułowany Filtr pasmowo zaporowy, przedstawia charakterystykę filtru, którego transmitancja jest zbliżona do 0 dB w szerokim zakresie częstotliwości, z wyjątkiem wąskiego pasma wokół 1000 Hz, gdzie pojawia się głębokie wcięcie o charakterze rezonansowym, sięgające około -26 dB, co odpowiada typowemu zachowaniu filtru pasmowo‑zaporowego (pułapki).}]{./imags/L14/bandpass_filters.png}
 		\caption{Przykład filtrów o różnej dobroci.}
 	\end{figure}
 \end{frame}
